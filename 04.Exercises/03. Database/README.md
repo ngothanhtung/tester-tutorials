@@ -36,11 +36,12 @@ So before exploring about the concept of data integrity testing, let’s first k
 6. Check whether default value is assigned when user input is not given.
 
 ## Types of Data Integrity Test:
+
 **There are mainly three types of data integrity test**
 
 - **Entity Integrity** –
-It examines that each row of a table consists of non-null primary key where each should be specific. The test may be attained defining duplicate or null values in test data.
+  It examines that each row of a table consists of non-null primary key where each should be specific. The test may be attained defining duplicate or null values in test data.
 - **Domain Integrity** –
-It checks that each set of data value. Column falls with a specific permissible range. Testing may be achieved using null, default and invalid values.
+  It checks that each set of data value. Column falls with a specific permissible range. Testing may be achieved using null, default and invalid values.
 - **Referential Integrity** –
-It checks relationship between a foreign key and primary key of multiple table. This test is achieved by eliminating parent or child row in a table.
+  It checks relationship between a foreign key and primary key of multiple table. This test is achieved by eliminating parent or child row in a table.
