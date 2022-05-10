@@ -27,10 +27,10 @@ Nhập đúng username + password sẽ chuyển user vào màn hình.
 - Kiểm tra button “Sign In” highlighted khi hover mouse
 - Kiểm tra button “Sign In” đổi màu khi mouse down
 - Kiểm tra placeholder Username, Password mờ hoặc xoá khi click vào Username, Password textbox
-- Kiểm tra placeholder Username, Password bi xoá khi nhập value vào Username, Password textbox
-- Kiểm tra Paste keyboard, right click hoạt động với username, password
-- Kiểm tra Copy keyboard, right click hoạt động với username
-- Kiểm tra Copy keyboard bị disable với password, right-click disable
+- Kiểm tra placeholder Username, Password bị xoá khi nhập value vào Username, Password textbox
+- Kiểm tra Paste keyboard (Ctrl + V) và right click hoạt động với username, password.
+- Kiểm tra Copy keyboard (Ctrl + V) và right click hoạt động với username.
+- Kiểm tra Copy keyboard (Ctrl + C) bị disable với password, right-click (chức năng Copy) disable.
 
 ### II.2 Functions
 
