@@ -28,7 +28,7 @@ Hãng yêu cầu viết một phần mềm nhỏ để tự động tính ra s�
 - Loại vé (Type of Class): cho phép chọn trong danh sách 2 giá trị Business Class và Economy Class
 - Số tiền vé (Payment): Không cho phép sửa đổi giá trị
 
-Xem form
+> Xem form (https://github.com/ngothanhtung/tester-tutorials/blob/main/04.Exercises/HTML/images/booking-form.png?raw=true)
 
 ## Yêu cầu 2: Kiểm tra các ràng buộc: Name, ID Card No, Date of Birth và Type of Class bắt buộc phải nhập dữ liệu.
 
