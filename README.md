@@ -8,8 +8,8 @@
 
 ## Cài đặt các extensions cho Visual Studio Code:
 
-Prettier - Code formatter
-Visual Studio IntelliCode
-Bracket Pair Colorizer 2
-Color Highlight
-Dracula Official (theme)
+- Prettier - Code formatter
+- Visual Studio IntelliCode
+- Bracket Pair Colorizer 2
+- Color Highlight
+- Dracula Official (theme)
