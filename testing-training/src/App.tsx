@@ -8,6 +8,7 @@ import type { MenuProps } from 'antd';
 import { UserOutlined, SendOutlined } from '@ant-design/icons';
 import Home from './pages/Home';
 import SideMenu from './components/SideMenu';
+import TicketBooking from './pages/TicketBooking';
 const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
@@ -34,12 +35,12 @@ function App() {
               <Breadcrumb style={{ margin: '16px 0' }}>
                 <Breadcrumb.Item>Home</Breadcrumb.Item>
                 <Breadcrumb.Item>Forms</Breadcrumb.Item>
-                <Breadcrumb.Item>Login</Breadcrumb.Item>
               </Breadcrumb>
               <div className='site-layout-content'>
                 <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='login' element={<Login />} />
+                  <Route path='ticket-booking' element={<TicketBooking />} />
                 </Routes>
               </div>
             </Content>

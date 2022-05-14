@@ -21,14 +21,14 @@ Hãng yêu cầu viết một phần mềm nhỏ để tự động tính ra s�
 
 ## Yêu cầu 1: Nhập thông tin đăng ký vé bao gồm:
 
-- Tên người đăng ký (Name)
+- Tên người đăng ký (Full name)
 - Địa chỉ (Address)
-- Số CMT (ID Card No)
-- Ngày tháng năm sinh (Date of Birth): cho phép nhập theo định dạng DD/MM/YYYY
+- Số CMT (ID Number / Passport)
+- Năm sinh (Year of Birth): cho phép nhập YYYY
 - Loại vé (Type of Class): cho phép chọn trong danh sách 2 giá trị Business Class và Economy Class
 - Số tiền vé (Payment): Không cho phép sửa đổi giá trị
 
-> Xem form (https://github.com/ngothanhtung/tester-tutorials/blob/main/04.Exercises/HTML/images/booking-form.png?raw=true)
+> Xem form (https://aptech-tester.web.app/ticket-booking)
 
 ## Yêu cầu 2: Kiểm tra các ràng buộc: Name, ID Card No, Date of Birth và Type of Class bắt buộc phải nhập dữ liệu.
 

@@ -1,10 +1,15 @@
 import React from 'react';
+import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { Form, Input, Button, Checkbox, Divider, message } from 'antd';
 
 const markdown = `
 ## Xây dựng mẫu kiểm thử cho form Login sau:
+
+### Giả sử đăng nhập thành công là:
+- Username: admin
+- Password: Tester@2022
 
 ## I. Yêu cầu của form Login:
 
@@ -27,7 +32,7 @@ Nhập đúng username + password sẽ chuyển user vào màn hình.
 
 ### II.1 UI
 
-- Kiểm tra icon, font size, font style, font color của các text trên màn hình login & Error validation
+- Kiểm tra icon, font size, font style, font color của các text trên màn hình login & Error validations
 - Kiểm tra button “Sign In” highlighted khi hover mouse
 - Kiểm tra button “Sign In” đổi màu khi mouse down
 - Kiểm tra placeholder Username, Password mờ hoặc xoá khi click vào Username, Password textbox
@@ -76,11 +81,18 @@ Nhập đúng username + password sẽ chuyển user vào màn hình.
 const Login = () => {
   const navigate = useNavigate();
   const onFinish = (values: any) => {
-    console.log('Success:', values);
     const { username, password } = values;
-    if (username === 'admin' && password === 'Tester@2022') {
+    if (username === 'admin' && password === 'Tester2022') {
       message.success('Login success');
+      const cookies = new Cookies();
+      let d = new Date();
+      d.setTime(d.getTime() + 20 * 60 * 1000); // 20 minutes
+
+      cookies.set('username', username, { path: '/', expires: d });
+      cookies.set('password', password, { path: '/', expires: d });
       navigate('/');
+    } else {
+      message.error('Login failed');
     }
   };
 
@@ -90,6 +102,8 @@ const Login = () => {
 
   return (
     <React.Fragment>
+      <h3>Login Form - Version 1.0</h3>
+      <Divider />
       <Form name='login-form' labelCol={{ span: 8 }} wrapperCol={{ span: 8 }} initialValues={{ username: '', password: '', remember: true }} onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete='off'>
         <Form.Item
           label='Username'
@@ -118,8 +132,8 @@ const Login = () => {
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-          <Button type='primary' htmlType='submit'>
-            Submit
+          <Button type='primary' htmlType='submit' style={{ minWidth: 120 }}>
+            Login
           </Button>
         </Form.Item>
       </Form>
