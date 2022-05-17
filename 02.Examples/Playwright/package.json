@@ -9,5 +9,10 @@
   "dependencies": {
     "playwright": "^1.22.0"
   },
-  "scripts": {}
+  "scripts": {
+    "test": "npx playwright test",
+    "headed": "npx playwright test --headed",
+    "debug": "npx playwright test --debug",
+    "report": "npx playwright show-report"
+  }
 }
