@@ -1,14 +1,31 @@
-## API: Login
+# API: Get all users
+
+## REQUEST:
+
+- Url: https://training.softech.cloud/api/training/users
+- Method: GET
+
+## RESPONSE:
+
+```json
+[
+  {
+    "_id": "628395a6effcfb0ae4fd1c25",
+    "username": "tungnt",
+    "password": "123456789",
+    "email": "tungnt@softech.com",
+    "fullName": "Ngô Thanh Tùng"
+  }
+]
+```
+
+# API: Login
+
+## REQUEST:
 
 - Url: https://training.softech.cloud/api/training/users/login
 - Method: POST
-- Header:
-
-```
-Content-Type: application/json
-```
-
-- Body:
+- Body (Raw, JSON):
 
 ```json
 {
@@ -17,16 +34,40 @@ Content-Type: application/json
 }
 ```
 
-## API: Get all users
+## RESPONSE:
 
-- Url: https://training.softech.cloud/api/training/users
-- Method: GET
+- If success:
 
-## API: Register a new user
+```json
+{
+  "ok": true,
+  "login": true,
+  "user": {
+    "_id": "628395a6effcfb0ae4fd1c25",
+    "username": "tungnt",
+    "password": "123456789",
+    "email": "tungnt@softech.edu.vn",
+    "fullName": "Ngô Thanh Tùng"
+  }
+}
+```
+
+- If failed:
+
+```json
+{
+  "ok": true,
+  "login": false
+}
+```
+
+# API: Register a new user
+
+## REQUEST:
 
 - Url: https://training.softech.cloud/api/training/users/register
 - Method: POST
-- Body:
+- Body (Raw, JSON):
 
 ```json
 {
@@ -37,8 +78,9 @@ Content-Type: application/json
 }
 ```
 
-- Response:
-  If user exists
+## RESPONSE:
+
+- If user exists
 
 ```json
 {
@@ -48,7 +90,7 @@ Content-Type: application/json
 }
 ```
 
-If success:
+- If success:
 
 ```json
 {
@@ -66,38 +108,15 @@ If success:
       "result": {
         "n": 1,
         "ok": 1
-      },
-      "connection": {
-        "_events": {},
-        "_eventsCount": 4,
-        "id": 1,
-        "address": "127.0.0.1:27017",
-        "bson": {},
-        "socketTimeout": 360000,
-        "monitorCommands": false,
-        "closed": false,
-        "destroyed": false,
-        "lastIsMasterMS": 1
-      },
-      "ops": [
-        {
-          "username": "tuana123",
-          "password": "123456789",
-          "email": "tuanna@softech.edu.vn",
-          "fullName": "Nguyễn Anh Tuấn",
-          "_id": "6283988ceffcfb0ae4fd1c2b"
-        }
-      ],
-      "insertedCount": 1,
-      "insertedId": "6283988ceffcfb0ae4fd1c2b",
-      "n": 1,
-      "ok": 1
+      }
     }
   }
 }
 ```
 
-## API: Delete a user
+# API: Delete a user
+
+## REQUEST:
 
 - Url: https://training.softech.cloud/api/training/users/:id
 - Method: DELETE
@@ -107,7 +126,20 @@ If success:
 id = 615456cf4139ac6c5cc07fee
 ```
 
-## API: Update a user
+## RESPONSE:
+
+```json
+{
+  "result": {
+    "n": 0,
+    "ok": 1
+  }
+}
+```
+
+# API: Update a user
+
+## REQUEST:
 
 - Url: https://training.softech.cloud/api/training/users/:id
 - Method: PUT
@@ -117,12 +149,46 @@ id = 615456cf4139ac6c5cc07fee
 id = 615456cf4139ac6c5cc07fee
 ```
 
-- Body:
+- Body (Raw, JSON):
 
 ```json
 {
   "email": "tungnt@softech.com",
   "password": "123456789",
   "fullName": "Ngô Thanh Tùng"
+}
+```
+
+## RESPONSE
+
+- If success:
+
+```json
+{
+  "lastErrorObject": {
+    "n": 1,
+    "updatedExisting": true
+  },
+  "value": {
+    "_id": "628395a6effcfb0ae4fd1c25",
+    "username": "tungnt",
+    "password": "123456789",
+    "email": "tungnt@softech.edu.vn",
+    "fullName": "Ngô Thanh Tùng"
+  },
+  "ok": 1
+}
+```
+
+- If not found user
+
+```json
+{
+  "lastErrorObject": {
+    "n": 0,
+    "updatedExisting": false
+  },
+  "value": null,
+  "ok": 1
 }
 ```
