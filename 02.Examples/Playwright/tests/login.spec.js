@@ -62,8 +62,8 @@ test.describe('Login: Fields is required', () => {
     await page.screenshot({ path: './tests/screenshots/TC-LOGIN-REQUIRED-PASSWORD.png', clip: { x: 0, y: 0, height: 1080, width: 1920 } });
 
     // Case 1: Kiểm tra tồn tại của text
-    const error = await page.locator('text=Please input your password!');
-    await expect(error).toHaveCount(1);
+    // const error = await page.locator('text=Please input your password!');
+    // await expect(error).toHaveCount(1);
 
     // Case 2: Kiểm tra theo class
     // const error = await page.locator('span.ant-input-password');
@@ -71,8 +71,8 @@ test.describe('Login: Fields is required', () => {
 
     // Case 3: Kiểm tra theo ảnh chụp
     // Configure image matching threshold and snapshot name.
-    // expect(await page.screenshot({ clip: { x: 0, y: 0, height: 1080, width: 1920 } })).toMatchSnapshot({
-    //   name: './tests/screenshots/TC-LOGIN-REQUIRED-PASSWORD.png',
-    // });
+    expect(await page.screenshot({ clip: { x: 0, y: 0, height: 1080, width: 1920 } })).toMatchSnapshot({
+      name: './tests/screenshots/TC-LOGIN-REQUIRED-PASSWORD.png',
+    });
   });
 });
