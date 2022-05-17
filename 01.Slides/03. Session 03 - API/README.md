@@ -64,3 +64,37 @@ Xem thêm (https://playwright.dev/docs/codegen)
 ```
 npx playwright open <Website url>
 ```
+
+## G. Reports
+
+### List reporter
+
+List reporter is default (except on CI where the dot reporter is default). It prints a line for each test being run.
+
+```
+npx playwright test --reporter=list
+```
+
+### Line reporter
+
+Line reporter is more concise than the list reporter. It uses a single line to report last finished test, and prints failures when they occur. Line reporter is useful for large test suites where it shows the progress but does not spam the output by listing all the tests.
+
+```
+npx playwright test --reporter=line
+```
+
+### Dot reporter
+
+Dot reporter is very concise - it only produces a single character per successful test run. It is the default on CI and useful where you don't want a lot of output.
+
+```
+npx playwright test --reporter=dot
+```
+
+### HTML reporter
+
+HTML reporter produces a self-contained folder that contains report for the test run that can be served as a web page.
+
+```
+npx playwright test --reporter=html
+```

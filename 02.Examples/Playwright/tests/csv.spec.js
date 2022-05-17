@@ -1,3 +1,5 @@
+// Tại của sổ termial cài thư viện csv-parse: npm install csv-parse
+
 const { test, expect } = require('@playwright/test');
 
 const fs = require('fs');
@@ -17,7 +19,7 @@ test.beforeEach(async ({ page }) => {
 
 // Lặp qua từng dòng khi đọc được
 for (const record of records) {
-  test('TC-LOGIN-SUCCESS: Login Success with ' + record.username, async ({ page }) => {
+  test('TC-LOGIN-CHECK: Check login result with account: ' + record.username, async ({ page }) => {
     // Click input[type="text"]
     await page.locator('input[type="text"]').click();
     // Fill input[type="text"]
