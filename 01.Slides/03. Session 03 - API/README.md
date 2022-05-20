@@ -1,24 +1,3 @@
-# API: Get all users
-
-## REQUEST:
-
-- Url: https://training.softech.cloud/api/training/users
-- Method: GET
-
-## RESPONSE:
-
-```json
-[
-  {
-    "_id": "628395a6effcfb0ae4fd1c25",
-    "username": "tungnt",
-    "password": "123456789",
-    "email": "tungnt@softech.com",
-    "fullName": "Ngô Thanh Tùng"
-  }
-]
-```
-
 # API: Login
 
 ## REQUEST:
@@ -114,11 +93,78 @@
 }
 ```
 
+# API: Get all users (Authentication Bearer)
+
+## REQUEST:
+
+- Url: https://training.softech.cloud/api/training/users
+- Authorization: Bearer
+- Method: GET
+
+## RESPONSE:
+
+```json
+[
+  {
+    "_id": "628395a6effcfb0ae4fd1c25",
+    "username": "tungnt",
+    "password": "123456789",
+    "email": "tungnt@softech.com",
+    "fullName": "Ngô Thanh Tùng"
+  }
+]
+```
+
+# API: Get all users (Authentication Basic)
+
+## REQUEST:
+
+- Url: https://training.softech.cloud/api/training/users/auth/basic
+- Authorization: Basic
+- Method: GET
+
+## RESPONSE:
+
+```json
+[
+  {
+    "_id": "628395a6effcfb0ae4fd1c25",
+    "username": "tungnt",
+    "password": "123456789",
+    "email": "tungnt@softech.com",
+    "fullName": "Ngô Thanh Tùng"
+  }
+]
+```
+
+# API: Get all users (Authentication API-KEY)
+
+## REQUEST:
+
+- Url: https://training.softech.cloud/api/training/users/auth/basic
+- Authorization: API KEY with [x-api-key = tester31] on header
+- Method: GET
+
+## RESPONSE:
+
+```json
+[
+  {
+    "_id": "628395a6effcfb0ae4fd1c25",
+    "username": "tungnt",
+    "password": "123456789",
+    "email": "tungnt@softech.com",
+    "fullName": "Ngô Thanh Tùng"
+  }
+]
+```
+
 # API: Delete a user
 
 ## REQUEST:
 
 - Url: https://training.softech.cloud/api/training/users/:id
+- Authorization: Bearer Token
 - Method: DELETE
 - Params:
 
@@ -142,6 +188,7 @@ id = 615456cf4139ac6c5cc07fee
 ## REQUEST:
 
 - Url: https://training.softech.cloud/api/training/users/:id
+- Authorization: Bearer Token
 - Method: PUT
 - Params:
 
