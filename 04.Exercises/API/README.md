@@ -152,7 +152,7 @@
 
 ### REQUEST:
 
-- Url: https://training.softech.cloud/api/training/users/auth/basic
+- Url: https://training.softech.cloud/api/training/users/auth/api-key
 - Authorization: API KEY with [x-api-key = tester31] on header
 - Method: GET
 
