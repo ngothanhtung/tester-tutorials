@@ -1,35 +1,43 @@
-import { Menu, MenuProps } from 'antd';
 import React from 'react';
-import { UserOutlined, SendOutlined } from '@ant-design/icons';
-import { useNavigate } from 'react-router-dom';
-
-type Props = {};
+import { Menu, MenuProps } from 'antd';
+import { UserOutlined, SendOutlined, HomeOutlined } from '@ant-design/icons';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const menuItems: MenuProps['items'] = [
   {
-    key: 'login',
+    key: '/home',
+    label: 'Home',
+    icon: <HomeOutlined />,
+  },
+  {
+    key: '/login',
     label: 'Login',
     icon: <UserOutlined />,
   },
   {
-    key: 'ticket-booking',
+    key: '/login/v2',
+    label: 'Login (V2)',
+    icon: <UserOutlined />,
+  },
+  {
+    key: '/ticket-booking',
     label: 'Ticket booking',
     icon: <SendOutlined />,
   },
 ];
 
-function SideMenu({}: Props) {
+function SideMenu() {
+  const location = useLocation();
+
   const navigate = useNavigate();
   return (
     <Menu
       mode='inline'
-      defaultSelectedKeys={['1']}
-      defaultOpenKeys={['login']}
+      selectedKeys={[location.pathname]}
       style={{ minHeight: '100%', borderRight: 0 }}
       items={menuItems}
       onClick={(info) => {
-        console.log(info);
-        navigate(`/${info.key}`);
+        navigate(`${info.key}`);
       }}
     />
   );

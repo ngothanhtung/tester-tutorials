@@ -81,18 +81,24 @@ Nhập đúng username + password sẽ chuyển user vào màn hình.
 const Login = () => {
   const navigate = useNavigate();
   const onFinish = (values: any) => {
+    const cookies = new Cookies();
+    cookies.remove('username');
+    cookies.remove('password');
+
     const { username, password } = values;
     if (username === 'admin' && password === 'Tester2022') {
       message.success('Login success');
-      const cookies = new Cookies();
+
       let d = new Date();
       d.setTime(d.getTime() + 20 * 60 * 1000); // 20 minutes
 
       cookies.set('username', username, { path: '/', expires: d });
-      cookies.set('password', password, { path: '/', expires: d });
+      // II.3 Security / Session
+      // Password không được lưu trong browser cookies
+      // cookies.set('password', password, { path: '/', expires: d });
       navigate('/home');
     } else {
-      message.error('Login failed');
+      message.error('Username hoặc Password đã nhập sai');
     }
   };
 
@@ -102,29 +108,29 @@ const Login = () => {
 
   return (
     <React.Fragment>
-      <h3>Login Form - Version 1.0</h3>
+      <h3>Login Form - Version 2.0</h3>
       <Divider />
       <Form name='login-form' labelCol={{ span: 8 }} wrapperCol={{ span: 8 }} initialValues={{ username: '', password: '', remember: true }} onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete='off'>
         <Form.Item
           label='Username'
           name='username'
           rules={[
-            { required: true, message: 'Please input your username!' },
-            { min: 2, max: 30, message: 'Your username is invalid' },
+            { required: true, message: 'Username không được để trống' },
+            { min: 3, max: 30, message: 'Độ dài Username phải nằm trong khoảng 3 đến 30 ký tự' },
           ]}
         >
-          <Input placeholder='' />
+          <Input placeholder='Nhập tên đăng nhập' />
         </Form.Item>
 
         <Form.Item
           label='Password'
           name='password'
           rules={[
-            { required: true, message: 'Please input your password!' },
-            { min: 2, max: 30, message: 'Your password is invalid' },
+            { required: true, message: 'Password không được để trống' },
+            { min: 6, max: 10, message: 'Độ dài Password phải nằm trong khoảng 6 đến 10 ký tự' },
           ]}
         >
-          <Input.Password placeholder='' />
+          <Input.Password placeholder='Nhập mật khẩu' />
         </Form.Item>
 
         <Form.Item name='remember' valuePropName='checked' wrapperCol={{ offset: 8, span: 16 }}>
@@ -133,7 +139,7 @@ const Login = () => {
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
           <Button type='primary' htmlType='submit' style={{ minWidth: 120 }}>
-            Login
+            Sign In
           </Button>
         </Form.Item>
       </Form>

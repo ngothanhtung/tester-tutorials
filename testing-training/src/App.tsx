@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Login from './pages/Login';
+import LoginV2 from './pages/Login.V2';
 import { Breadcrumb, Layout, Menu } from 'antd';
-import type { MenuProps } from 'antd';
-import { UserOutlined, SendOutlined } from '@ant-design/icons';
 import Home from './pages/Home';
 import SideMenu from './components/SideMenu';
 import TicketBooking from './pages/TicketBooking';
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 
 function App() {
   return (
@@ -39,8 +38,10 @@ function App() {
               <div className='site-layout-content'>
                 <Routes>
                   <Route path='/' element={<Home />} />
-                  <Route path='login' element={<Login />} />
-                  <Route path='ticket-booking' element={<TicketBooking />} />
+                  <Route path='/home' element={<Home />} />
+                  <Route path='/login' element={<Login />} />
+                  <Route path='/login/V2' element={<LoginV2 />} />
+                  <Route path='/ticket-booking' element={<TicketBooking />} />
                 </Routes>
               </div>
             </Content>
