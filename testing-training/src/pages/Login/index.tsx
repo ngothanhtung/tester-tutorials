@@ -53,7 +53,7 @@ Nhập đúng username + password sẽ chuyển user vào màn hình.
 - Đăng nhập không thành công với user =null. => Hiện thị tin nhắn "Username không được để trống"
 - Đăng nhập không thành công với user = 2 kí tự => Hiện thị tin nhắn "Độ dài Username phải nằm trong khoảng 3 đến 30 ký tự"
 - Đăng nhập không thành công với user = 31 kí tự => Hiện thị tin nhắn "Độ dài Username phải nằm trong khoảng 3 đến 30 ký tự"
-- Username không được tự trim
+- Username không tự trim dấu cách đầu cuối
 - Check Special character, emoji 🌷👩👨
 
 **Password**
@@ -66,7 +66,7 @@ Nhập đúng username + password sẽ chuyển user vào màn hình.
 - Đăng nhập không thành công với password = null. => Hiện thị tin nhắn "Password không được để trống"
 - Đăng nhập không thành công với password = 5 kí tự. => Hiện thị tin nhắn " Độ dài Password phải nằm trong khoảng 6 đến 10 ký tự"
 - Đăng nhập không thành công với password = 11 kí tự. => Hiện thị tin nhắn " Độ dài Password phải nằm trong khoảng 6 đến 10 ký tự"
-- Password tự trim dấu cách đầu cuối
+- Password không tự trim dấu cách đầu cuối
 - Check Special character, emoji 🌷👩👨
 
 ### II.3 Security / Session
