@@ -1,0 +1,5 @@
+UPDATE dbo.Products
+SET
+	Price = 0
+WHERE
+	id = 3
