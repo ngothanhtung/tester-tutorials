@@ -1,0 +1,209 @@
+{
+  "id": "e2eb01e6-83bf-42a8-b7c9-0fd629792012",
+  "version": "2.0",
+  "name": "TRAINING",
+  "url": "https://ecommerce.aptech.io/",
+  "tests": [{
+    "id": "18d2c04f-830b-4b98-979d-a9dfad5c241d",
+    "name": "Times Command",
+    "commands": [{
+      "id": "598214a6-8207-4dee-ba59-58c4e87eb465",
+      "comment": "",
+      "command": "store",
+      "target": "10",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "14c68905-ec3f-4862-8b63-a507ae9f7b9f",
+      "comment": "",
+      "command": "times",
+      "target": "${count}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "855f19ca-ab29-4250-8870-1acba184e0cc",
+      "comment": "",
+      "command": "echo",
+      "target": "Hello",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b1252e65-806d-43d7-9986-39866b5e0bf1",
+      "comment": "",
+      "command": "run",
+      "target": "OPEN",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b1966cb-5f43-4bf9-a333-2ae498779b80",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "db249328-4dac-431e-894a-e94d19faca6d",
+    "name": "Do Repeat if",
+    "commands": [{
+      "id": "78e62cd1-888a-4efa-aafd-3f068d68ff6d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 1",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "dfa898db-ec77-4c83-9cd1-30cb52c04091",
+      "comment": "",
+      "command": "do",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94a75082-3fc8-44f9-81f5-b437cf519a5d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${count} + 1",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "d4060917-c184-484b-8c72-f01003adcf4f",
+      "comment": "",
+      "command": "echo",
+      "target": "${count}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "82868a52-2627-4a56-9941-cdb5daae5803",
+      "comment": "",
+      "command": "echo",
+      "target": "Hello",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "479f0fae-be00-445f-818e-168a06977235",
+      "comment": "",
+      "command": "repeatIf",
+      "target": "${count} < 5",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "00fdb589-93f1-401a-a9e6-c778e028af44",
+    "name": "For Each",
+    "commands": [{
+      "id": "a2e37d6c-0eb8-4126-a43a-594a11aab4da",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return [{username: \"tungnt\", password: \"123456789\"}]",
+      "targets": [],
+      "value": "items"
+    }, {
+      "id": "f6b0bd0f-0585-4de3-9ffc-8aca4d34fae1",
+      "comment": "",
+      "command": "forEach",
+      "target": "items",
+      "targets": [],
+      "value": "item"
+    }, {
+      "id": "ed3a76a3-79d9-4d6b-9e34-31c075b39e8a",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${item}.username",
+      "targets": [],
+      "value": "username"
+    }, {
+      "id": "09cbb1d5-5fa6-4643-9ebd-a2feae9cef4c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${item}.password",
+      "targets": [],
+      "value": "password"
+    }, {
+      "id": "9162549a-675c-44ff-9b69-682e13e9c986",
+      "comment": "",
+      "command": "echo",
+      "target": "${username}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b465a7b-df74-4314-a84c-9e445cef35dc",
+      "comment": "",
+      "command": "echo",
+      "target": "${password}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59d3a3d0-60a2-4b2e-bba7-f1dfb63afdfa",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "9d33ae47-8c13-4122-aac2-fda9b97c267a",
+    "name": "While",
+    "commands": []
+  }, {
+    "id": "e8f2c602-ff46-48a3-ba26-a7ab07f4b196",
+    "name": "FETCH",
+    "commands": [{
+      "id": "74449204-35d7-47d8-a6a8-a56b474cf514",
+      "comment": "",
+      "command": "executeAsyncScript",
+      "target": "return (async function() { const response = await fetch('https://jsonplaceholder.typicode.com/users');     const json = await response.json(); return json; })();",
+      "targets": [],
+      "value": "json"
+    }, {
+      "id": "ae3a6d61-2c9d-4ab3-b89a-d27985af34d0",
+      "comment": "",
+      "command": "forEach",
+      "target": "json",
+      "targets": [],
+      "value": "user"
+    }, {
+      "id": "1991c824-8b02-4157-a2cd-2d689a1e5bbf",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${user}.name",
+      "targets": [],
+      "value": "name"
+    }, {
+      "id": "e6151cfa-a139-4836-9381-9c2f6bef0376",
+      "comment": "",
+      "command": "echo",
+      "target": "${name}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6d009e84-2ce7-42c2-962a-5b9113da0aa1",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d8946eeb-69c0-43c6-aeab-b4344a83428b",
+    "name": "OPEN",
+    "commands": [{
+      "id": "d99d98b9-ec05-4980-96dc-09303f2a1c5c",
+      "comment": "",
+      "command": "echo",
+      "target": "OPEN TEST CASE",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "8d7fa6f2-2040-4747-95d3-12b3846d77dc",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["18d2c04f-830b-4b98-979d-a9dfad5c241d"]
+  }],
+  "urls": ["https://ecommerce.aptech.io/"],
+  "plugins": []
+}
