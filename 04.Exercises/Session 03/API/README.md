@@ -1,6 +1,6 @@
 # A. Bài tập chính:
 
-### API: Login (Có token kèm theo)
+## 🔶 API: Login
 
 #### REQUEST:
 
@@ -45,7 +45,7 @@
 
 ---
 
-### API: Register a new user
+## 🔶 API: Register a new user
 
 ### REQUEST:
 
@@ -100,7 +100,7 @@
 
 ---
 
-## API: Get all users (Authentication Bearer)
+## 🔶 API: Get all users (Authentication Bearer)
 
 ### REQUEST:
 
@@ -124,7 +124,7 @@
 
 ---
 
-## API: Get all users (Authentication Basic)
+## 🔶 API: Get all users (Authentication Basic)
 
 ### REQUEST:
 
@@ -148,12 +148,16 @@
 
 ---
 
-## API: Get all users (Authentication API-KEY)
+## 🔶 API: Get all users (Authentication API-KEY)
 
 ### REQUEST:
 
 - Url: https://training.softech.cloud/api/training/users/auth/api-key
-- Authorization: API KEY with [x-api-key = tester31] on header
+- Authorization:
+  - Type: API KEY
+  - Key: x-api-key
+  - Value: aptech-tester-pro
+  - Add to: Header
 - Method: GET
 
 ### RESPONSE:
@@ -189,10 +193,8 @@ id = 615456cf4139ac6c5cc07fee
 
 ```json
 {
-  "result": {
-    "n": 0,
-    "ok": 1
-  }
+  "acknowledged": true,
+  "deletedCount": 1
 }
 ```
 
@@ -204,7 +206,7 @@ id = 615456cf4139ac6c5cc07fee
 
 - Url: https://training.softech.cloud/api/training/users/:id
 - Authorization: Bearer Token
-- Method: PUT
+- Method: PATCH
 - Params:
 
 ```
@@ -255,30 +257,10 @@ id = 615456cf4139ac6c5cc07fee
 }
 ```
 
-# B. Bài tập luyện tập với jsonplaceholder.typicode.com:
-
-https://jsonplaceholder.typicode.com/
-
-# C. Bài tập luyện tập với Slack API:
-
-- Url: https://slack.com/api/chat.postMessage
-- Authorization: Bearer token
-- Method: POST
-- Body:
-
-```json
-{
-  "channel": "C039Q7MGT9C",
-  "text": "Welcome "
-}
-```
-
-token = 'Lấy ở nhóm trên FB'
-
-# D. Bài tập luyện tập với FPT AI (Text to speech)
+# C. Bài tập luyện tập với FPT AI (Text to speech)
 
 - Đăng ký tài khoản tại (https://fpt.ai/tts) và thực hiện lệnh gọi API Text to Speech theo hướng dẫn
 
-# E. Bài tập luyện tập với Open Weather
+# D. Bài tập luyện tập với Open Weather
 
 - Đăng ký tài khoản tại (https://openweathermap.org/api) và thực hiện lệnh gọi API theo hướng dẫn
