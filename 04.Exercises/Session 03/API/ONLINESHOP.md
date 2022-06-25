@@ -89,3 +89,101 @@
   "description": "Cac loai CPU cho may tinh"
 }
 ```
+
+---
+
+## 🔶 API: Create a category (Authentication Bearer)
+
+### REQUEST:
+
+- Url: https://server.aptech.io/training/categories
+- Authorization: Bearer <token>
+- Method: POST
+- Body:
+
+```json
+{
+  "name": "Tên sản phẩm",
+  "description": "Mô tả ..."
+}
+```
+
+### RESPONSE:
+
+#### If success:
+
+- Status = 201
+
+```json
+{
+  "name": "Tên sản phẩm",
+  "description": "Mô tả ...",
+  "id": 1153
+}
+```
+
+#### if failed:
+
+- Status = 400
+- Body:
+
+```json
+{
+  "error": true,
+  "errorMessage": "Error: Violation of UNIQUE KEY constraint 'UQ_Categories_Name'..."
+}
+```
+
+## 🔶 API: Update a category (Authentication Bearer)
+
+### REQUEST:
+
+- Url: https://server.aptech.io/training/categories/:id
+- Authorization: Bearer <token>
+- Method: PATCH
+- Params: id
+- Body:
+
+```json
+{
+  "name": "Tên sản phẩm",
+  "description": "Mô tả ..."
+}
+```
+
+### RESPONSE:
+
+#### If success:
+
+- Status = 200
+
+```json
+{
+  "id": 1137,
+  "name": "Sản phẩm 1031",
+  "description": "Mô tả ... 1137"
+}
+```
+
+#### if failed:
+
+- Status = 410
+
+## 🔶 API: Delete a category (Authentication Bearer)
+
+### REQUEST:
+
+- Url: https://server.aptech.io/training/categories/:id
+- Authorization: Bearer <token>
+- Method: DELETE
+- Params: id
+
+### RESPONSE:
+
+#### If success:
+
+- Status = 200
+
+#### if failed:
+
+- Status = 410
