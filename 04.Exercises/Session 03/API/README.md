@@ -264,3 +264,5 @@ id = 615456cf4139ac6c5cc07fee
 # D. Bài tập luyện tập với Open Weather
 
 - Đăng ký tài khoản tại (https://openweathermap.org/api) và thực hiện lệnh gọi API theo hướng dẫn
+
+# E. Bài tập luyện tập: https://www.themoviedb.org/
