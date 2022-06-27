@@ -4,7 +4,7 @@
 
 #### REQUEST:
 
-- Url: https://training.softech.cloud/api/training/users/login
+- Url: https://server.aptech.io/training/auth/login
 - Method: POST
 - Body (Raw, JSON):
 
@@ -48,8 +48,8 @@
 
 ### REQUEST:
 
-- Url: https://training.softech.cloud/api/training/users
-- Authorization: Bearer <token>
+- Url: https://server.aptech.io/training/categories
+- Authorization: Bearer Token
 - Method: GET
 
 ### RESPONSE:
@@ -76,7 +76,7 @@
 ### REQUEST:
 
 - Url: https://server.aptech.io/training/categories/:id
-- Authorization: Bearer <token>
+- Authorization: Bearer Token
 - Method: GET
 - Params: id = 1
 
@@ -97,7 +97,7 @@
 ### REQUEST:
 
 - Url: https://server.aptech.io/training/categories
-- Authorization: Bearer <token>
+- Authorization: Bearer Token
 - Method: POST
 - Body:
 
@@ -139,7 +139,7 @@
 ### REQUEST:
 
 - Url: https://server.aptech.io/training/categories/:id
-- Authorization: Bearer <token>
+- Authorization: Bearer Token
 - Method: PATCH
 - Params: id
 - Body:
@@ -174,7 +174,7 @@
 ### REQUEST:
 
 - Url: https://server.aptech.io/training/categories/:id
-- Authorization: Bearer <token>
+- Authorization: Bearer Token
 - Method: DELETE
 - Params: id
 

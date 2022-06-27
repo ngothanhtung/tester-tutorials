@@ -105,7 +105,7 @@
 ### REQUEST:
 
 - Url: https://training.softech.cloud/api/training/users
-- Authorization: Bearer
+- Authorization: Bearer Token
 - Method: GET
 
 ### RESPONSE:
