@@ -17,4 +17,9 @@
 ## Download:
 
 - Download Apache JMeter
+
   > https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.5.zip
+
+- Install JAVA for Windows
+- Config JAVA_HOME
+  > https://mkyong.com/java/how-to-set-java_home-on-windows-10/
