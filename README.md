@@ -13,3 +13,8 @@
 - Bracket Pair Colorizer 2
 - Color Highlight
 - Dracula Official (theme)
+
+## Download:
+
+- Download Apache JMeter
+  > https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.5.zip
