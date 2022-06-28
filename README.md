@@ -31,6 +31,9 @@
 Install brew, access url https://brew.sh/:
 
 - Copy and run below command in terminal, example:
+
   > /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
   > brew tap adoptopenjdk/openjdk
+
   > brew install --cask adoptopenjdk11
