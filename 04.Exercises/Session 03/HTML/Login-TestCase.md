@@ -17,7 +17,7 @@
 
 ### Khi login thành công:
 
-Nhập đúng username + password sẽ chuyển user vào màn hình.
+Nhập đúng username + password sẽ chuyển user vào màn hình chính.
 
 ## II. Testcase
 
@@ -28,9 +28,9 @@ Nhập đúng username + password sẽ chuyển user vào màn hình.
 - Kiểm tra button “Sign In” đổi màu khi mouse down
 - Kiểm tra placeholder Username, Password mờ hoặc xoá khi click vào Username, Password textbox
 - Kiểm tra placeholder Username, Password bị xoá khi nhập value vào Username, Password textbox
-- Kiểm tra Paste keyboard (Ctrl + V) và right click hoạt động với username, password.
-- Kiểm tra Copy keyboard (Ctrl + V) và right click hoạt động với username.
-- Kiểm tra Copy keyboard (Ctrl + C) bị disable với password, right-click (chức năng Copy) disable.
+- Kiểm tra chức năng Paste trên keyboard (Ctrl + V) và right click (Mouse) hoạt động với username, password.
+- Kiểm tra chức năng Copy trên keyboard (Ctrl + C) và right click (Mouse) hoạt động với username.
+- Kiểm tra chức năng Copy trên keyboard (Ctrl + C) bị disable, right-click (chức năng Copy) disable với password.
 
 ### II.2 Functions
 
