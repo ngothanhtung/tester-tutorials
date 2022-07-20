@@ -796,7 +796,31 @@
       ],
       "value": "123432213"
     }, {
-      "id": "11e3ea19-f123-4047-9d9f-223bea3b22cd",
+      "id": "61ad3ce4-84e7-41aa-966e-2f5d390f2ac3",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44a1c4f4-6b09-4554-bf16-e515cf6a17f2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-layout-content",
+      "targets": [
+        ["css=.ant-layout-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main", "xpath:idRelative"],
+        ["xpath=//main", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "47b6f9c5-c432-45e3-a1ef-580db5c1d11c",
       "comment": "",
       "command": "type",
       "target": "id=ticket-booking-form_year",
@@ -807,26 +831,741 @@
         ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
       ],
-      "value": "2017"
+      "value": "2014"
     }, {
-      "id": "abf550d1-6c56-4807-9cde-806e72125dce",
+      "id": "bf990938-121f-4a4e-8017-8fd9a5e59cdb",
       "comment": "",
-      "command": "select",
-      "target": "css=.ant-select-selector",
-      "targets": [],
-      "value": "BUSINESS"
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
     }, {
-      "id": "9d15e4c0-71a4-4971-9fa5-c2621478d512",
+      "id": "263c41c4-3e9d-4084-9197-fdcbb82d0ba9",
       "comment": "",
       "command": "click",
-      "target": "css=.ant-btn-primary:nth-child(1)",
+      "target": "css=.ant-select-selection-item",
       "targets": [
-        ["css=.ant-btn-primary:nth-child(1)", "css:finder"],
+        ["css=.ant-select-selection-item", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/div/div/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'BUSINESS')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca3a75dd-cd9c-4c92-a603-faf4e7b8e1a1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-select-item-option-active > .ant-select-item-option-content",
+      "targets": [
+        ["css=.ant-select-item-option-active > .ant-select-item-option-content", "css:finder"],
+        ["xpath=//div[2]/div/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "deab3a05-3cae-43fa-8b3f-90fd4ca12cd5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn > span",
+      "targets": [
+        ["css=.ant-btn > span", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[6]/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Tính tiền')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a37d5553-6e9b-41e1-b9a4-3f138a7aacbb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content",
+      "targets": [
+        ["css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div/div/div[2]/table/tbody/tr[5]/td/div/span[2]", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Trẻ em')]", "xpath:innerText"]
+      ],
+      "value": "Người lớn"
+    }, {
+      "id": "e4a7deac-7517-4ea6-a43d-829316cf2abd",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-result-title",
+      "targets": [
+        ["css=.ant-result-title", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Tiền vé: 4.000.000 VNĐ"
+    }]
+  }, {
+    "id": "61e782f2-410d-4b15-a745-8409add3258d",
+    "name": "TESTCASE-BOOKING-02",
+    "commands": [{
+      "id": "fbae3f2c-54be-4869-a36d-70ebdc708f38",
+      "comment": "",
+      "command": "open",
+      "target": "/ticket-booking",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "19aa18cc-748c-417d-bff3-4ac9368b8bc0",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Nguyen Thi Hoa"
+    }, {
+      "id": "b4510005-c85c-49f4-86ff-2ac002cdc09a",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_address",
+      "targets": [
+        ["id=ticket-booking-form_address", "id"],
+        ["css=#ticket-booking-form_address", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_address']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "15 Hùng Vương"
+    }, {
+      "id": "7c19863d-8681-474c-b5d5-2a38cd3224c1",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "123432213"
+    }, {
+      "id": "1fd4a9c8-384a-4aab-b915-fa3e1f0ca721",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "225dc7f2-8970-4a2a-abdb-2d0adb29a033",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-layout-content",
+      "targets": [
+        ["css=.ant-layout-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main", "xpath:idRelative"],
+        ["xpath=//main", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "205cd4af-a1cf-4e39-95a3-5f5e5d596862",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "2014"
+    }, {
+      "id": "8cc25379-ddeb-480f-8495-2c1ee09bf179",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "e2a70b94-01cc-4723-9916-92984845793f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-select-selection-item",
+      "targets": [
+        ["css=.ant-select-selection-item", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/div/div/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'BUSINESS')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d8557a2-9b6b-435b-bc9c-e65eab3ab5fe",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-select-item-option-active > .ant-select-item-option-content",
+      "targets": [
+        ["css=.ant-select-item-option-active > .ant-select-item-option-content", "css:finder"],
+        ["xpath=//div[2]/div/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18da9441-a2ae-4e3e-91e1-878b432ad5cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn > span",
+      "targets": [
+        ["css=.ant-btn > span", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[6]/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Tính tiền')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "54c25170-ea48-435c-8a57-f0f210e5da8b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content",
+      "targets": [
+        ["css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div/div/div[2]/table/tbody/tr[5]/td/div/span[2]", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Trẻ em')]", "xpath:innerText"]
+      ],
+      "value": "Người lớn"
+    }, {
+      "id": "15b1d7d7-853a-4460-816e-713056943a79",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-result-title",
+      "targets": [
+        ["css=.ant-result-title", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Tiền vé: 4.000.000 VNĐ"
+    }]
+  }, {
+    "id": "c3d4ebb3-d783-477a-a042-bc9275fd4637",
+    "name": "TESTCASE-BOOKING-03",
+    "commands": [{
+      "id": "e0811f98-5cfc-4d0b-8f31-a4c2fb5a4a9c",
+      "comment": "",
+      "command": "open",
+      "target": "/ticket-booking",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ac5289b-a740-4e24-b631-e19ca51a01c1",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ac9f62a-d4db-4107-9f75-e8e1d6e3b5a0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(1)",
+      "targets": [
+        ["css=.ant-row:nth-child(1)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4aeab45a-c71f-48da-9fd6-5bb0798dff61",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Nguyen Van Hung"
+    }, {
+      "id": "c55b7318-0baa-4fc1-ae74-0444728a59de",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(2)",
+      "targets": [
+        ["css=.ant-row:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d63892e3-e937-4e05-b115-faa82edb8c10",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_address",
+      "targets": [
+        ["id=ticket-booking-form_address", "id"],
+        ["css=#ticket-booking-form_address", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_address']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "15 Hùng Vương"
+    }, {
+      "id": "a7fb8664-49a1-483e-bff6-67bc613fce41",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c79a9517-37c9-489c-bda8-bf7905ef8279",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1921cdc7-341e-4e56-8a0c-3f88797ffd81",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c27fd97e-853f-4960-8275-3392afd828f4",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "1233211234"
+    }, {
+      "id": "209c19f8-dfb5-4e78-9d93-f585d297ab22",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09e942ff-258b-48c3-9401-5448b24f65d0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(4)",
+      "targets": [
+        ["css=.ant-row:nth-child(4)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]", "xpath:idRelative"],
+        ["xpath=//div[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18e5b793-390a-4f1c-b588-e19a636bb068",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "2014"
+    }, {
+      "id": "e564955b-4806-45eb-9269-5fbc1194d673",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "bdf43096-b185-42c3-b3d7-ee55635e82f8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-select-selection-item",
+      "targets": [
+        ["css=.ant-select-selection-item", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/div/div/div/span[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c0127f0-dc25-40c9-9dee-90bc919c254c",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_classType",
+      "targets": [
+        ["id=ticket-booking-form_classType", "id"],
+        ["css=#ticket-booking-form_classType", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_classType']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "BUSINESS"
+    }, {
+      "id": "2bc88b07-36c4-4c29-b406-0be4da81d39b",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_classType",
+      "targets": [
+        ["id=ticket-booking-form_classType", "id"],
+        ["css=#ticket-booking-form_classType", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_classType']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "c1f87e59-ba30-4a48-b459-1e2821c24b5c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn",
+      "targets": [
+        ["css=.ant-btn", "css:finder"],
         ["xpath=//button[@type='submit']", "xpath:attributes"],
         ["xpath=//form[@id='ticket-booking-form']/div[6]/div/div/div/button", "xpath:idRelative"],
         ["xpath=//button", "xpath:position"],
         ["xpath=//button[contains(.,'Tính tiền')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "0aeafa28-ab88-49af-b79d-5cf624c45577",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content",
+      "targets": [
+        ["css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div/div/div[2]/table/tbody/tr[5]/td/div/span[2]", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Người lớn')]", "xpath:innerText"]
+      ],
+      "value": "Người lớn"
+    }, {
+      "id": "99f48a31-51a8-4f1e-ab3c-f59372548336",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-result-title",
+      "targets": [
+        ["css=.ant-result-title", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Tiền vé: 4.000.000 VNĐ"
+    }, {
+      "id": "3af94c9d-743e-470f-8f9f-f1db1d1bb65a",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "55f8b8be-4d99-4ad0-b092-07d627332a40",
+    "name": "TESTCASE-BOOKING-04",
+    "commands": [{
+      "id": "223987c7-6ce0-4406-b3df-89b8ea4ff4e3",
+      "comment": "",
+      "command": "open",
+      "target": "/ticket-booking",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "da8c8a85-0045-465e-9c12-d1b647164acc",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7faf9de5-534d-4abf-b34c-21558a8be4a5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(1)",
+      "targets": [
+        ["css=.ant-row:nth-child(1)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3607aee0-5047-433f-87d2-dd74dc2452ae",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Nguyen Van Hung"
+    }, {
+      "id": "40127a2f-0ea0-44fc-bb59-bec76eaadc33",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(2)",
+      "targets": [
+        ["css=.ant-row:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcd40f0b-55b9-47e7-93b9-4372680a869d",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_address",
+      "targets": [
+        ["id=ticket-booking-form_address", "id"],
+        ["css=#ticket-booking-form_address", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_address']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "15 Hùng Vương"
+    }, {
+      "id": "9edd9f57-e406-49c9-9a36-3282fecc03b3",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f5470c7-435f-4939-b0e2-f6953a643522",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "598034ee-1043-4ce7-9365-79d25635a951",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a88a484a-650b-4811-8874-95863e77268c",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "1233211234"
+    }, {
+      "id": "4ad3052e-a783-47d1-b9a4-4ff284599108",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d64e4261-8114-40bf-9b51-c133ddeb8937",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(4)",
+      "targets": [
+        ["css=.ant-row:nth-child(4)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]", "xpath:idRelative"],
+        ["xpath=//div[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bde2fd5-e52c-4f1c-9706-b43c17266a1e",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "2014"
+    }, {
+      "id": "d9329e9c-f268-4e0f-8f08-23bc0e0be4af",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "cf2f1768-495c-4ea9-8e75-c25d5f7cc869",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-select-selection-item",
+      "targets": [
+        ["css=.ant-select-selection-item", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/div/div/div/span[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "51c5a1fc-fbea-4c36-96c0-8e8a2546d2f4",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_classType",
+      "targets": [
+        ["id=ticket-booking-form_classType", "id"],
+        ["css=#ticket-booking-form_classType", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_classType']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "ECONOMY"
+    }, {
+      "id": "deeabf46-b68c-4d7e-a5c9-1dca3094b31d",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_classType",
+      "targets": [
+        ["id=ticket-booking-form_classType", "id"],
+        ["css=#ticket-booking-form_classType", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_classType']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "f00059d7-cf3f-4908-b1cb-822fe630b331",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn",
+      "targets": [
+        ["css=.ant-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[6]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Tính tiền')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef23b753-6f90-47ca-8caa-62c76b8975ca",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content",
+      "targets": [
+        ["css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div/div/div[2]/table/tbody/tr[5]/td/div/span[2]", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Người lớn')]", "xpath:innerText"]
+      ],
+      "value": "Người lớn"
+    }, {
+      "id": "48021e68-a670-487b-9482-9467cc4b9cb2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-result-title",
+      "targets": [
+        ["css=.ant-result-title", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Tiền vé: 3.000.000 VNĐ"
+    }, {
+      "id": "64a63518-22ac-4993-9740-6b43aeab3691",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }],

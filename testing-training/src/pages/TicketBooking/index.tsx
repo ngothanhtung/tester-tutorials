@@ -120,7 +120,7 @@ const TicketBooking = () => {
         </Form.Item>
 
         <Form.Item label='Chọn loại vé' name='classType' rules={[{ required: true, message: 'Vui lòng chọn loại vé!' }]}>
-          <Select>
+          <Select showSearch>
             <Select.Option value='BUSINESS'>BUSINESS</Select.Option>
             <Select.Option value='ECONOMY'>ECONOMY</Select.Option>
           </Select>
