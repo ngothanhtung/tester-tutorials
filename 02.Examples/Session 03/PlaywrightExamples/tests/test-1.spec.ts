@@ -9,5 +9,9 @@ test('test', async ({ page }) => {
 
   // Click div[role="alert"]:has-text("Username không được để trống")
   const message = page.locator('div[role="alert"]:has-text("Tên đăng nhập không được để trống")');
+
+  const statusLocator = page.locator('.status');
+  await expect(statusLocator).toHaveText('Submitted');
+
   await expect(message).toBeVisible();
 });
