@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 test('Test: toBeChecked', async ({ page }) => {
+  // https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_input_checked
+
   // Go to https://aptech-tester.web.app/login/v2
   await page.goto('https://aptech-tester.web.app/login/v2');
 
