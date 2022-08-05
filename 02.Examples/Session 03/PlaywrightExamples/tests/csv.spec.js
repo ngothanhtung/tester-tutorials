@@ -1,4 +1,4 @@
-// Tại của sổ termial cài thư viện csv-parse: npm install csv-parse
+// Tại của sổ termial cài thư viện csv-parse: npm install csv-parse --save
 
 const { test, expect } = require('@playwright/test');
 
@@ -31,6 +31,6 @@ for (const record of records) {
     // Click button:has-text("Login")
     await page.locator('button:has-text("Login")').click();
 
-    await expect(page).toHaveURL('https://aptech-tester.web.app');
+    await expect(page).toHaveURL('https://aptech-tester.web.app/home');
   });
 }

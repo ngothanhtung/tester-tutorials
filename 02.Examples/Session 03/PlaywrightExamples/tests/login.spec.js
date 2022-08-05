@@ -7,18 +7,15 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Login: Result', () => {
   test('TC-LOGIN-SUCCESS: Login Success', async ({ page }) => {
-    // Click input[type="text"]
-    await page.locator('input[type="text"]').click();
     // Fill input[type="text"]
-    await page.locator('input[type="text"]').fill('admin');
-    // Click input[type="password"]
-    await page.locator('input[type="password"]').click();
-    // Fill input[type="password"]
-    await page.locator('input[type="password"]').fill('Tester2022');
-    // Click button:has-text("Login")
-    await page.locator('button:has-text("Login")').click();
+    await page.locator('#login-form_username').fill('admin');
 
-    await expect(page).toHaveURL('https://aptech-tester.web.app');
+    // Fill input[type="password"]
+    await page.locator('#login-form_password').fill('Tester2022');
+    // Click button:has-text("Login")
+    await page.locator('#login-form > div:nth-child(4) > div > div > div > button').click();
+
+    await expect(page).toHaveURL('https://aptech-tester.web.app/home');
   });
 
   test('TC-LOGIN-FAILED: Login Failed', async ({ page }) => {
@@ -59,7 +56,7 @@ test.describe('Login: Fields is required', () => {
     await page.waitForTimeout(1000);
 
     // Chụp màn hình
-    await page.screenshot({ path: './tests/screenshots/TC-LOGIN-REQUIRED-PASSWORD.png', clip: { x: 0, y: 0, height: 1080, width: 1920 } });
+    // await page.screenshot({ path: './tests/screenshots/TC-LOGIN-REQUIRED-PASSWORD.png', clip: { x: 0, y: 0, height: 1080, width: 1920 } });
 
     // Case 1: Kiểm tra tồn tại của text
     // const error = await page.locator('text=Please input your password!');
