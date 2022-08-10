@@ -4,7 +4,7 @@ test('api: login', async ({ request }) => {
   const url = 'https://training.softech.cloud/api/training/users/login';
   const data = {
     username: 'tungnt',
-    password: '123456789',
+    password: 'new password',
   };
 
   const response = await request.post(url, {
@@ -15,6 +15,14 @@ test('api: login', async ({ request }) => {
   });
 
   expect(response.ok()).toBeTruthy();
+  const json = await response.json();
+
+  expect(await response.json()).toMatchObject(
+    expect.objectContaining({
+      login: true,
+      ok: true,
+    }),
+  );
 });
 
 test('api: register users', async ({ request }) => {
