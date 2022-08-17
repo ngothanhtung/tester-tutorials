@@ -3,6 +3,8 @@
 - Download Apache JMeter
 
   > https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.5.zip
+- Run Jmeter:
+ > Xả nén, vào thư mục /bin/jmeter.bat (Windows)
 
 ### WINDOWS
 
