@@ -29,6 +29,20 @@ Install brew, access url https://brew.sh/:
 
 # Thực hiện 1 REQUEST:
 
-- Tạo mới 1 Thread Users / Thread Grouo
-- Tạo mới 1 Sampler / HttpRequest
+- Tạo mới 1 Thread (Users) / Thread Group
+- Tạo mới 1 Sampler / Http Request
+
+  - Protocal: https
+  - Server Name or IP: training.softech.cloud
+  - Port: 443
+  - Method: POST
+  - Path: api/training/users/login
+  - Data:
+
+  ```
+    username = "tungnt"
+    password = "123456789"
+  ```
+
 - Tạo mới 1 Listener / View Result Tree
+- Run
