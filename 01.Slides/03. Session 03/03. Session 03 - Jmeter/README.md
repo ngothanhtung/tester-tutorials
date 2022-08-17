@@ -3,8 +3,11 @@
 - Download Apache JMeter
 
   > https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.5.zip
+
 - Run Jmeter:
- > Xả nén, vào thư mục /bin/jmeter.bat (Windows)
+  - Xả nén, vào thư mục /bin/
+  - Chạy file: jmeter.bat (Windows)
+  - Chạy file: jmeter (MacOS)
 
 ### WINDOWS
 
@@ -23,3 +26,9 @@ Install brew, access url https://brew.sh/:
   > brew tap adoptopenjdk/openjdk
 
   > brew install --cask adoptopenjdk11
+
+# Thực hiện 1 REQUEST:
+
+- Tạo mới 1 Thread Users / Thread Grouo
+- Tạo mới 1 Sampler / HttpRequest
+- Tạo mới 1 Listener / View Result Tree
