@@ -4,7 +4,7 @@
 
   > https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.5.zip
 
-### WIDNOWS
+### WINDOWS
 
 - Install JAVA for Windows
 - Config JAVA_HOME
