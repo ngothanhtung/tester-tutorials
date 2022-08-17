@@ -22,7 +22,7 @@
 
 ### WIDNOWS
 
-- Install JAVA for Windows
+- Install JAVA for Windows (https://www.oracle.com/java/technologies/downloads/#jdk18-windows)
 - Config JAVA_HOME
   > https://mkyong.com/java/how-to-set-java_home-on-windows-10/
 
