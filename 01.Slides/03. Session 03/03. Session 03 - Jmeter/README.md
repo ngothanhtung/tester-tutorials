@@ -27,7 +27,7 @@ Install brew, access url https://brew.sh/:
 
   > brew install --cask adoptopenjdk11
 
-# Thực hiện 1 REQUEST:
+# Thực hiện 1 REQUEST: Login:
 
 - Tạo mới 1 Thread (Users) / Thread Group
 - Tạo mới 1 Sampler / Http Request
@@ -36,13 +36,31 @@ Install brew, access url https://brew.sh/:
   - Server Name or IP: training.softech.cloud
   - Port: 443
   - Method: POST
-  - Path: api/training/users/login
+  - Path: /api/training/users/login
   - Data:
 
   ```
     username = "tungnt"
     password = "123456789"
   ```
+
+- Tạo mới 1 Listener / View Result Tree
+- Run
+
+# Thực hiện 1 REQUEST: Get Users:
+
+- Tạo mới 1 Thread (Users) / Thread Group
+- Tạo mới 1 Sampler / Http Request
+
+  - Protocal: https
+  - Server Name or IP: training.softech.cloud
+  - Port: 443
+  - Method: GET
+  - Path: /api/training/users
+
+- Tạo mới 1 Config Element / Http Header Manager
+
+  - Authorization = Bearer <token từ login thành công>
 
 - Tạo mới 1 Listener / View Result Tree
 - Run
