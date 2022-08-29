@@ -113,7 +113,6 @@ pm.test('Status code is 200', function () {
 });
 
 pm.test('Response must be valid and have a body', function () {
-  pm.response.to.be.ok;
   pm.response.to.be.withBody;
   pm.response.to.be.json;
 });
@@ -204,7 +203,6 @@ pm.test('Status code is 400', function () {
 });
 
 pm.test('Response must be valid and have a body', function () {
-  pm.response.to.be.badRequest;
   pm.response.to.be.withBody;
   pm.response.to.be.json;
 });
