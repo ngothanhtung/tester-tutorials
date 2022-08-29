@@ -49,7 +49,7 @@
 ### REQUEST:
 
 - Url: https://server.aptech.io/training/categories
-- Authorization: Bearer Token
+- Authorization: Bearer <access_token>
 - Method: GET
 
 ### RESPONSE:
