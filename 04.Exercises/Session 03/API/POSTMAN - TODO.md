@@ -431,3 +431,23 @@ pm.test('Status code is 410', function () {
    - POST
    - PATCH/id
    - DELETE/id
+
+POST, body:
+
+```json
+{
+  "description": "",
+  "shippingAddress": "112 Phan Chu Trinh, Hai Chau",
+  "shippingCity": "Da Nang",
+  "customerId": "peterjackson",
+  "employeeId": "johnculi",
+  "orderDetails": [
+    {
+      "quantity": 1,
+      "price": 1,
+      "discount": 0,
+      "productId": 3
+    }
+  ]
+}
+```
