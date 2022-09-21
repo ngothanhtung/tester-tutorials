@@ -8,6 +8,7 @@ import { Breadcrumb, Layout, Menu } from 'antd';
 import Home from './pages/Home';
 import SideMenu from './components/SideMenu';
 import TicketBooking from './pages/TicketBooking';
+import Categories from './pages/Categories';
 const { Header, Sider, Content } = Layout;
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
                   <Route path='/login' element={<Login />} />
                   <Route path='/login/V2' element={<LoginV2 />} />
                   <Route path='/ticket-booking' element={<TicketBooking />} />
+                  <Route path='/categories' element={<Categories />} />
                 </Routes>
               </div>
             </Content>

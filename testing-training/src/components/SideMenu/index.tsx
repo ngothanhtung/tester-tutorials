@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, MenuProps } from 'antd';
-import { UserOutlined, SendOutlined, HomeOutlined } from '@ant-design/icons';
+import { UserOutlined, SendOutlined, HomeOutlined, AppstoreOutlined } from '@ant-design/icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const menuItems: MenuProps['items'] = [
@@ -23,6 +23,11 @@ const menuItems: MenuProps['items'] = [
     key: '/ticket-booking',
     label: 'Ticket booking',
     icon: <SendOutlined />,
+  },
+  {
+    key: '/categories',
+    label: 'Categories',
+    icon: <AppstoreOutlined />,
   },
 ];
 
