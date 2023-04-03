@@ -8,6 +8,7 @@
     "csv-parse": "^5.0.4"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "playwright": "^1.24.2"
   },
   "scripts": {

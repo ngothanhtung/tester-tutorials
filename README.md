@@ -1,12 +1,12 @@
 # Aptech Testers
 
-## Cài đặt phần mềm:
+## Cài đặt phần mềm
 
-- Nodejs: https://nodejs.org/en/ (Cài bản LTS)
-- Yarn (https://yarnpkg.com/lang/en/docs/install/#windows-stable)
-- Visual Studio Code: https://code.visualstudio.com/Download
+- Nodejs: <https://nodejs.org/en/> (Cài bản LTS)
+- Yarn (<https://yarnpkg.com/lang/en/docs/install/#windows-stable>)
+- Visual Studio Code: <https://code.visualstudio.com/Download>
 
-## Cài đặt các extensions cho Visual Studio Code:
+## Cài đặt các extensions cho Visual Studio Code
 
 - Prettier - Code formatter
 - Visual Studio IntelliCode
@@ -14,25 +14,25 @@
 - Color Highlight
 - Dracula Official (theme)
 
-## Download:
+## Download
 
 - Download Apache JMeter
 
-  > https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.5.zip
+  > <https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.5.zip>
 
-### WIDNOWS
+### WINDOWS
 
-- Install JAVA for Windows (https://www.oracle.com/java/technologies/downloads/#jdk18-windows)
+- Install JAVA for Windows (<https://www.oracle.com/java/technologies/downloads/#jdk18-windows>)
 - Config JAVA_HOME
-  > https://mkyong.com/java/how-to-set-java_home-on-windows-10/
+  > <https://mkyong.com/java/how-to-set-java_home-on-windows-10/>
 
 ### MACOS
 
-Install brew, access url https://brew.sh/:
+Install brew, access url <https://brew.sh/>:
 
 - Copy and run below command in terminal, example:
 
-  > /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  > /bin/bash -c "$(curl -fsSL <https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh>)"
 
   > brew tap adoptopenjdk/openjdk
 
