@@ -4,7 +4,6 @@
 
 - Azure Data Studio <https://learn.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver16&tabs=redhat-install%2Credhat-uninstall>
 - Nodejs: <https://nodejs.org/en/> (Cài bản LTS)
-- Yarn (<https://yarnpkg.com/lang/en/docs/install/#windows-stable>)
 - Visual Studio Code: <https://code.visualstudio.com/Download>
 
 ## Cài đặt các extensions cho Visual Studio Code
