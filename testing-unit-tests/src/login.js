@@ -1,5 +1,8 @@
 const axios = require('axios');
 
+// add comment
+// Login
+// username: username or phone or email.
 async function login(username, password) {
   try {
     const response = await axios.post('https://server.aptech.io/training/auth/login', {
