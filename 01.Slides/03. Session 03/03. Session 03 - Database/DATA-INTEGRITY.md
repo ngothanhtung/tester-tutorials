@@ -1,22 +1,22 @@
-## Data Integrity
+## Data Integrity là gì?
 
-Data Integrity là một khái niệm rất quan trọng trong lĩnh vực cơ sở dữ liệu đó là tính toàn vẹn dữ liệu (data integrity). Trong khi lưu trữ và quản lý dữ liệu, chúng ta cần đảm bảo rằng dữ liệu được lưu trữ trong cơ sở dữ liệu là chính xác và không bị bất kỳ sai sót nào. Đây chính là một phần của khái niệm tính toàn vẹn dữ liệu.
+- Data Integrity là một khái niệm rất quan trọng trong lĩnh vực cơ sở dữ liệu đó là tính toàn vẹn dữ liệu (data integrity). Trong khi lưu trữ và quản lý dữ liệu, chúng ta cần đảm bảo rằng dữ liệu được lưu trữ trong cơ sở dữ liệu là chính xác và không bị bất kỳ sai sót nào. Đây chính là một phần của khái niệm tính toàn vẹn dữ liệu.
 
-Tính toàn vẹn dữ liệu đảm bảo rằng dữ liệu trong cơ sở dữ liệu là đúng, hoàn chỉnh và nhất quán. Điều này đảm bảo rằng khi dữ liệu được lưu trữ, truy xuất và sử dụng, nó sẽ được sử dụng đúng cách và sẽ không gây ra bất kỳ vấn đề nào. Tính toàn vẹn dữ liệu đóng một vai trò quan trọng trong việc đảm bảo rằng dữ liệu được bảo vệ và an toàn.
+- Tính toàn vẹn dữ liệu đảm bảo rằng dữ liệu trong cơ sở dữ liệu là đúng, hoàn chỉnh và nhất quán. Điều này đảm bảo rằng khi dữ liệu được lưu trữ, truy xuất và sử dụng, nó sẽ được sử dụng đúng cách và sẽ không gây ra bất kỳ vấn đề nào. Tính toàn vẹn dữ liệu đóng một vai trò quan trọng trong việc đảm bảo rằng dữ liệu được bảo vệ và an toàn.
 
-Có nhiều cách để đảm bảo tính toàn vẹn dữ liệu trong cơ sở dữ liệu. Đầu tiên, chúng ta cần đảm bảo rằng các ràng buộc và kiểm tra dữ liệu được thiết lập đúng cách. Chúng ta cần đảm bảo rằng các giá trị dữ liệu được nhập vào cơ sở dữ liệu đáp ứng các yêu cầu và giới hạn đã được định nghĩa. Chúng ta cũng cần đảm bảo rằng các ràng buộc dữ liệu được áp dụng đúng cách để đảm bảo rằng dữ liệu không bị mất hoặc bị xáo trộn.
+- Có nhiều cách để đảm bảo tính toàn vẹn dữ liệu trong cơ sở dữ liệu. Đầu tiên, chúng ta cần đảm bảo rằng các ràng buộc và kiểm tra dữ liệu được thiết lập đúng cách. Chúng ta cần đảm bảo rằng các giá trị dữ liệu được nhập vào cơ sở dữ liệu đáp ứng các yêu cầu và giới hạn đã được định nghĩa. Chúng ta cũng cần đảm bảo rằng các ràng buộc dữ liệu được áp dụng đúng cách để đảm bảo rằng dữ liệu không bị mất hoặc bị xáo trộn.
 
-Thứ hai, chúng ta cần sử dụng các phương pháp và công cụ để đảm bảo tính toàn vẹn dữ liệu. Ví dụ, chúng ta có thể sử dụng các kỹ thuật mã hóa để bảo vệ dữ liệu khỏi các cuộc tấn công và xâm nhập. Chúng ta cũng có thể sử dụng các công cụ phân tích để phát hiện và giải quyết các vấn đề tính toàn vẹn dữ liệu trong cơ sở dữ liệu.
+- Chúng ta cần sử dụng các phương pháp và công cụ để đảm bảo tính toàn vẹn dữ liệu. Ví dụ, chúng ta có thể sử dụng các kỹ thuật mã hóa để bảo vệ dữ liệu khỏi các cuộc tấn công và xâm nhập. Chúng ta cũng có thể sử dụng các công cụ phân tích để phát hiện và giải quyết các vấn đề tính toàn vẹn dữ liệu trong cơ sở dữ liệu.
 
-Cuối cùng, chúng ta cần thường xuyên kiểm tra tính toàn vẹn dữ liệu để đảm bảo rằng dữ liệu trong cơ sở dưới đây:
+- Cuối cùng, chúng ta cần thường xuyên kiểm tra tính toàn vẹn dữ liệu để đảm bảo rằng dữ liệu trong cơ sở dưới đây:
 
-Cơ sở dữ liệu của chúng ta vẫn đảm bảo tính toàn vẹn và chất lượng. Kiểm tra tính toàn vẹn dữ liệu có thể được thực hiện bằng cách sử dụng các công cụ kiểm tra dữ liệu tự động hoặc bằng cách thực hiện kiểm tra thủ công trên một mẫu dữ liệu đại diện.
+  - Cơ sở dữ liệu của chúng ta vẫn đảm bảo tính toàn vẹn và chất lượng. Kiểm tra tính toàn vẹn dữ liệu có thể được thực hiện bằng cách sử dụng các công cụ kiểm tra dữ liệu tự động hoặc bằng cách thực hiện kiểm tra thủ công trên một mẫu dữ liệu đại diện.
 
-Ngoài ra, có một số quy tắc cơ bản cần được tuân thủ để đảm bảo tính toàn vẹn dữ liệu trong cơ sở dữ liệu. Đầu tiên, dữ liệu phải được nhập vào cơ sở dữ liệu theo cách chính xác và đầy đủ. Thứ hai, các ràng buộc và kiểm tra dữ liệu phải được thiết lập và áp dụng đúng cách. Thứ ba, các quy tắc và quy trình để xử lý dữ liệu phải được xác định rõ ràng và được tuân thủ chặt chẽ.
+  - Ngoài ra, có một số quy tắc cơ bản cần được tuân thủ để đảm bảo tính toàn vẹn dữ liệu trong cơ sở dữ liệu. Đầu tiên, dữ liệu phải được nhập vào cơ sở dữ liệu theo cách chính xác và đầy đủ. Thứ hai, các ràng buộc và kiểm tra dữ liệu phải được thiết lập và áp dụng đúng cách. Thứ ba, các quy tắc và quy trình để xử lý dữ liệu phải được xác định rõ ràng và được tuân thủ chặt chẽ.
 
 Tóm lại, tính toàn vẹn dữ liệu là rất quan trọng trong việc đảm bảo rằng cơ sở dữ liệu của chúng ta hoạt động chính xác và hiệu quả. Chúng ta cần thiết lập các ràng buộc và kiểm tra dữ liệu đúng cách, sử dụng các công cụ và phương pháp để bảo vệ dữ liệu, và thường xuyên kiểm tra tính toàn vẹn dữ liệu để đảm bảo rằng dữ liệu của chúng ta được lưu trữ và sử dụng một cách an toàn và đáng tin cậy.
 
-## Data Integrity Testing:
+## Data Integrity Testing là gì?:
 
 Data Integrity Testing (Đánh giá tính toàn vẹn dữ liệu) là quá trình kiểm tra và đánh giá tính toàn vẹn của dữ liệu trong cơ sở dữ liệu. Quá trình này giúp đảm bảo rằng dữ liệu được lưu trữ và xử lý trong cơ sở dữ liệu là chính xác, hoàn chỉnh và không bị thay đổi hoặc mất mát.
 
