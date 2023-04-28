@@ -19,7 +19,7 @@ GO
 -- Customers
 CREATE TABLE [Customers]
 (
-	[Id] VARCHAR(50) PRIMARY KEY,
+	[Id] INT PRIMARY KEY IDENTITY(1, 1),
 	[FirstName] NVARCHAR(50) NOT NULL,
 	[LastName] NVARCHAR(50) NOT NULL,
 	[PhoneNumber] VARCHAR(50),
@@ -31,7 +31,7 @@ GO
 -- Employees
 CREATE TABLE [Employees]
 (
-	[Id] VARCHAR(50) PRIMARY KEY,
+	[Id] INT PRIMARY KEY IDENTITY(1, 1),
 	[FirstName] NVARCHAR(50) NOT NULL,
 	[LastName] NVARCHAR(50) NOT NULL,
 	[PhoneNumber] VARCHAR(50),
@@ -64,16 +64,22 @@ CREATE TABLE Orders
 	[ShippingAddress] NVARCHAR(500) NOT NULL,
 	[ShippingCity] NVARCHAR(50) NOT NULL,
 	[PaymentType] VARCHAR(20) NOT NULL DEFAULT('CASH'), CHECK([PaymentType] IN ('CREDIT CARD', 'CASH')),
-	[CustomerId] VARCHAR(50) NOT NULL REFERENCES [Customers](Id),
-	[EmployeeId] VARCHAR(50) NOT NULL REFERENCES [Employees](Id)
+	[CustomerId] INT NOT NULL REFERENCES [Customers](Id),
+	[EmployeeId] INT NOT NULL REFERENCES [Employees](Id)
 )
 GO
 -- OrderDetails
 CREATE TABLE [OrderDetails]
-(
-	[Id] INT PRIMARY KEY IDENTITY(1, 1),
+(	
 	[OrderId] INT NOT NULL REFERENCES [Orders](Id),
 	[ProductId] INT NOT NULL REFERENCES [Products](Id),
-	[Quantity] DECIMAL(18, 2) NOT NULL, CHECK([Quantity] > 0)
+	[Quantity] DECIMAL(18, 2) NOT NULL, CHECK([Quantity] > 0),
+	[Price] DECIMAL(18, 2) NOT NULL, CHECK([Price] > 0),
+	[Discount] DECIMAL(18, 2) NOT NULL DEFAULT(0), CHECk([Disocunt] BETWEEN 0 AND 90),
+	CONSTRAINT [PK_OrderDetails] PRIMARY KEY CLUSTERED 
+	(
+		[OrderId] ASC,
+		[ProductId] ASC
+	)
 )
 GO

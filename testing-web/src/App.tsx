@@ -1,14 +1,15 @@
-import React from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Login from './pages/Login';
-import LoginV2 from './pages/Login.V2';
 import { Breadcrumb, Layout, Menu } from 'antd';
-import Home from './pages/Home';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import SideMenu from './components/SideMenu';
-import TicketBooking from './pages/TicketBooking';
 import Categories from './pages/Categories';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import TicketBooking from './pages/TicketBooking';
+
 const { Header, Sider, Content } = Layout;
 
 function App() {
@@ -41,7 +42,6 @@ function App() {
                   <Route path='/' element={<Home />} />
                   <Route path='/home' element={<Home />} />
                   <Route path='/login' element={<Login />} />
-                  <Route path='/login/V2' element={<LoginV2 />} />
                   <Route path='/ticket-booking' element={<TicketBooking />} />
                   <Route path='/categories' element={<Categories />} />
                 </Routes>
