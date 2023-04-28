@@ -1,7 +1,7 @@
-import React from 'react';
 import { Menu, MenuProps } from 'antd';
-import { UserOutlined, SendOutlined, HomeOutlined, AppstoreOutlined } from '@ant-design/icons';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+import { HomeOutlined, UserOutlined } from '@ant-design/icons';
 
 const menuItems: MenuProps['items'] = [
   {
@@ -14,21 +14,16 @@ const menuItems: MenuProps['items'] = [
     label: 'Login',
     icon: <UserOutlined />,
   },
-  {
-    key: '/login/v2',
-    label: 'Login (V2)',
-    icon: <UserOutlined />,
-  },
-  {
-    key: '/ticket-booking',
-    label: 'Ticket booking',
-    icon: <SendOutlined />,
-  },
-  {
-    key: '/categories',
-    label: 'Categories',
-    icon: <AppstoreOutlined />,
-  },
+  // {
+  //   key: '/ticket-booking',
+  //   label: 'Ticket booking',
+  //   icon: <SendOutlined />,
+  // },
+  // {
+  //   key: '/categories',
+  //   label: 'Categories',
+  //   icon: <AppstoreOutlined />,
+  // },
 ];
 
 function SideMenu() {
