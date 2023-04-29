@@ -1,7 +1,5 @@
 // Tại của sổ termial cài thư viện csv-parse: npm install csv-parse
-
-const { test, expect } = require('@playwright/test');
-
+import { test, expect } from '@playwright/test';
 const fs = require('fs');
 const path = require('path');
 const { parse } = require('csv-parse/sync');

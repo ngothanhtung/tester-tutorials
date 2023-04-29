@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('https://aptech-tester.web.app/login');
 });
 
-test.describe('Login: Result', () => {
+test.describe('Login', () => {
   test('TC-LOGIN-SUCCESS: Login Success', async ({ page }) => {
     // Click input[type="text"]
     await page.locator('input[type="text"]').click();
@@ -14,14 +14,15 @@ test.describe('Login: Result', () => {
     // Click input[type="password"]
     await page.locator('input[type="password"]').click();
     // Fill input[type="password"]
-    await page.locator('input[type="password"]').fill('Tester2022');
+    await page.locator('input[type="password"]').fill('Tester@123');
     // Click button:has-text("Login")
-    await page.locator('button:has-text("Login")').click();
+    // await page.locator('button:has-text("Đăng nhập")').screenshot({ path: './tests/screenshots/TC-LOGIN-SUCCESS.png', clip: { x: 0, y: 0, height: 1080, width: 1920 } });
+    await page.locator('button:has-text("Đăng nhập")').click();
 
-    await expect(page).toHaveURL('https://aptech-tester.web.app');
+    await expect(page).toHaveURL('https://aptech-tester.web.app/home');
   });
 
-  test('TC-LOGIN-FAILED: Login Failed', async ({ page }) => {
+  test('TC-LOGIN-FAILED: Wrong password', async ({ page }) => {
     // Click input[type="text"]
     await page.locator('input[type="text"]').click();
     // Fill input[type="text"]
@@ -29,9 +30,24 @@ test.describe('Login: Result', () => {
     // Click input[type="password"]
     await page.locator('input[type="password"]').click();
     // Fill input[type="password"]
-    await page.locator('input[type="password"]').fill('Tester2029');
+    await page.locator('input[type="password"]').fill('Tester@321');
     // Click button:has-text("Login")
-    await page.locator('button:has-text("Login")').click();
+    await page.locator('button:has-text("Đăng nhập")').click();
+
+    await expect(page).toHaveURL('https://aptech-tester.web.app/login');
+  });
+
+  test('TC-LOGIN-FAILED: Wrong username', async ({ page }) => {
+    // Click input[type="text"]
+    await page.locator('input[type="text"]').click();
+    // Fill input[type="text"]
+    await page.locator('input[type="text"]').fill('admin1');
+    // Click input[type="password"]
+    await page.locator('input[type="password"]').click();
+    // Fill input[type="password"]
+    await page.locator('input[type="password"]').fill('Tester@123');
+    // Click button:has-text("Login")
+    await page.locator('button:has-text("Đăng nhập")').click();
 
     await expect(page).toHaveURL('https://aptech-tester.web.app/login');
   });
@@ -54,7 +70,7 @@ test.describe('Login: Fields is required', () => {
     await page.locator('#login-form_password').fill('');
 
     // Click button:has-text("Login")
-    await page.locator('button:has-text("Login")').click();
+    await page.locator('button:has-text("Đăng nhập")').click();
 
     await page.waitForTimeout(1000);
 
