@@ -11,7 +11,7 @@ test.describe('Login: Result', () => {
     await page.locator('#login-form_username').fill('admin');
 
     // Fill input[type="password"]
-    await page.locator('#login-form_password').fill('Tester2022');
+    await page.locator('#login-form_password').fill('Tester@123');
     // Click button:has-text("Login")
     await page.locator('#login-form > div:nth-child(4) > div > div > div > button').click();
 
@@ -28,7 +28,7 @@ test.describe('Login: Result', () => {
     // Fill input[type="password"]
     await page.locator('input[type="password"]').fill('Tester2029');
     // Click button:has-text("Login")
-    await page.locator('button:has-text("Login")').click();
+    await page.locator('button:has-text("Đăng nhập")').click();
 
     await expect(page).toHaveURL('https://aptech-tester.web.app/login');
   });
@@ -39,7 +39,7 @@ test.describe('Login: Fields is required', () => {
     await page.locator('#login-form_username').fill('');
 
     // Click button:has-text("Login")
-    await page.locator('button:has-text("Login")').click();
+    await page.locator('button:has-text("Đăng nhập")').click();
 
     const error = await page.locator('#login-form_username');
     // Kiểm tra tồn tại của class

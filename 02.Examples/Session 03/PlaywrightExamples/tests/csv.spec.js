@@ -18,8 +18,10 @@ test.beforeEach(async ({ page }) => {
 });
 
 // Lặp qua từng dòng khi đọc được
+let index = 0;
 for (const record of records) {
-  test('TC-LOGIN-CHECK: Check login result with account: ' + record.username, async ({ page }) => {
+  index++;
+  test('TC-LOGIN-CHECK: Check login result with account: ' + index, async ({ page }) => {
     // Click input[type="text"]
     await page.locator('input[type="text"]').click();
     // Fill input[type="text"]
@@ -29,7 +31,7 @@ for (const record of records) {
     // Fill input[type="password"]
     await page.locator('input[type="password"]').fill(record.password);
     // Click button:has-text("Login")
-    await page.locator('button:has-text("Login")').click();
+    await page.locator('button:has-text("Đăng nhập")').click();
 
     await expect(page).toHaveURL('https://aptech-tester.web.app/home');
   });
