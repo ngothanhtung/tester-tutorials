@@ -2,7 +2,7 @@
   "id": "b993ee2e-a11b-454a-ba62-4873bb612469",
   "version": "2.0",
   "name": "OlineShop",
-  "url": "https://localhost:5173/",
+  "url": "https://os-admin.aptech.io/",
   "tests": [{
     "id": "c11f1119-b330-4f21-a6cf-8bc31a8a65e4",
     "name": "Add new category",
@@ -10,16 +10,16 @@
       "id": "66f0b860-331c-4397-8d62-fb4676342b98",
       "comment": "",
       "command": "store",
-      "target": "Category Name 333",
+      "target": "Category Name 3334",
       "targets": [],
       "value": "name"
     }, {
-      "id": "3975a41a-808b-4b71-b7ea-f92f3dd8e8fc",
+      "id": "d76c56f5-56a3-4bbf-aed9-f7374a465dac",
       "comment": "",
-      "command": "echo",
-      "target": "${name}",
+      "command": "store",
+      "target": "Category Desc 3334",
       "targets": [],
-      "value": ""
+      "value": "desc"
     }, {
       "id": "ee96cdbe-470e-4245-aba2-8f28ee456ce7",
       "comment": "",
@@ -52,7 +52,7 @@
         ["xpath=//form[@id='create-form']/div[2]/div/div[2]/div/div/input", "xpath:idRelative"],
         ["xpath=//div[2]/div/div/input", "xpath:position"]
       ],
-      "value": "Desc ..."
+      "value": "${desc}"
     }, {
       "id": "cf20a121-aa1a-4087-85f2-9ca8d97365ac",
       "comment": "",
@@ -61,46 +61,15 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "c8161e47-5a23-4fbf-8866-03306c4d1af5",
+      "id": "c049df02-1dfb-4f2a-b13b-7f82fe552893",
       "comment": "",
-      "command": "storeXpathCount",
-      "target": "xpath=//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div/div/div[3]",
-      "targets": [],
-      "value": "error"
-    }, {
-      "id": "92d03d63-4bed-43e6-b213-327f9a36902c",
-      "comment": "",
-      "command": "echo",
-      "target": "${error}",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "0f02d4a9-9b6a-4662-9290-87f4b3c07281",
-      "comment": "",
-      "command": "if",
-      "target": "${error} >= 1",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "a1fdcc5c-f706-4860-bc1b-7986ab8285f0",
-      "comment": "",
-      "command": "echo",
-      "target": "\"Có lỗi\"",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "70d55af7-5d78-4dae-8f31-42b27c33882f",
-      "comment": "",
-      "command": "assert",
-      "target": "${error}",
-      "targets": [],
-      "value": "0"
-    }, {
-      "id": "38de0480-0f93-4d6b-ab76-a536c5567c3c",
-      "comment": "",
-      "command": "end",
-      "target": "",
-      "targets": [],
+      "command": "assertElementNotPresent",
+      "target": "css=.ant-alert",
+      "targets": [
+        ["css=.ant-alert", "css:finder"],
+        ["xpath=//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div/div/div[3]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]/div/div/div/div[3]", "xpath:position"]
+      ],
       "value": ""
     }, {
       "id": "670055d7-9dd0-4215-a887-4a27e4eae479",
@@ -114,6 +83,18 @@
         ["xpath=//span[contains(.,'Category Name 123')]", "xpath:innerText"]
       ],
       "value": "${name}"
+    }, {
+      "id": "d35f8edc-b4fa-408f-8f9c-2407a50819c4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr.ant-table-row > td:nth-child(3) > span",
+      "targets": [
+        ["css=.ant-table-cell-row-hover:nth-child(2) > span", "css:finder"],
+        ["xpath=//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div[2]/div/div/div/div/div/div/div/table/tbody/tr/td[2]/span", "xpath:idRelative"],
+        ["xpath=//td[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Category Name 123')]", "xpath:innerText"]
+      ],
+      "value": "${desc}"
     }]
   }, {
     "id": "a8096939-dc3b-4df4-a16c-be0b691f9a96",
@@ -137,13 +118,6 @@
         ["xpath=//td[contains(.,'6954')]", "xpath:innerText"]
       ],
       "value": "deleteId"
-    }, {
-      "id": "57decb51-294c-462f-babc-42fa4a744340",
-      "comment": "",
-      "command": "echo",
-      "target": "${deleteId}",
-      "targets": [],
-      "value": ""
     }, {
       "id": "9d297126-a2c8-4e9e-b15a-57768cb1455e",
       "comment": "",
@@ -254,6 +228,40 @@
       "targets": [],
       "value": "${description}"
     }]
+  }, {
+    "id": "c15e1b75-665f-456b-aa53-284196783933",
+    "name": "TC-Name Required",
+    "commands": [{
+      "id": "73c4f477-792b-457d-b4af-21801a465937",
+      "comment": "",
+      "command": "open",
+      "target": "online-shop/data-management/categories",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f9d66210-32bd-4312-8dde-c7993d57e522",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn-primary > span",
+      "targets": [
+        ["css=.ant-btn-primary > span", "css:finder"],
+        ["xpath=//form[@id='create-form']/div[3]/div/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d848a40-af9c-40de-8798-b8ee8f4cfccc",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-form-item-explain-error",
+      "targets": [
+        ["css=.ant-form-item-explain-error", "css:finder"],
+        ["xpath=//div[@id='create-form_name_help']/div", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Category's name is required"
+    }]
   }],
   "suites": [{
     "id": "9b27cba1-9dc9-4bd1-b8d6-52c1c96c6d48",
@@ -263,6 +271,6 @@
     "timeout": 300,
     "tests": ["c11f1119-b330-4f21-a6cf-8bc31a8a65e4"]
   }],
-  "urls": ["https://localhost:5173/"],
+  "urls": ["https://localhost:5173/", "https://os-admin.aptech.io/"],
   "plugins": []
 }
