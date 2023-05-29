@@ -1,0 +1,123 @@
+{
+  "id": "b1dbb889-8209-4813-a9ec-a25dd10ddc80",
+  "version": "2.0",
+  "name": "TRAINING",
+  "url": "https://os-admin.aptech.io",
+  "tests": [{
+    "id": "8a788647-19e3-49d8-8731-6f61748b17fc",
+    "name": "TEST 1",
+    "commands": [{
+      "id": "9d198618-9faf-4f68-a659-342afe12c4ea",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4c1266d6-7589-49fd-8a70-26738ea1618d",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.mb-3:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "tungnt@softech.vn"
+    }, {
+      "id": "b6fa979d-990b-49c5-bda3-2d7c99bbc82a",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.mb-3:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456789"
+    }, {
+      "id": "46bed53e-6c40-4fbb-80ea-1a53d4e4c7c7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "50aec161-eda2-443b-8d3d-f4bb4c2df63e",
+      "comment": "",
+      "command": "open",
+      "target": "/online-shop/data-management/categories",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "be51905e-67c2-4d5a-beca-2da7d48ebd68",
+      "comment": "",
+      "command": "type",
+      "target": "css=#create-form_name",
+      "targets": [
+        ["css=.ant-input-affix-wrapper", "css:finder"],
+        ["xpath=//form[@id='create-form']/div/div/div[2]/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/span", "xpath:position"]
+      ],
+      "value": "CPU1111"
+    }, {
+      "id": "ded5f0fc-9459-45c8-9fed-9209ce58404b",
+      "comment": "",
+      "command": "type",
+      "target": "id=create-form_description",
+      "targets": [
+        ["id=create-form_description", "id"],
+        ["css=#create-form_description", "css:finder"],
+        ["xpath=//input[@id='create-form_description']", "xpath:attributes"],
+        ["xpath=//form[@id='create-form']/div[2]/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "Desc ..."
+    }, {
+      "id": "d0d2b79d-e936-460e-997b-812cc0b7dd92",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn-primary",
+      "targets": [
+        ["css=.ant-btn-primary", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='create-form']/div[3]/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "58588b86-12b7-426e-8cea-7107282f590c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-alert-description li",
+      "targets": [
+        ["css=.ant-alert-description li", "css:finder"],
+        ["xpath=//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div/div/div[3]/div/div[2]/ul/li", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/ul/li", "xpath:position"],
+        ["xpath=//li[contains(.,'Name must be unique')]", "xpath:innerText"]
+      ],
+      "value": "Name must be unique"
+    }]
+  }],
+  "suites": [{
+    "id": "2abe636f-af50-49d9-bada-5e14f6231d28",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["8a788647-19e3-49d8-8731-6f61748b17fc"]
+  }],
+  "urls": ["https://os-admin.aptech.io/"],
+  "plugins": []
+}

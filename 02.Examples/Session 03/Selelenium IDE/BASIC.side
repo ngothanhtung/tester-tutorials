@@ -1,0 +1,156 @@
+{
+  "id": "dbfe872e-bbab-4ba5-9211-132d32b97140",
+  "version": "2.0",
+  "name": "Traning 1",
+  "url": "https://ecommerce.aptech.io",
+  "tests": [{
+    "id": "529947f7-924d-4ed5-846b-a629aaf8298f",
+    "name": "TC-01",
+    "commands": [{
+      "id": "3b450bd4-6cde-4e1e-9406-5b0e18854bbf",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8a4caecc-1c75-45e8-aea6-df3cc72f9ad7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1734x1032",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0f826b2f-dc48-4f50-b0fb-407bb9e0da70",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=My account",
+      "targets": [
+        ["linkText=My account", "linkText"],
+        ["css=.ico-account", "css:finder"],
+        ["xpath=//a[contains(text(),'My account')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/customer/info')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'My account')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bf02202-1963-4d2d-a1cf-982b576d0ec3",
+      "comment": "",
+      "command": "click",
+      "target": "id=gender-male",
+      "targets": [
+        ["id=gender-male", "id"],
+        ["name=Gender", "name"],
+        ["css=#gender-male", "css:finder"],
+        ["xpath=//input[@id='gender-male']", "xpath:attributes"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "195f7239-807f-469a-a1c7-6c05cf2edc35",
+      "comment": "",
+      "command": "click",
+      "target": "id=Company",
+      "targets": [
+        ["id=Company", "id"],
+        ["name=Company", "name"],
+        ["css=#Company", "css:finder"],
+        ["xpath=//input[@id='Company']", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f6392b41-6ce6-455e-8180-48fbfe233238",
+      "comment": "",
+      "command": "type",
+      "target": "id=Company",
+      "targets": [
+        ["id=Company", "id"],
+        ["name=Company", "name"],
+        ["css=#Company", "css:finder"],
+        ["xpath=//input[@id='Company']", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Aptech Education"
+    }, {
+      "id": "77febbd2-dba6-450f-ae30-8b170cbde06c",
+      "comment": "",
+      "command": "click",
+      "target": "id=Newsletter",
+      "targets": [
+        ["id=Newsletter", "id"],
+        ["name=Newsletter", "name"],
+        ["css=#Newsletter", "css:finder"],
+        ["xpath=//input[@id='Newsletter']", "xpath:attributes"],
+        ["xpath=//div[3]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "805d70d7-58f6-4c33-81be-a249f8c48c7e",
+      "comment": "",
+      "command": "click",
+      "target": "id=save-info-button",
+      "targets": [
+        ["id=save-info-button", "id"],
+        ["name=save-info-button", "name"],
+        ["css=#save-info-button", "css:finder"],
+        ["xpath=//button[@id='save-info-button']", "xpath:attributes"],
+        ["xpath=//div[4]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3397fa9-9fcd-4ca7-9b38-5f44373c072d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Addresses",
+      "targets": [
+        ["linkText=Addresses", "linkText"],
+        ["css=.customer-addresses > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Addresses')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/customer/addresses')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Addresses')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dac7a810-88fa-4bf5-8e18-6ddf59e684f7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Orders",
+      "targets": [
+        ["linkText=Orders", "linkText"],
+        ["css=.customer-orders > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Orders')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/order/history')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Orders')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6199ab9e-3c96-4e0a-92a1-b620a46285c6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Downloadable products",
+      "targets": [
+        ["linkText=Downloadable products", "linkText"],
+        ["css=.downloadable-products > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Downloadable products')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/customer/downloadableproducts')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Downloadable products')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "0309a759-ebb2-4e0d-b2e0-804d91f01868",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["529947f7-924d-4ed5-846b-a629aaf8298f"]
+  }],
+  "urls": ["https://ecommerce.aptech.io/"],
+  "plugins": []
+}
