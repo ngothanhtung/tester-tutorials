@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 test('api: login', async ({ request }) => {
-  const url = 'https://training.softech.cloud/api/training/users/login';
+  const url = 'https://server.aptech.io/api/auth/login';
   const data = {
-    username: 'tungnt',
-    password: 'new password',
+    username: 'tungnt@softech.vn',
+    password: '123456789',
   };
 
   const response = await request.post(url, {
@@ -17,7 +17,7 @@ test('api: login', async ({ request }) => {
   expect(response.ok()).toBeTruthy();
   const json = await response.json();
 
-  expect(await response.json()).toMatchObject(
+  expect(json).toMatchObject(
     expect.objectContaining({
       login: true,
       ok: true,
@@ -89,7 +89,8 @@ test('api: get users - bearer token', async ({ request }) => {
   const response = await request.get(url, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidHVuZ250IiwiZnVsbG5hbWUiOiJOZ8O0IFRoYW5oIFTDuW5nIiwiZW1haWwiOiJ0dW5nbnRAc29mdGVjaC5lZHUudm4ifSwiaWF0IjoxNjYwMTMxNzc5LCJleHAiOjE2NjAyMTgxNzksImF1ZCI6InNvZnRlY2guY2xvdWQiLCJpc3MiOiJzb2Z0ZWNoLmNsb3VkIiwic3ViIjoiNjJlZjFmZmI3ZGRkY2MxMzk0NTQ1MDMxIn0.gOeCqUb-4RfgrU_w1OJVGlw0SJ74lyPj2oye00o50jierJSgFC2xD8cJKQWSJnoqf0bE6sEcNzQGemNSbWYUQA',
+      Authorization:
+        'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidHVuZ250IiwiZnVsbG5hbWUiOiJOZ8O0IFRoYW5oIFTDuW5nIiwiZW1haWwiOiJ0dW5nbnRAc29mdGVjaC5lZHUudm4ifSwiaWF0IjoxNjYwMTMxNzc5LCJleHAiOjE2NjAyMTgxNzksImF1ZCI6InNvZnRlY2guY2xvdWQiLCJpc3MiOiJzb2Z0ZWNoLmNsb3VkIiwic3ViIjoiNjJlZjFmZmI3ZGRkY2MxMzk0NTQ1MDMxIn0.gOeCqUb-4RfgrU_w1OJVGlw0SJ74lyPj2oye00o50jierJSgFC2xD8cJKQWSJnoqf0bE6sEcNzQGemNSbWYUQA',
     },
   });
 
@@ -103,7 +104,8 @@ test('api: delete users - bearer token', async ({ request }) => {
   const response = await request.delete(url, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidHVuZ250IiwiZnVsbG5hbWUiOiJOZ8O0IFRoYW5oIFTDuW5nIiwiZW1haWwiOiJ0dW5nbnRAc29mdGVjaC5lZHUudm4ifSwiaWF0IjoxNjYwMTMxNzc5LCJleHAiOjE2NjAyMTgxNzksImF1ZCI6InNvZnRlY2guY2xvdWQiLCJpc3MiOiJzb2Z0ZWNoLmNsb3VkIiwic3ViIjoiNjJlZjFmZmI3ZGRkY2MxMzk0NTQ1MDMxIn0.gOeCqUb-4RfgrU_w1OJVGlw0SJ74lyPj2oye00o50jierJSgFC2xD8cJKQWSJnoqf0bE6sEcNzQGemNSbWYUQA',
+      Authorization:
+        'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidHVuZ250IiwiZnVsbG5hbWUiOiJOZ8O0IFRoYW5oIFTDuW5nIiwiZW1haWwiOiJ0dW5nbnRAc29mdGVjaC5lZHUudm4ifSwiaWF0IjoxNjYwMTMxNzc5LCJleHAiOjE2NjAyMTgxNzksImF1ZCI6InNvZnRlY2guY2xvdWQiLCJpc3MiOiJzb2Z0ZWNoLmNsb3VkIiwic3ViIjoiNjJlZjFmZmI3ZGRkY2MxMzk0NTQ1MDMxIn0.gOeCqUb-4RfgrU_w1OJVGlw0SJ74lyPj2oye00o50jierJSgFC2xD8cJKQWSJnoqf0bE6sEcNzQGemNSbWYUQA',
     },
   });
 
@@ -122,7 +124,8 @@ test('api: patch users - bearer token', async ({ request }) => {
   const response = await request.patch(url, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidHVuZ250IiwiZnVsbG5hbWUiOiJOZ8O0IFRoYW5oIFTDuW5nIiwiZW1haWwiOiJ0dW5nbnRAc29mdGVjaC5lZHUudm4ifSwiaWF0IjoxNjYwMTMxNzc5LCJleHAiOjE2NjAyMTgxNzksImF1ZCI6InNvZnRlY2guY2xvdWQiLCJpc3MiOiJzb2Z0ZWNoLmNsb3VkIiwic3ViIjoiNjJlZjFmZmI3ZGRkY2MxMzk0NTQ1MDMxIn0.gOeCqUb-4RfgrU_w1OJVGlw0SJ74lyPj2oye00o50jierJSgFC2xD8cJKQWSJnoqf0bE6sEcNzQGemNSbWYUQA',
+      Authorization:
+        'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidHVuZ250IiwiZnVsbG5hbWUiOiJOZ8O0IFRoYW5oIFTDuW5nIiwiZW1haWwiOiJ0dW5nbnRAc29mdGVjaC5lZHUudm4ifSwiaWF0IjoxNjYwMTMxNzc5LCJleHAiOjE2NjAyMTgxNzksImF1ZCI6InNvZnRlY2guY2xvdWQiLCJpc3MiOiJzb2Z0ZWNoLmNsb3VkIiwic3ViIjoiNjJlZjFmZmI3ZGRkY2MxMzk0NTQ1MDMxIn0.gOeCqUb-4RfgrU_w1OJVGlw0SJ74lyPj2oye00o50jierJSgFC2xD8cJKQWSJnoqf0bE6sEcNzQGemNSbWYUQA',
     },
     data: data,
   });
