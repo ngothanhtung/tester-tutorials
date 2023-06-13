@@ -1,4 +1,4 @@
-// Tại của sổ termial cài thư viện csv-parse: npm install csv-parse --save
+// Tại của sổ terminal cài thư viện csv-parse: npm install csv-parse --save
 
 const { test, expect } = require('@playwright/test');
 
@@ -8,8 +8,9 @@ import { parse } from 'csv-parse/sync';
 
 // Đọc file csv
 const records = parse(fs.readFileSync(path.join(__dirname, 'accounts.csv')), {
-  columns: true,
-  skip_empty_lines: true,
+  columns: true, // Tự động đọc header
+  delimiter: ',', // Dấu phân cách
+  skip_empty_lines: true, // Bỏ qua dòng trống
 });
 
 test.beforeEach(async ({ page }) => {
@@ -21,7 +22,9 @@ test.beforeEach(async ({ page }) => {
 let index = 0;
 for (const record of records) {
   index++;
-  test('TC-LOGIN-CHECK: Check login result with account ' + index + ': ' + record.username + '/' + record.password, async ({ page }) => {
+
+  const testName = 'TC-LOGIN-CHECK: Check login result of account ' + index + ': ' + record.username + '/' + record.password;
+  test(testName, async ({ page }) => {
     // Click input[type="text"]
     await page.locator('input[type="text"]').click();
     // Fill input[type="text"]
