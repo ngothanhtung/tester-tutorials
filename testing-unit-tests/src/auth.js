@@ -4,9 +4,9 @@ const axios = require('axios');
 //
 async function login({ username, password }) {
   try {
-    const response = await axios.post('https://server.aptech.io/training/auth/login', {
-      username: username,
-      password: password,
+    const response = await axios.post('https://server.aptech.io/auth/login', {
+      username,
+      password,
     });
 
     return { ...response.data, ok: true };
@@ -15,21 +15,4 @@ async function login({ username, password }) {
   }
 }
 
-async function register({ username, password, email, phone, address, fullname }) {
-  try {
-    const response = await axios.post('https://server.aptech.io/training/auth/register', {
-      username: username,
-      password: password,
-      email: email,
-      phone: phone,
-      address: address,
-      fullname: fullname,
-    });
-
-    return { ...response.data, ok: true };
-  } catch (error) {
-    return { ...error.response.data, ok: false };
-  }
-}
-
-module.exports = { login, register };
+module.exports = { login };
