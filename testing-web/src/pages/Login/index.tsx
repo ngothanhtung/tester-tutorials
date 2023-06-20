@@ -2,16 +2,23 @@ import React from 'react';
 import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
 import { Form, Input, Button, Checkbox, Divider, message } from 'antd';
+import axios from 'axios';
 
 const Login = () => {
   const navigate = useNavigate();
-  const onFinish = (values: any) => {
+  const onFinish = async (values: any) => {
     const cookies = new Cookies();
     cookies.remove('username');
     cookies.remove('password');
 
     const { username, password } = values;
-    if (username === 'admin' && password === 'Tester@123') {
+
+    const response = await axios.post('https://server.aptech.io/auth/login', {
+      username: username,
+      password: password,
+    });
+
+    if (response.status === 200) {
       message.success('Login success');
 
       let d = new Date();

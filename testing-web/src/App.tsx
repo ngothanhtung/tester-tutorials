@@ -9,6 +9,7 @@ import Categories from './pages/Categories';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import TicketBooking from './pages/TicketBooking';
+import LogOut from './pages/LogOut';
 
 const { Header, Sider, Content } = Layout;
 
@@ -42,6 +43,7 @@ function App() {
                   <Route path='/' element={<Home />} />
                   <Route path='/home' element={<Home />} />
                   <Route path='/login' element={<Login />} />
+                  <Route path='/logout' element={<LogOut />} />
                   <Route path='/ticket-booking' element={<TicketBooking />} />
                   <Route path='/categories' element={<Categories />} />
                 </Routes>
