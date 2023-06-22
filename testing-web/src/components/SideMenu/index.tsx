@@ -1,7 +1,7 @@
 import { Menu, MenuProps } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { AppstoreOutlined, HomeOutlined, LogoutOutlined, UserOutlined } from '@ant-design/icons';
+import { SendOutlined, HomeOutlined, LogoutOutlined, UserOutlined } from '@ant-design/icons';
 
 const menuItems: MenuProps['items'] = [
   {
@@ -14,11 +14,11 @@ const menuItems: MenuProps['items'] = [
     label: 'Login',
     icon: <UserOutlined />,
   },
-  // {
-  //   key: '/ticket-booking',
-  //   label: 'Ticket booking',
-  //   icon: <SendOutlined />,
-  // },
+  {
+    key: '/ticket-booking',
+    label: 'Ticket booking',
+    icon: <SendOutlined />,
+  },
   // {
   //   key: '/categories',
   //   label: 'Categories',
