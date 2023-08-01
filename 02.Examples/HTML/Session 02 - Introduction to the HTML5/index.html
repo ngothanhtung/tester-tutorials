@@ -1,21 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Shop</title>
-  </head>
-  <body>
-    <h1>Hello WEB</h1>
-    <p>
-      <strong> "Vừa học kiến thức trên trường đại học, </strong>
-      <br />
-      vừa học tại <span style="color: red; font-size: 24px; font-weight: 700">Softech Aptech</span>, thời gian đầu mình bị quá tải nhưng sau đó dần sắp xếp được thời gian học tập hợp lý, bản thân có nền tảng cơ bản nên tiếp thu nhanh và dể dàng hơn"
-    </p>
-    <p>"Sau khi hoàn thành 6 tháng học tập tại Softech Aptech, bản thân tụi mình đã có được dự án đầu tay, đây cũng chính là mình chứng thực tế, giúp mình tự tin hơn khi đứng trước nhà tuyển dụng."</p>
-    <a href="https://vnexpress.vn" target="_blank">GO TO EXPRESS</a>
-    <img src="https://..." />
-    <button></button>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <h6>Heading 6</h6>
+  <p>
+    <strong>Xin chào</strong> <em> các bạn</em>
+  </p>
+  <p>This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a
+    paragraph.
+
+    This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is
+    a paragraph. This is a paragraph.
+  </p>
+
+  <div style="background-color: red;">
+    This is a paragraph.
+  </div>
+
+  <div style="background-color: green;">
+    This is a <span style="background-color: yellow;">paragraph</span>. This is a paragraph. This is a paragraph. This is a
+    paragraph. This is a paragraph. This
+    is
+    a paragraph. This is a paragraph.
+  </div>
+
+  <ol>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ol>
+
+  <ul>
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+  <table border="1">
+
+    <tbody>
+
+      <tr>
+        <td style="text-align: center;"><strong>Company</strong></td>
+        <td><strong>Contact</strong></td>
+        <td><strong>Country</strong></td>
+      </tr>
+
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Ernst Handel</td>
+        <td>Roland Mendel</td>
+        <td>Austria</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <label for="cars">Choose a car:</label>
+  <select id="cars" name="cars">
+    <option value="volvo" selected>Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+  <input />
+  <label for="cars">Choose a car:</label>
+  <select id="cars" name="cars" size="4" multiple>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+
+  <label for="option1"> <input type="radio" id="option1" name="options" value="option1" /> Option 1 </label>
+  <label for="option2"> <input type="radio" id="option2" name="options" value="option2" /> Option 2 </label>
+  <label for="option3"> <input type="radio" id="option3" name="options" value="option3" /> Option 3 </label>
+
+  <textarea name="message" rows="10" cols="30"></textarea>
+
+  <form action="/action_page.php" method="get">
+    <label for="fname">First name:</label><br />
+    <input type="text" id="fname" name="fname" value="John" /><br />
+
+    <label for="lname">Last name:</label><br />
+    <input type="text" id="lname" name="lname" value="Doe" /><br /><br />
+
+    <input type="submit" value="Submit" />
+  </form>
+</body>
+
 </html>
