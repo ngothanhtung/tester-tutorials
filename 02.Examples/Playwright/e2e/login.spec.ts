@@ -7,12 +7,8 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Login', () => {
   test('TC-LOGIN-SUCCESS: Login Success', async ({ page }) => {
-    // Click input[type="text"]
-    await page.locator('input[type="text"]').click();
     // Fill input[type="text"]
     await page.locator('input[type="text"]').fill('admin');
-    // Click input[type="password"]
-    await page.locator('input[type="password"]').click();
     // Fill input[type="password"]
     await page.locator('input[type="password"]').fill('Tester@123');
     // Click button:has-text("Login")
@@ -58,7 +54,7 @@ test.describe('Login: Fields is required', () => {
     await page.locator('#login-form_username').fill('');
 
     // Click button:has-text("Login")
-    await page.locator('button:has-text("Login")').click();
+    await page.locator('button:has-text("Đăng nhập")').click();
 
     const error = await page.locator('#login-form_username');
     // Kiểm tra tồn tại của class

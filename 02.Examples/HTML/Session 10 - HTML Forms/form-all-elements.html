@@ -1,69 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form Examples</title>
-    <style>
-      form {
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-      }
-    </style>
-  </head>
 
-  <body>
-    <form>
-      <input placeholder="Hãy nhập email" autofocus />
-      <input type="checkbox" />
-      <input type="color" />
-      <input type="date" />
-      <input type="datetime-local" />
-      <input type="email" />
-      <input type="file" />
-      <input type="hidden" />
-      <input type="image" />
-      <input type="month" />
-      <input type="number" />
-      Password
-      <input type="password" />
-      <input type="radio" name="gender" />
-      <input type="radio" name="gender" />
-      Range
-      <input type="range" min="0" max="10" step="1" />
-      <input type="reset" />
-      Telephone
-      <input type="tel" />
-      Text
-      <input type="text" />
-      Time
-      <input type="time" />
-      Url
-      <input type="url" />
-      Week
-      <input type="week" />
-      Search
-      <input type="search" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Examples</title>
+  <style>
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+    }
+  </style>
+</head>
 
-      <label for="cars">Choose a car:</label>
-      <select id="cars" name="cars">
-        <option value="volvo" selected>Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="fiat">Fiat</option>
-        <option value="audi">Audi</option>
-      </select>
+<body>
+  <form>
+    <input placeholder="Hãy nhập email" autofocus />
+    <input type="checkbox" />
+    <input type="color" />
+    <input type="date" />
+    <input type="datetime-local" />
+    <input type="email" />
+    <input type="file" />
+    <input type="hidden" />
+    <input type="image" />
+    <input type="month" />
+    <input type="number" />
+    Password
+    <input type="password" />
+    <input type="radio" name="gender" />
+    <input type="radio" name="gender" />
+    Range
+    <input type="range" min="0" max="10" step="1" />
+    <input type="reset" />
+    Telephone
+    <input type="tel" />
+    Text
+    <input type="text" />
+    Time
+    <input type="time" />
+    Url
+    <input type="url" />
+    Week
+    <input type="week" />
+    Search
+    <input type="search" />
 
-      <label for="cars">Choose a car:</label>
-      <select id="cars" name="cars" size="4" multiple>
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="fiat">Fiat</option>
-        <option value="audi">Audi</option>
-      </select>
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars">
+      <option value="volvo">Hãng xe Volvo</option>
+      <option value="saab">Hãng xe Saab</option>
+      <option value="fiat">Hãng xe Fiat</option>
+      <option value="audi" selected>Hãng xe Audi</option>
+    </select>
 
-      <textarea name="message" rows="10" cols="30"></textarea>
-      <input type="submit" />
-    </form>
-  </body>
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars" size="4" multiple>
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+    </select>
+
+    <textarea name="message" rows="5" cols="30"></textarea>
+    <input type="submit" />
+  </form>
+</body>
+
 </html>
