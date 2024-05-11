@@ -18,7 +18,7 @@ const Login = () => {
       password: password,
     });
 
-    if (response.status === 200) {
+    if (response.status === 200 || response.status === 201) {
       message.success('Login success');
 
       let d = new Date();
@@ -27,7 +27,7 @@ const Login = () => {
       cookies.set('username', username, { path: '/', expires: d });
       // II.3 Security / Session
       // Mật khẩu không được lưu trong browser cookies
-      // cookies.set('password', password, { path: '/', expires: d });
+      cookies.set('password', password, { path: '/', expires: d });
       navigate('/home');
     } else {
       message.error('Tên đăng nhập hoặc Mật khẩu đã nhập sai');
