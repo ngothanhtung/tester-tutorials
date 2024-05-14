@@ -3,6 +3,39 @@ import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
 import { Form, Input, Button, Checkbox, Divider, message } from 'antd';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
+
+const markdown = `
+## Xây dựng mẫu kiểm thử cho form Login sau:
+
+### I. Yêu cầu chung về các thành phần trong giao diện:
+
+- Tên đăng nhập: TextBox / TextInput
+- Mật khẩu: TextBox / TextInput (Secure Entry)
+- CheckBox "Ghi nhớ thông tin tài khoản"
+- Button "Đăng nhập"
+- Link "Quên mật khẩu", liên kết đến màn hình quên mật khẩu (https://aptech-tester.web.app/forgot-password)
+- Link "Đăng ký", liên kết đến màn hình đăng ký (https://aptech-tester.web.app/register)
+
+### II. Thông tin đăng nhập thành công là:
+- Username: admin
+- Password: Tester@123
+
+### III. Thông tin về ràng buộc dữ liệu:
+
+- Username: Không được để trống và có độ dài trong khoảng 3-30 ký tự.
+  - Invalid messages:
+    - Username không được để trống.
+    - Độ dài Username phải nằm trong khoảng 3 đến 30 ký tự.
+- Password: Không được để trống và có độ dài trong khoảng 6-10 ký tự
+  - Invalid messages:
+    - Password không được để trống.
+    - Độ dài Password phải nằm trong khoảng 6 đến 10 ký tự.
+
+### IV. Khi login thành công / thất bại:
+- Nhập đúng username + password sẽ chuyển user vào màn hình chính.
+- Nhập sai username + password sẽ hiển thị thông báo lỗi "Tên đăng nhập hoặc Mật khẩu đã nhập sai".
+`;
 
 const Login = () => {
   const navigate = useNavigate();
@@ -75,6 +108,9 @@ const Login = () => {
           </Button>
         </Form.Item>
       </Form>
+
+      <Divider></Divider>
+      <ReactMarkdown children={markdown}></ReactMarkdown>
     </React.Fragment>
   );
 };

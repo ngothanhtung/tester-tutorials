@@ -1,11 +1,12 @@
-import React from 'react';
 import 'moment/locale/vi';
 import 'numeral/locales/vi';
-import ReactMarkdown from 'react-markdown';
-import { Form, Input, Button, DatePicker, Divider, Select, Result, Descriptions, Row, Col, message } from 'antd';
+
+import { Button, Divider, Form, Input, message } from 'antd';
+import axios from 'axios';
 import moment from 'moment';
 import numeral from 'numeral';
-import axios from 'axios';
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 try {
   // MOMENT
@@ -20,13 +21,20 @@ const markdown = `
 ## YÊU CẦU: 
 
 ## Nhập vào danh mục sản phẩm:
+### Nhập liệu:
+- Name: required, unique
+  - Invalida messages
+    - Name (required): Vui lòng nhập tên danh mục!
+    - Name (unique): Tên danh mục đã tồn tại!
+- Description: allow null
 
-### Đối chiếu với Database:
+
+### Đối chiếu với Database (Nếu đã học phần Database):
 
 - Name: required, unique
 - Description: allow null
 
-### Đối chiếu với API:
+### Đối chiếu với API (Nếu đã học phần API):
 
 - Name: required, unique
 - Description: allow null
@@ -40,7 +48,7 @@ const Categories = () => {
     console.log({ name, description });
 
     axios
-      .post('https://server.aptech.io/training/auth/login', {
+      .post('https://server.aptech.io/auth/login', {
         username: 'tungnt@softech.vn',
         password: '123456789',
       })
@@ -48,7 +56,7 @@ const Categories = () => {
         console.log(response.data.access_token);
         axios
           .post(
-            'https://server.aptech.io/training/categories',
+            'https://server.aptech.io/online-shop/categories',
             { name, description },
             {
               headers: {
