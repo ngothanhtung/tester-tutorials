@@ -51,12 +51,14 @@ Hãng yêu cầu viết một phần mềm nhỏ để tự động tính ra s�
 > Xem form (https://github.com/ngothanhtung/tester-tutorials/blob/main/04.Exercises/HTML/images/booking-form.png?raw=true)
 
 ### Yêu cầu 2: Kiểm tra các ràng buộc: Name, ID Card No, Date of Birth và Type of Class bắt buộc phải nhập dữ liệu.
+- Thông báo khi không nhập liệu có cấu trúc: Vui lòng nhập [Tên trường dữ liệu]! Đối với loại vé thì: Vui lòng chọn loại vé!
 
 ### Yêu cầu 3: Tự động xác định số tuổi của khách hàng theo quy tắc:
 
 - Nếu năm hiện tại > năm sinh thì Tuổi = Năm hiện tại – Năm sinh.
 - Nếu năm hiện tại = năm sinh thì Tuổi = 1
 - Tuổi > 0
+- Lưu ý: Kiểm tra phi chức năng khi nhập năm sinh lớn hơn năm hiện tại.
 
 ### Yêu cầu 4: Tự động xác định số tiền vé (Payment) của khách hàng theo giá vé được công bố trên.
 
