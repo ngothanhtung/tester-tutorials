@@ -4,12 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "^1.35.1",
-    "csv-parse": "^5.0.4"
+    "@playwright/test": "^1.44.1",
+    "csv-parse": "^5.5.6"
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "playwright": "^1.24.2"
+    "playwright": "^1.44.1"
   },
   "scripts": {
     "test": "npx playwright test",
