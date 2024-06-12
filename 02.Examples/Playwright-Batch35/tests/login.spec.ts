@@ -4,7 +4,9 @@ test.beforeEach(async ({ page }) => {
   await page.goto('https://aptech-tester.web.app/login');
 });
 
+// TEST SUITE
 test.describe('Login', () => {
+  // TEST CASE: LOGIN SUCCESSFULLY
   test('should login successfully', async ({ page }) => {
     // await page.getByPlaceholder('Nhập tên đăng nhập').fill('admin');
     await page.locator('#login-form_username').fill('admin');
