@@ -1,7 +1,6 @@
-const { test, expect } = require('@playwright/test');
+import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
-  // Go to https://aptech-tester.web.app/login
   await page.goto('https://aptech-tester.web.app/login');
 });
 
