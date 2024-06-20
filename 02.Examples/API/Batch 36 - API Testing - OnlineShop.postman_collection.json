@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "459236a5-17df-4744-898f-22cd813e9f04",
+		"name": "Batch 36 - API Testing - OnlineShop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1664278"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://server.aptech.io/online-shop/categories",
+							"protocol": "https",
+							"host": [
+								"server",
+								"aptech",
+								"io"
+							],
+							"path": [
+								"online-shop",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://server.aptech.io/online-shop/categories/12145",
+							"protocol": "https",
+							"host": [
+								"server",
+								"aptech",
+								"io"
+							],
+							"path": [
+								"online-shop",
+								"categories",
+								"12145"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Category 11233\",\n  \"description\": \"Category description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://server.aptech.io/online-shop/categories",
+							"protocol": "https",
+							"host": [
+								"server",
+								"aptech",
+								"io"
+							],
+							"path": [
+								"online-shop",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sản phẩm new 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://server.aptech.io/online-shop/categories/1",
+							"protocol": "https",
+							"host": [
+								"server",
+								"aptech",
+								"io"
+							],
+							"path": [
+								"online-shop",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://server.aptech.io/online-shop/categories/12145",
+							"protocol": "https",
+							"host": [
+								"server",
+								"aptech",
+								"io"
+							],
+							"path": [
+								"online-shop",
+								"categories",
+								"12145"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suppliers",
+			"item": [
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://server.aptech.io/online-shop/suppliers",
+							"protocol": "https",
+							"host": [
+								"server",
+								"aptech",
+								"io"
+							],
+							"path": [
+								"online-shop",
+								"suppliers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://server.aptech.io/online-shop/suppliers/1",
+							"protocol": "https",
+							"host": [
+								"server",
+								"aptech",
+								"io"
+							],
+							"path": [
+								"online-shop",
+								"suppliers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sony\",\n    \"email\": \"sony@gmail.com\",\n    \"phoneNumber\": \"090123456\",\n    \"address\": \"Tokyo, Japan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://server.aptech.io/online-shop/suppliers",
+							"protocol": "https",
+							"host": [
+								"server",
+								"aptech",
+								"io"
+							],
+							"path": [
+								"online-shop",
+								"suppliers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employees",
+			"item": []
+		},
+		{
+			"name": "Customers",
+			"item": []
+		},
+		{
+			"name": "Products",
+			"item": []
+		},
+		{
+			"name": "Orders",
+			"item": []
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"tungnt@softech.vn\",\n    \"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://server.aptech.io/auth/login",
+							"protocol": "https",
+							"host": [
+								"server",
+								"aptech",
+								"io"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInVzZXJuYW1lIjoidHVuZ250QHNvZnRlY2gudm4iLCJlbWFpbCI6InR1bmdudEBzb2Z0ZWNoLnZuIiwic3ViIjoxMCwiYXBwbGljYXRpb24iOiJPbmxpbmUgU2hvcCAtIEFQSSIsInJvbGVzIjpbeyJpZCI6MSwibmFtZSI6IkFkbWluaXN0cmF0b3JzIn1dLCJpYXQiOjE3MTg4ODM5MjksImV4cCI6MTc1MDQ0MTUyOX0.pGU5twfiyCAfZUzhT6XqZ7SAVHL4Mz021GCe2S1PFTI",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
