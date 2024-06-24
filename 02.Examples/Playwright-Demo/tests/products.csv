@@ -1,0 +1,4 @@
+name,price,discount,stock,category_id,supplier_id
+iPhone 11,1000,5,100,1,2
+iPhone 12,2000,10,75,1,2
+iPhone 13,2200,0,50,1,2
