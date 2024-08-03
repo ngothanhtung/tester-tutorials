@@ -2,7 +2,7 @@
   "id": "70648fae-0720-46cf-913b-d971a2436930",
   "version": "2.0",
   "name": "SELENIUM IDE",
-  "url": "https://ecommerce.aptech.io",
+  "url": "https://www.w3schools.com/",
   "tests": [{
     "id": "01944a3e-ccd1-4607-bf96-54c3256d4ca9",
     "name": "TC-BASIC",

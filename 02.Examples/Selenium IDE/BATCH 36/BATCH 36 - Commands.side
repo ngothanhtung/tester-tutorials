@@ -1,0 +1,107 @@
+{
+  "id": "2caa7853-07fb-4b98-bcc9-b2d2a2468617",
+  "version": "2.0",
+  "name": "BATCH 36 - Commands",
+  "url": "https://www.w3schools.com",
+  "tests": [{
+    "id": "2844258d-aa7a-4f6f-a055-0f57c4c1b8b2",
+    "name": "add selection",
+    "commands": [{
+      "id": "4b4e588e-6639-4d8a-86cd-2b5bdfc754b9",
+      "comment": "",
+      "command": "open",
+      "target": "/Session%2010%20-%20HTML%20Forms/form-all-elements.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "559460a5-16a3-425d-9b1a-5a433a09177f",
+      "comment": "",
+      "command": "addSelection",
+      "target": "//*[@id=\"m-cars\"]",
+      "targets": [],
+      "value": "Audi"
+    }, {
+      "id": "3efb917d-9779-4ccc-b631-3404ea197ccf",
+      "comment": "",
+      "command": "addSelection",
+      "target": "//*[@id=\"m-cars\"]",
+      "targets": [],
+      "value": "Fiat"
+    }, {
+      "id": "d9002c77-bd49-4bca-8662-52fcf2da8c6f",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "fe8f1b73-c566-42b8-911b-da36900ebe61",
+    "name": "check",
+    "commands": [{
+      "id": "0ec75e6f-5b5d-4e28-b1b1-338094f54bc9",
+      "comment": "",
+      "command": "open",
+      "target": "/Session%2010%20-%20HTML%20Forms/form-all-elements.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c8a73b0b-131d-457b-bfbf-6a50638d2453",
+      "comment": "",
+      "command": "check",
+      "target": "id=check-input",
+      "targets": [
+        ["id=check-input", "id"],
+        ["css=#check-input", "css:finder"],
+        ["xpath=//input[@id='check-input']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff643ce8-924a-4c79-bc05-2bfe6bf566e7",
+      "comment": "",
+      "command": "check",
+      "target": "id=gender-man",
+      "targets": [
+        ["id=gender-man", "id"],
+        ["css=#gender-man", "css:finder"],
+        ["xpath=//input[@id='gender-man']", "xpath:attributes"],
+        ["xpath=//input[14]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f798b69a-79ee-4a45-87e3-61f76f5fec62",
+    "name": "drag & drop",
+    "commands": [{
+      "id": "3aad9abd-b600-4699-a961-05be545290d5",
+      "comment": "",
+      "command": "open",
+      "target": "/html/tryit.asp?filename=tryhtml5_draganddrop",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a75524df-cd68-450c-95f6-6457671e678d",
+      "comment": "",
+      "command": "dragAndDropToObject",
+      "target": "id=drag1",
+      "targets": [
+        ["id=drag1", "id"],
+        ["css=#drag1", "css:finder"],
+        ["xpath=//img[@id='drag1']", "xpath:attributes"],
+        ["xpath=//body/img", "xpath:position"]
+      ],
+      "value": "id=div1"
+    }]
+  }],
+  "suites": [{
+    "id": "fb95688b-2099-4263-8cdf-d941acfb8e5f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["2844258d-aa7a-4f6f-a055-0f57c4c1b8b2"]
+  }],
+  "urls": ["http://127.0.0.1:5500/", "https://www.w3schools.com/"],
+  "plugins": []
+}
