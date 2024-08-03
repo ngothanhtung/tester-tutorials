@@ -1,247 +1,3172 @@
 {
 	"info": {
-		"_postman_id": "459236a5-17df-4744-898f-22cd813e9f04",
-		"name": "Batch 36 - API Testing - OnlineShop",
+		"_postman_id": "536b4c0e-d2c4-45d0-b552-e01a878b5160",
+		"name": "TRAINING (TESTER - BATCH 36)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1664278"
 	},
 	"item": [
 		{
-			"name": "Categories",
+			"name": "Nestjs - Tester",
 			"item": [
 				{
-					"name": "Get all",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://server.aptech.io/online-shop/categories",
-							"protocol": "https",
-							"host": [
-								"server",
-								"aptech",
-								"io"
-							],
-							"path": [
-								"online-shop",
-								"categories"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get by id",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://server.aptech.io/online-shop/categories/12145",
-							"protocol": "https",
-							"host": [
-								"server",
-								"aptech",
-								"io"
-							],
-							"path": [
-								"online-shop",
-								"categories",
-								"12145"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"name\": \"Category 11233\",\n  \"description\": \"Category description\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "Categories",
+					"item": [
+						{
+							"name": "Category Name",
+							"item": []
+						},
+						{
+							"name": "GET ALL",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"1. Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"2. Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"    pm.response.to.be.withBody;",
+											"    pm.response.to.be.json;",
+											"});",
+											"",
+											"",
+											"pm.test('4. Json must be an array', () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.be.an('array');",
+											"});",
+											"",
+											"",
+											"pm.test(\"5. Schema is valid\", () => {",
+											"    var schema = {",
+											"        type: \"array\",",
+											"        items: {",
+											"            type: \"object\",",
+											"            properties: {",
+											"                id: { type: \"number\" },",
+											"                name: { type: \"string\" },",
+											"                description: { type: [\"string\", \"null\"] }",
+											"",
+											"            },",
+											"            required: [\"id\", \"name\", \"description\"],",
+											"            additionalProperties: false,",
+											"        }",
+											"    };",
+											"",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.be.jsonSchema(schema);",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
 								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories"
+									]
+								},
+								"description": "This endpoint makes an HTTP GET request to retrieve the categories for an online shop.\n\n### Response\n\nThe response for this request is a JSON schema representing the categories available in the online shop."
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories"
+									]
+								},
+								"description": "This endpoint makes an HTTP GET request to retrieve the categories for an online shop.\n\n### Response\n\nThe response for this request is a JSON schema representing the categories available in the online shop."
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"1. Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"2. Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"    pm.response.to.be.withBody;",
+											"    pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"4. Json must be a object\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"5. Schema is valid\", () => {",
+											"    var schema = { ",
+											"        \"type\": \"object\",",
+											"        \"properties\": {",
+											"            \"id\": {",
+											"            \"type\": \"integer\"",
+											"            },",
+											"            \"name\": {",
+											"            \"type\": \"string\"",
+											"            },",
+											"            \"description\": {",
+											"            \"type\": \"string\"",
+											"            }",
+											"        },",
+											"        \"required\": [\"id\", \"name\", \"description\"],",
+											"        \"additionalProperties\": false",
+											"        };",
+											"",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.be.jsonSchema(schema)",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID - Invalid Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"1. Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"2. Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"4. Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"5. Schema is valid\", () => {",
+											"  var schema = {",
+											"        type: \"object\",",
+											"        properties: {",
+											"            statusCode: { \"type\": \"number\" },",
+											"            message: { \"type\": \"array\" },        ",
+											"            error: { \"type\": \"string\" },",
+											"        },",
+											"        required: [\"statusCode\", \"message\", \"error\"]",
+											"",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();  ",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema)     ",
+											"});",
+											"",
+											"",
+											"pm.test(\"6. Values is correct'\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.statusCode).to.eql(400);",
+											"    pm.expect(jsonData.message).to.contains(\"Validation failed (numeric string is expected)\");",
+											"    pm.expect(jsonData.error).to.eql('Invalid route params');",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID - Not found",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"1. Status code is 410\", function () {",
+											"    pm.response.to.have.status(410);",
+											"});",
+											"",
+											"pm.test(\"2. Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"4. Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"5. Schema is valid\", () => {",
+											"  var schema = {",
+											"    type: 'object',",
+											"    properties: {    ",
+											"       \"statusCode\": { \"type\": \"number\" },",
+											"        \"message\": { \"type\": \"array\" },        ",
+											"        \"error\":  { \"type\": \"string\" }  ",
+											"    },",
+											"    required: ['message'],",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema);",
+											"});",
+											"",
+											"pm.test(\"6. Values is valid\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.message).to.eql(['Category not found']);    ",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories/4",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('1. Status code is 201', function () {",
+											"  pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test('2. Response time is less than 200ms', function () {",
+											"  pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test('4. Json must be a object', () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an('object');",
+											"});",
+											"",
+											"pm.test('5. Schema is valid', () => {",
+											"  var schema = {",
+											"        \"type\": \"object\",",
+											"        \"properties\": {",
+											"            \"id\": { \"type\": \"number\" },",
+											"            \"name\": { \"type\": \"string\" },        ",
+											"            \"description\":  {\"type\": [\"string\", \"null\"]}",
+											"        },",
+											"        \"required\": [\"id\", \"name\", \"description\"]",
+											"",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema);",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomStreetName}}\",\n    \"description\": \"Category description\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST (duplicate key)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"1. Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"",
+											"pm.test('2. Response time is less than 200ms', function () {",
+											"  pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test('4. Json must be a object', () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an('object');",
+											"});",
+											"",
+											"pm.test(\"5. Schema is valid\", () => {",
+											"  var schema = {",
+											"        \"type\": \"object\",",
+											"        \"properties\": {",
+											"            \"statusCode\": { \"type\": \"number\" },",
+											"            \"message\": { \"type\": \"array\" },        ",
+											"            \"error\":  { \"type\": \"string\" }",
+											"        },",
+											"        \"required\": [\"statusCode\", \"message\", \"error\"]",
+											"",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();  ",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema)     ",
+											"});",
+											"",
+											"pm.test(\"6. Values is correct'\", function () {",
+											"  var jsonData = pm.response.json();",
+											"  pm.expect(jsonData.statusCode).to.eql(400);",
+											"  pm.expect(jsonData.message).to.contains('Name must be unique');",
+											"  pm.expect(jsonData.error).to.eql('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Cafe\",\n    \"description\": \"New Desc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST (Name is required)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"1. Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"",
+											"pm.test('2. Response time is less than 200ms', function () {",
+											"  pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test('4. Json must be a object', () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an('object');",
+											"});",
+											"",
+											"pm.test(\"5. Schema is valid\", () => {",
+											"  var schema = {",
+											"        \"type\": \"object\",",
+											"        \"properties\": {",
+											"            \"statusCode\": { \"type\": \"number\" },",
+											"            \"message\": { \"type\": \"array\" },        ",
+											"            \"error\":  { \"type\": \"string\" }",
+											"        },",
+											"        \"required\": [\"statusCode\", \"message\", \"error\"]",
+											"",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();  ",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema)     ",
+											"});",
+											"",
+											"pm.test(\"6. Values is correct'\", function () {",
+											"  var jsonData = pm.response.json();",
+											"  pm.expect(jsonData.statusCode).to.eql(400);",
+											"  pm.expect(jsonData.message).to.contains('Name is required');",
+											"  pm.expect(jsonData.error).to.eql('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{    \n    \"description\": \"New Desc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST (Name with length 1 -> 50)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"1. Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"",
+											"pm.test('2. Response time is less than 200ms', function () {",
+											"  pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test('4. Json must be a object', () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an('object');",
+											"});",
+											"",
+											"pm.test(\"5. Schema is valid\", () => {",
+											"  var schema = {",
+											"        \"type\": \"object\",",
+											"        \"properties\": {",
+											"            \"statusCode\": { \"type\": \"number\" },",
+											"            \"message\": { \"type\": \"array\" },        ",
+											"            \"error\":  { \"type\": \"string\" }",
+											"        },",
+											"        \"required\": [\"statusCode\", \"message\", \"error\"]",
+											"",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();  ",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema)     ",
+											"});",
+											"",
+											"pm.test(\"6. Values is correct'\", function () {",
+											"  var jsonData = pm.response.json();",
+											"  pm.expect(jsonData.statusCode).to.eql(400);",
+											"  pm.expect(jsonData.message).to.contains('Name must be greater than 1 and less than or equal 50 characters');",
+											"  pm.expect(jsonData.error).to.eql('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"\",\n    \"description\": \"New Desc\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"1. Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"2. Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"4. Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"5. Schema is valid\", () => {",
+											"  var schema = {",
+											"        \"type\": \"object\",",
+											"        \"properties\": {",
+											"            \"id\": { \"type\": \"number\" },",
+											"            \"name\": { \"type\": \"string\" },        ",
+											"            \"description\":  {\"type\": [\"string\", \"null\"]}",
+											"        },",
+											"        \"required\": [\"id\", \"name\", \"description\"]",
+											"",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();  ",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema)     ",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"HDD / SSD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH (Duplicated)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('1. Status code is 400', function () {",
+											"  pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test('2. Response time is less than 200ms', function () {",
+											"  pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test('4. Json must be a object', () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an('object');",
+											"});",
+											"",
+											"pm.test('5. Schema is valid', () => {",
+											"  var schema = {",
+											"    type: 'object',",
+											"    properties: {",
+											"      statusCode: { type: 'number' },",
+											"      message: { type: 'array', items: { type: 'string' } },",
+											"      error: { type: 'string' },",
+											"    },",
+											"    required: ['statusCode', 'message', 'error'],",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema);",
+											"});",
+											"",
+											"pm.test('6. Values is correct', function () {",
+											"  var json = pm.response.json();",
+											"  pm.expect(json.statusCode).to.eql(400);",
+											"  pm.expect(json.message).to.include('Name must be unique');",
+											"  pm.expect(json.error).to.eql('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"HDD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH (410 Gone)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('1. Status code is 410', function () {",
+											"  pm.response.to.have.status(410);",
+											"});",
+											"",
+											"pm.test('2. Response time is less than 200ms', function () {",
+											"  pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test('4. Json must be a object', () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an('object');",
+											"});",
+											"",
+											"pm.test('5. Schema is valid', () => {",
+											"  var schema = {",
+											"    type: 'object',",
+											"    properties: {",
+											"      statusCode: { type: 'number' },",
+											"      message: { type: 'array', items: { type: 'string' } },",
+											"      error: { type: 'string' },",
+											"    },",
+											"    required: ['message'],",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema);",
+											"});",
+											"",
+											"pm.test(\"6. Values is correct\", function () {",
+											"  var json = pm.response.json();",
+											"  pm.expect(json.statusCode).to.eql(410);",
+											"  pm.expect(json.message).to.include('Category not found');",
+											"  pm.expect(json.error).to.eql('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Sản phẩm 3883\",\r\n    \"description\": \"Mô tả ... 3883\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories/38831111",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories",
+										"38831111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH BY ID - Invalid Id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('1. Status code is 400', function () {",
+											"  pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test('2. Response time is less than 200ms', function () {",
+											"  pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test('4. Json must be a object', () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an('object');",
+											"});",
+											"",
+											"pm.test('5. Schema is valid', () => {",
+											"  var schema = {",
+											"    type: 'object',",
+											"    properties: {",
+											"      statusCode: { type: 'number' },",
+											"      message: { type: 'array', items: { type: 'string' } },",
+											"      error: { type: 'string' },",
+											"    },",
+											"    required: ['statusCode', 'message', 'error'],",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema);",
+											"});",
+											"",
+											"pm.test('6. Values is correct', function () {",
+											"  var json = pm.response.json();",
+											"  pm.expect(json.statusCode).to.equal(400);",
+											"  pm.expect(json.message).to.include('Validation failed (numeric string is expected)');",
+											"  pm.expect(json.error).to.equal('Invalid route params');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Sản phẩm 3883\",\r\n    \"description\": \"Mô tả ... 3883\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"1. Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"2. Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"4. Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"5. Schema is valid\", () => {",
+											"  var schema = {",
+											"        \"type\": \"object\",",
+											"        \"properties\": {            ",
+											"            \"message\": { \"type\": \"string\" },                    ",
+											"        },",
+											"        \"required\": [\"message\"]",
+											"",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();  ",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema)     ",
+											"});",
+											"",
+											" ",
+											"pm.test(\"6. Message is 'Category deleted'\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    pm.expect(jsonData.message).to.eql('Category deleted');",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories/1sdsd",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories",
+										"1sdsd"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE (Foreign Key)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"1. Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"2. Response time is less than 200ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"4. Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"5. Schema is valid\", () => {",
+											"  var schema = {",
+											"        \"type\": \"object\",",
+											"        \"properties\": {            ",
+											"            \"statusCode\": { \"type\": \"number\" },                    ",
+											"            \"message\": { \"type\": \"array\", \"items\": { \"type\": \"string\" }  },          ",
+											"            \"error\": { \"type\": \"string\" },                       ",
+											"        },",
+											"        \"required\": [\"statusCode\", \"message\", \"error\"]",
+											"",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();  ",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema)     ",
+											"});",
+											"",
+											"",
+											"pm.test(\"6. Values is correct'\", function () {",
+											"  var jsonData = pm.response.json();",
+											"  pm.expect(jsonData.statusCode).to.eql(400);",
+											"  pm.expect(jsonData.message).to.eql(['Cannot delete category with products']);",
+											"  pm.expect(jsonData.error).to.eql('Bad Request');",
+											"});",
+											" "
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE (410 Gone)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('1. Status code is 410', function () {",
+											"  pm.response.to.have.status(410);",
+											"});",
+											"",
+											"pm.test('2. Response time is less than 200ms', function () {",
+											"  pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											"pm.test('3. Response must be valid and have a body', function () {",
+											"  pm.response.to.be.withBody;",
+											"  pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test('4. Json must be a object', () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an('object');",
+											"});",
+											"",
+											"pm.test('5. Schema is valid', () => {",
+											"  var schema = {",
+											"    type: 'object',",
+											"    properties: {",
+											"      statusCode: { type: 'number' },",
+											"      message: { type: 'array', items: { type: 'string' } },",
+											"      error: { type: 'string' },",
+											"    },",
+											"    required: ['statusCode', 'message', 'error'],",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema);",
+											"});",
+											"",
+											"pm.test('6. Values is correct', function () {",
+											"  var jsonData = pm.response.json();",
+											"  pm.expect(jsonData.statusCode).to.eql(410);",
+											"  pm.expect(jsonData.message).to.include('Category not found');",
+											"  pm.expect(jsonData.error).to.eql('Bad Request');",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/categories/12117",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"categories",
+										"12117"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
 							}
 						},
-						"url": {
-							"raw": "https://server.aptech.io/online-shop/categories",
-							"protocol": "https",
-							"host": [
-								"server",
-								"aptech",
-								"io"
-							],
-							"path": [
-								"online-shop",
-								"categories"
-							]
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Update",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Sản phẩm new 1\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+					"name": "Suppliers",
+					"item": [
+						{
+							"name": "GET",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {     ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be an array\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"array\");",
+											"});",
+											"",
+											"pm.test(\"Assert that every object contains keys or properties\", () => {",
+											"",
+											"    var schema = {",
+											"        \"type\": \"array\",",
+											"        \"items\": {",
+											"            \"type\": \"object\",",
+											"            \"properties\": {",
+											"                \"id\": { \"type\": \"number\" },",
+											"                \"name\": { \"type\": \"string\" },        ",
+											"                \"phoneNumber\": { \"type\": \"string\" },        ",
+											"                \"email\": { \"type\": \"string\" },        ",
+											"                \"address\":  { \"oneOf:\":[{\"type\": \"string\"}, {\"type\": \"null\"}] }",
+											"            },",
+											"            \"required\": [\"id\", \"name\", \"phoneNumber\", \"email\"]",
+											"        }",
+											"    };",
+											"",
+											"    const responseJson = pm.response.json();  ",
+											"    pm.expect(responseJson).to.be.jsonSchema(schema)     ",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
 								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/suppliers",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"suppliers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{$randomCompanyName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"phoneNumber\": \"{{$randomPhoneNumber}}\",\r\n    \"address\": \"{{$randomStreetName}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/suppliers",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"suppliers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/training/suppliers/5",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"training",
+										"suppliers",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"abc@example.com\",\r\n    \"phoneNumber\": \"090X.XYZ.111\"\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/suppliers/16",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"suppliers",
+										"16"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/suppliers/1",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"suppliers",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
 							}
 						},
-						"url": {
-							"raw": "https://server.aptech.io/online-shop/categories/1",
-							"protocol": "https",
-							"host": [
-								"server",
-								"aptech",
-								"io"
-							],
-							"path": [
-								"online-shop",
-								"categories",
-								"1"
-							]
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
 						}
-					},
-					"response": []
+					]
 				},
 				{
-					"name": "Delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "https://server.aptech.io/online-shop/categories/12145",
-							"protocol": "https",
-							"host": [
-								"server",
-								"aptech",
-								"io"
+					"name": "Auth",
+					"item": [
+						{
+							"name": "roles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
 							],
-							"path": [
-								"online-shop",
-								"categories",
-								"12145"
-							]
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Unknown\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/roles",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "auth/login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"tungnt@softech.vn\",\r\n    \"password\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "auth/refresh-token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTcxMzk1OTA0NCwiZXhwIjoxNzE0NTYzODQ0fQ.HynAGmwY5Do8vxsAZrpbPZxVO8_chbuylK_0ay9q16c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/refresh-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"refresh-token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "auth/login-failed",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});",
+											"",
+											"pm.test(\"Response time is less than 100ms\", function () {",
+											"    pm.expect(pm.response.responseTime).to.be.below(100);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"tungnt@softech.vn\",\r\n    \"password\": \"1234567891\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://server.aptech.io/training/auth/login",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"training",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "auth/profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3003/auth/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3003",
+									"path": [
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3003/auth/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3003",
+									"path": [
+										"auth",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Roles",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3003/auth/roles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3003",
+									"path": [
+										"auth",
+										"roles"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "GET",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"",
+											"pm.test(\"Response status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Price is a non-negative number\", function () {",
+											"    const responseData = pm.response.json();",
+											"",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.price).to.be.a('number');",
+											"    pm.expect(responseData.price).to.be.at.least(0, \"Price should be a non-negative number\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Stock is a non-negative integer\", function () {",
+											"    const responseData = pm.response.json();",
+											"",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.stock).to.be.a('number');",
+											"    pm.expect(responseData.stock).to.be.gte(0);",
+											"});",
+											"",
+											"",
+											"pm.test(\"Verify category object in the response\", function () {",
+											"    const responseData = pm.response.json();",
+											"",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.category).to.exist.and.to.be.an('object');",
+											"    pm.expect(responseData.category).to.have.all.keys('id', 'name', 'description');",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/products/8",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"products",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {              ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"Assert that object contains keys or properties\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.have.all.keys('id', 'name', 'description');         ",
+											"});",
+											"",
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Name\",\n    \"price\": 19,\n    \"discount\": 0,\n    \"stock\": 10,\n    \"description\": \"New Desc\",\n    \"categoryId\": 1,\n    \"supplierId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/products/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST - Price (-1)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {              ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"Assert that object contains keys or properties\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.have.all.keys('id', 'name', 'description');         ",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"1\",\n    \"price\": -1,\n    \"discount\": 70,\n    \"stock\": 100,    \n    \"description\": \"New Desc\",\n    \"categoryId\": 1,\n    \"supplierId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/products/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST - Discount (91)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {              ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"Assert that object contains keys or properties\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.have.all.keys('id', 'name', 'description');         ",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"1\",\n    \"price\": 1,\n    \"discount\": 91,\n    \"stock\": 100,    \n    \"description\": \"New Desc\",\n    \"categoryId\": 1,\n    \"supplierId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/products/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE PRODUCT WITH Price > 0",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {              ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"Assert that object contains keys or properties\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.have.all.keys('id', 'name', 'description');         ",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"categoryId\": 1,\n    \"supplierId\": 2585,\n    \"name\": \"sdsds\",\n    \"price\": 55,\n    \"discount\": 5,\n    \"stock\": 5545,\n    \"description\": \"rerer\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/products/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {              ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Assert that object contains keys or properties\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.have.all.keys('id', 'name', 'description');         ",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Sản phẩm 1055\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/products/1055",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"products",
+										"1055"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/products/1",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "GET",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {     ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be an array\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"array\");",
+											"});",
+											"",
+											"pm.test(\"Assert that every object contains keys or properties\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    responseJson.forEach(item => {        ",
+											"        pm.expect(item).to.have.all.keys('id', 'name', 'description');",
+											"    });        ",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/orders",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {     ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"5. Schema is valid\", () => {",
+											"  var schema = {",
+											"\"type\": \"object\",",
+											"  \"properties\": {",
+											"    \"id\": {\"type\": \"integer\"},",
+											"    \"createdDate\": {\"type\": \"string\", \"format\": \"date-time\"},",
+											"    \"shippedDate\": {\"type\": \"string\", \"format\": \"date-time\"},",
+											"    \"status\": {\"type\": \"string\", \"enum\": [\"COMPLETED\", \"WAITING\", \"CANCELLED\"]},",
+											"    \"description\": {\"type\": [\"string\", \"null\" ]},",
+											"    \"shippingAddress\": {\"type\": \"string\"},",
+											"    \"shippingCity\": {\"type\": \"string\"},",
+											"    \"paymentType\": {\"type\": \"string\", \"enum\": [\"CASH\", \"CREDIT_CARD\"]},",
+											"    \"customerId\": {\"type\": \"integer\"},",
+											"    \"employeeId\": {\"type\": \"integer\"},",
+											"    \"customer\": {",
+											"      \"type\": \"object\",",
+											"      \"properties\": {",
+											"        \"id\": {\"type\": \"integer\"},",
+											"        \"firstName\": {\"type\": \"string\"},",
+											"        \"lastName\": {\"type\": \"string\"},",
+											"        \"phoneNumber\": {\"type\": \"string\"},",
+											"        \"address\": {\"type\": \"string\"},",
+											"        \"birthday\": {\"type\": \"string\", \"format\": \"date\"},",
+											"        \"email\": {\"type\": \"string\", \"format\": \"email\"}",
+											"      },",
+											"      \"required\": [\"id\", \"firstName\", \"lastName\", \"phoneNumber\"]",
+											"    },",
+											"    \"employee\": {",
+											"      \"type\": \"object\",",
+											"      \"properties\": {",
+											"        \"id\": {\"type\": \"integer\"},",
+											"        \"firstName\": {\"type\": \"string\"},",
+											"        \"lastName\": {\"type\": \"string\"},",
+											"        \"phoneNumber\": {\"type\": \"string\"},",
+											"        \"address\": {\"type\": \"string\"},",
+											"        \"birthday\": {\"type\": \"string\", \"format\": \"date\"},",
+											"        \"email\": {\"type\": \"string\", \"format\": \"email\"}",
+											"      },",
+											"      \"required\": [\"id\", \"firstName\", \"lastName\", \"phoneNumber\"]",
+											"    },",
+											"    \"orderDetails\": {",
+											"      \"type\": \"array\",",
+											"      \"items\": {",
+											"        \"type\": \"object\",",
+											"        \"properties\": {",
+											"          \"quantity\": {\"type\": \"integer\", \"minimum\": 0},",
+											"          \"price\": {\"type\": \"number\", \"minimum\": 0},",
+											"          \"discount\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 100},",
+											"          \"product\": {",
+											"            \"type\": \"object\",",
+											"            \"properties\": {",
+											"              \"id\": {\"type\": \"integer\"},",
+											"              \"name\": {\"type\": \"string\"},",
+											"              \"price\": {\"type\": \"number\", \"minimum\": 0},",
+											"              \"discount\": {\"type\": \"number\", \"minimum\": 0, \"maximum\": 100},",
+											"              \"stock\": {\"type\": \"integer\", \"minimum\": 0},",
+											"              \"description\": {\"type\": \"string\"},",
+											"              \"categoryId\": {\"type\": \"integer\"},",
+											"              \"supplierId\": {\"type\": \"integer\"},",
+											"              \"category\": {",
+											"                \"type\": \"object\",",
+											"                \"properties\": {",
+											"                  \"id\": {\"type\": \"integer\"},",
+											"                  \"name\": {\"type\": \"string\"},",
+											"                  \"description\": {\"type\": \"string\"}",
+											"                },",
+											"                \"required\": [\"id\", \"name\"]",
+											"              }",
+											"            },",
+											"            \"required\": [\"id\", \"name\", \"price\", \"stock\", \"categoryId\", \"supplierId\"]",
+											"          }",
+											"        },",
+											"        \"required\": [\"quantity\", \"price\", \"product\"]",
+											"      }",
+											"    }",
+											"  },",
+											"  \"required\": [\"id\", \"createdDate\", \"shippedDate\", \"status\"]",
+											"  };",
+											"",
+											"  const responseJson = pm.response.json();  ",
+											"  pm.expect(responseJson).to.be.jsonSchema(schema)     ",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/orders/2398",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"orders",
+										"2398"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {              ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"Assert that object contains keys or properties\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.have.all.keys('id', 'name', 'description');         ",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": 1,\n    \"employeeId\": 1,\n    \"createdDate\": \"2023-05-21\",\n    \"status\": \"WAITING\",\n    \"paymentType\": \"CASH\",\n    \"orderDetails\": [\n        {\n            \"quantity\": 1,\n            \"price\": 1,\n            \"discount\": 0,\n            \"productId\": 1\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {",
+											"    pm.response.to.have.status(201);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {              ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"Assert that object contains keys or properties\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.have.all.keys('id', 'name', 'description');         ",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\": 1,\n    \"employeeId\": 1,\n    \"description\": \"123\",\n    \"orderDetails\": []\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/online-shop/orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"online-shop",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST (duplicate key)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {     ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"pm.test(\"Assert that object contains keys or properties\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.have.all.keys('error', 'errorMessage');         ",
+											"});",
+											"",
+											"pm.test(\"Assert that errorMessage contains 'Cannot insert duplicate key'\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson.errorMessage).to.include('Cannot insert duplicate key');         ",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New Product 1\",\n    \"description\": \"New Desc 1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://server.aptech.io/training/categories",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"training",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {              ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be a object\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"object\");",
+											"});",
+											"",
+											"",
+											"pm.test(\"Assert that object contains keys or properties\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    pm.expect(responseJson).to.have.all.keys('id', 'name', 'description');         ",
+											"});",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Mô tả ... 2398\",\r\n    \"customerId\": 2,\r\n    \"employeeId\": 2,\r\n    \"orderDetails\": [\r\n        {\r\n            \"discount\": 5,\r\n            \"orderId\": 2397,\r\n            \"price\": 5314.683,\r\n            \"productId\": 7,\r\n            \"quantity\": 22\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/orders/2398",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"orders",
+										"2398"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH (410 Gone)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 410\", function () {",
+											"    pm.response.to.have.status(410);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Sản phẩm 3883\",\r\n    \"description\": \"Mô tả ... 3883\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://server.aptech.io/training/categories/38831111",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"training",
+										"categories",
+										"38831111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/training/categories/3882",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"training",
+										"categories",
+										"3882"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE (410 Gone)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 410\", function () {",
+											"    pm.response.to.have.status(410);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/training/categories/3883233",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"training",
+										"categories",
+										"3883233"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Employees",
+					"item": [
+						{
+							"name": "GET",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Response must be valid and have a body\", function () {     ",
+											"     pm.response.to.be.withBody;",
+											"     pm.response.to.be.json;",
+											"});",
+											"",
+											"pm.test(\"Json must be an array\", () => {",
+											"  const responseJson = pm.response.json();",
+											"  pm.expect(responseJson).to.be.an(\"array\");",
+											"});",
+											"",
+											"pm.test(\"Assert that every object contains keys or properties\", () => {",
+											"    const responseJson = pm.response.json();",
+											"    responseJson.forEach(item => {        ",
+											"        pm.expect(item).to.have.all.keys('id', 'name', 'phoneNumber', 'address', 'email');",
+											"    });        ",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/employees",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"employees"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"1234333\",\r\n    \"firstName\": \"Yip1\",\r\n    \"lastName\": \"Yip\",\r\n    \"phoneNumber\": \"123456\",\r\n    \"address\": \"TX\",\r\n    \"birthday\": \"1980-04-10\",\r\n    \"email\": \"ap01111@gmail.com\",\r\n    \"password\": \"147258369\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://server.aptech.io/training/employees",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"training",
+										"employees"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/training/suppliers/1033",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"training",
+										"suppliers",
+										"1033"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Sản phẩm 1031\"\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://server.aptech.io/training/suppliers/1031",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"training",
+										"suppliers",
+										"1031"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/training/suppliers/1",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"training",
+										"suppliers",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Customers",
+					"item": [
+						{
+							"name": "GET",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test('Status code is 200', function () {",
+											"  pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test('Response time is less than 200ms', function () {",
+											"  pm.expect(pm.response.responseTime).to.be.below(200);",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/customers",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{    \r\n    \"firstName\": \"Alex\",\r\n    \"lastName\": \"Smith\",\r\n    \"phoneNumber\": \"233456\",\r\n    \"address\": \"14 Doãn Uẩn\",\r\n    \"birthday\": \"1999-09-22T17:00:00.000Z\",\r\n    \"email\": \"abcd111111@gmail.com\",\r\n    \"password\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/customers",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/customers/321",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"customers",
+										"321"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Sản phẩm 1031\"\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://server.aptech.io/online-shop/customers/1",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"online-shop",
+										"customers",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://server.aptech.io/training/suppliers/1",
+									"protocol": "https",
+									"host": [
+										"server",
+										"aptech",
+										"io"
+									],
+									"path": [
+										"training",
+										"suppliers",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get users (Basic Auth)",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "tungnt",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://training.softech.cloud/api/training/users/auth/basic",
+									"protocol": "https",
+									"host": [
+										"training",
+										"softech",
+										"cloud"
+									],
+									"path": [
+										"api",
+										"training",
+										"users",
+										"auth",
+										"basic"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get users(API-KEY Auth)",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "x-api-key",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "aptech-tester-pro",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://training.softech.cloud/api/training/users/auth/api-key",
+									"protocol": "https",
+									"host": [
+										"training",
+										"softech",
+										"cloud"
+									],
+									"path": [
+										"api",
+										"training",
+										"users",
+										"auth",
+										"api-key"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{access_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							"pm.collectionVariables.set(\"baseUrl\", \"https://server.aptech.io\");      ",
+							"",
+							"var options = {",
+							"  method: 'POST',",
+							"  url: 'https://server.aptech.io/auth/login',",
+							"  header: 'Content-Type:application/json',",
+							"  body: {",
+							"    mode: 'application/json',",
+							"    raw: {",
+							"        \"username\": \"tungnt@softech.vn\",",
+							"        \"password\": \"123456789\"",
+							"    }",
+							"  }",
+							"};",
+							"",
+							"pm.sendRequest(options, function (err, response) {",
+							"    if (err === null) {",
+							"        var json = response.json();        ",
+							"        pm.collectionVariables.set(\"access_token\", json.access_token);        ",
+							"    }",
+							"});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		},
 		{
-			"name": "Suppliers",
+			"name": "Flows",
 			"item": [
 				{
-					"name": "Get all",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://server.aptech.io/online-shop/suppliers",
-							"protocol": "https",
-							"host": [
-								"server",
-								"aptech",
-								"io"
-							],
-							"path": [
-								"online-shop",
-								"suppliers"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get by id",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://server.aptech.io/online-shop/suppliers/1",
-							"protocol": "https",
-							"host": [
-								"server",
-								"aptech",
-								"io"
-							],
-							"path": [
-								"online-shop",
-								"suppliers",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"Sony\",\n    \"email\": \"sony@gmail.com\",\n    \"phoneNumber\": \"090123456\",\n    \"address\": \"Tokyo, Japan\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
+					"name": "auth/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
 							}
-						},
-						"url": {
-							"raw": "https://server.aptech.io/online-shop/suppliers",
-							"protocol": "https",
-							"host": [
-								"server",
-								"aptech",
-								"io"
-							],
-							"path": [
-								"online-shop",
-								"suppliers"
-							]
 						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Employees",
-			"item": []
-		},
-		{
-			"name": "Customers",
-			"item": []
-		},
-		{
-			"name": "Products",
-			"item": []
-		},
-		{
-			"name": "Orders",
-			"item": []
-		},
-		{
-			"name": "Auth",
-			"item": [
-				{
-					"name": "Login",
+					],
 					"request": {
+						"auth": {
+							"type": "noauth"
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"tungnt@softech.vn\",\n    \"password\": \"123456789\"\n}",
+							"raw": "{\r\n    \"username\": \"{{username}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -263,26 +3188,67 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://server.aptech.io/online-shop/products/1",
+							"protocol": "https",
+							"host": [
+								"server",
+								"aptech",
+								"io"
+							],
+							"path": [
+								"online-shop",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				}
 			]
 		}
 	],
-	"auth": {
-		"type": "bearer",
-		"bearer": [
-			{
-				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsInVzZXJuYW1lIjoidHVuZ250QHNvZnRlY2gudm4iLCJlbWFpbCI6InR1bmdudEBzb2Z0ZWNoLnZuIiwic3ViIjoxMCwiYXBwbGljYXRpb24iOiJPbmxpbmUgU2hvcCAtIEFQSSIsInJvbGVzIjpbeyJpZCI6MSwibmFtZSI6IkFkbWluaXN0cmF0b3JzIn1dLCJpYXQiOjE3MTg4ODM5MjksImV4cCI6MTc1MDQ0MTUyOX0.pGU5twfiyCAfZUzhT6XqZ7SAVHL4Mz021GCe2S1PFTI",
-				"type": "string"
-			}
-		]
-	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
 				"type": "text/javascript",
-				"packages": {},
 				"exec": [
 					""
 				]
@@ -297,6 +3263,21 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "access_token",
+			"value": ""
+		},
+		{
+			"key": "baseUrl",
+			"value": ""
+		},
+		{
+			"key": "url",
+			"value": "",
+			"type": "string"
 		}
 	]
 }

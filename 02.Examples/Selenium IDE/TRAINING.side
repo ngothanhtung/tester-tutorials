@@ -1,123 +1,1621 @@
 {
-  "id": "b1dbb889-8209-4813-a9ec-a25dd10ddc80",
+  "id": "e2eb01e6-83bf-42a8-b7c9-0fd629792012",
   "version": "2.0",
   "name": "TRAINING",
-  "url": "https://os-admin.aptech.io",
+  "url": "https://aptech-tester.web.app/",
   "tests": [{
-    "id": "8a788647-19e3-49d8-8731-6f61748b17fc",
-    "name": "TEST 1",
+    "id": "18d2c04f-830b-4b98-979d-a9dfad5c241d",
+    "name": "Times Command",
     "commands": [{
-      "id": "9d198618-9faf-4f68-a659-342afe12c4ea",
+      "id": "598214a6-8207-4dee-ba59-58c4e87eb465",
+      "comment": "",
+      "command": "store",
+      "target": "10",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "14c68905-ec3f-4862-8b63-a507ae9f7b9f",
+      "comment": "",
+      "command": "times",
+      "target": "${count}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "855f19ca-ab29-4250-8870-1acba184e0cc",
+      "comment": "",
+      "command": "echo",
+      "target": "Hello",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6d23102c-5f3e-4ac5-9ff2-3dea760b9c63",
+      "comment": "",
+      "command": "echo",
+      "target": "World",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b1966cb-5f43-4bf9-a333-2ae498779b80",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "db249328-4dac-431e-894a-e94d19faca6d",
+    "name": "Do Repeat if",
+    "commands": [{
+      "id": "78e62cd1-888a-4efa-aafd-3f068d68ff6d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 1",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "dfa898db-ec77-4c83-9cd1-30cb52c04091",
+      "comment": "",
+      "command": "do",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94a75082-3fc8-44f9-81f5-b437cf519a5d",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${count} + 1",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "d4060917-c184-484b-8c72-f01003adcf4f",
+      "comment": "",
+      "command": "echo",
+      "target": "${count}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "82868a52-2627-4a56-9941-cdb5daae5803",
+      "comment": "",
+      "command": "echo",
+      "target": "Hello",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "479f0fae-be00-445f-818e-168a06977235",
+      "comment": "",
+      "command": "repeatIf",
+      "target": "${count} < 5",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e8f2c602-ff46-48a3-ba26-a7ab07f4b196",
+    "name": "FETCH",
+    "commands": [{
+      "id": "74449204-35d7-47d8-a6a8-a56b474cf514",
+      "comment": "",
+      "command": "executeAsyncScript",
+      "target": "return (async function () {   const response = await fetch('https://jsonplaceholder.typicode.com/photos');   const json = await response.json();   return json; })();",
+      "targets": [],
+      "value": "json"
+    }, {
+      "id": "ae3a6d61-2c9d-4ab3-b89a-d27985af34d0",
+      "comment": "",
+      "command": "forEach",
+      "target": "json",
+      "targets": [],
+      "value": "photo"
+    }, {
+      "id": "1991c824-8b02-4157-a2cd-2d689a1e5bbf",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${photo}.title",
+      "targets": [],
+      "value": "title"
+    }, {
+      "id": "e6151cfa-a139-4836-9381-9c2f6bef0376",
+      "comment": "",
+      "command": "echo",
+      "target": "${title}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6d009e84-2ce7-42c2-962a-5b9113da0aa1",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "48c37380-ff53-47b5-b9de-a496b1191e55",
+    "name": "IF ELSE",
+    "commands": [{
+      "id": "1bee8d94-2e84-4e95-b8f6-36e73ec10d09",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 7",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "83d06983-0b46-46ba-a4e3-4926bd62ee5a",
+      "comment": "",
+      "command": "echo",
+      "target": "${count}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9696018-f897-41ef-89c9-e2a28e9b313a",
+      "comment": "",
+      "command": "if",
+      "target": "${count} > 9",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6958ca74-be28-4216-8268-5ea7e30a5263",
+      "comment": "",
+      "command": "echo",
+      "target": "Số lớn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "33b987ce-0bb2-441e-8a7e-ddc44b5b9db9",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fff0a7ef-2bcc-42bb-bc74-73da4f41fd02",
+      "comment": "",
+      "command": "echo",
+      "target": "Số bé",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef80f2e5-56f4-4c52-82a3-c5ee366169b1",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "c108c89f-be03-4c9a-92c3-ea2ea4b269e3",
+    "name": "Times Command - 2",
+    "commands": [{
+      "id": "6c3e0ff6-bf73-4e19-a908-691397215ced",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return 10",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "98c0f9f8-933f-4286-ba6d-880c126b5b2d",
+      "comment": "",
+      "command": "times",
+      "target": "${count}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e433e533-2a45-4934-ae8b-bf92801dcb1c",
+      "comment": "",
+      "command": "echo",
+      "target": "Hello",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "63142d9e-aa08-4c16-853b-19901d7c25b4",
+      "comment": "",
+      "command": "echo",
+      "target": "World",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9c02597c-bf11-4e08-9cd1-7e354bd480da",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "7ea6c96f-f780-439a-92b0-d35e9c3e9303",
+    "name": "For Each",
+    "commands": [{
+      "id": "3f7f6f94-5166-4027-a287-dd82124a5a98",
+      "comment": "",
+      "command": "open",
+      "target": "login?returnUrl=/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "745b09b8-c011-4599-b412-de26c738bc1b",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return [      { username: 'tungnt@softech.vn', password: '123456789' },      { username: 'tuanna@softech.vn', password: '987654321' },   { username: 'tuyetta@softech.vn', password: '987654321' },   { username: 'thutt@softech.vn', password: '987654321' }   ];",
+      "targets": [],
+      "value": "items"
+    }, {
+      "id": "30a610b1-5c04-440e-b169-e4c127a2d15b",
+      "comment": "",
+      "command": "forEach",
+      "target": "items",
+      "targets": [],
+      "value": "item"
+    }, {
+      "id": "59204a64-abfa-4e92-a2cf-88bb0bae93d9",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${item}.username",
+      "targets": [],
+      "value": "username"
+    }, {
+      "id": "ebdbfa9a-547e-41d3-8256-3f9c8de22a7b",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${item}.password",
+      "targets": [],
+      "value": "password"
+    }, {
+      "id": "61ade04e-e344-408f-8d00-cd8be8ce5635",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-form_username",
+      "targets": [
+        ["id=login-form_username", "id"],
+        ["css=#login-form_username", "css:finder"],
+        ["xpath=//input[@id='login-form_username']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${username}"
+    }, {
+      "id": "5b9ec195-87b3-4f4b-a39c-c5e62bea8f82",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-form_password",
+      "targets": [
+        ["id=login-form_password", "id"],
+        ["css=#login-form_password", "css:finder"],
+        ["xpath=//input[@id='login-form_password']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div[2]/div[2]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "${password}"
+    }, {
+      "id": "56654069-d4ce-4ef1-9bd1-4fd2f79c95a5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn",
+      "targets": [
+        ["css=.ant-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div[4]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "04a076f6-fc7b-4f5e-b453-6d7cfbc4f1e9",
+      "comment": "",
+      "command": "echo",
+      "target": "${username}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9df63233-e24d-48cd-86be-76b80174908f",
+      "comment": "",
+      "command": "echo",
+      "target": "${password}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8be55a25-f8ed-4ddb-a95b-1ea76c64121e",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "4d00ba3f-d7e4-476c-b886-90e662ceee5a",
+    "name": "TC-LOGIN-OK",
+    "commands": [{
+      "id": "acdf38da-cec7-4f0d-a4f1-cf345ae9bd0c",
       "comment": "",
       "command": "open",
       "target": "/login",
       "targets": [],
       "value": ""
     }, {
-      "id": "4c1266d6-7589-49fd-8a70-26738ea1618d",
+      "id": "de2ba5f6-9015-4c81-a801-5f19c0ba4fe1",
       "comment": "",
       "command": "type",
-      "target": "name=email",
+      "target": "id=login-form_username",
       "targets": [
-        ["name=email", "name"],
-        ["css=.mb-3:nth-child(1) > .form-control", "css:finder"],
-        ["xpath=//input[@name='email']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input", "xpath:idRelative"],
+        ["id=login-form_username", "id"],
+        ["css=#login-form_username", "css:finder"],
+        ["xpath=//input[@id='login-form_username']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div[2]/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "tungnt@softech.vn"
+      "value": "admin"
     }, {
-      "id": "b6fa979d-990b-49c5-bda3-2d7c99bbc82a",
+      "id": "df93cb19-a69b-4414-a85d-63105f580163",
       "comment": "",
       "command": "type",
-      "target": "name=password",
+      "target": "id=login-form_password",
       "targets": [
-        ["name=password", "name"],
-        ["css=.mb-3:nth-child(2) > .form-control", "css:finder"],
-        ["xpath=//input[@name='password']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input", "xpath:idRelative"],
-        ["xpath=//div[2]/input", "xpath:position"]
+        ["id=login-form_password", "id"],
+        ["css=#login-form_password", "css:finder"],
+        ["xpath=//input[@id='login-form_password']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div[2]/div[2]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
       ],
-      "value": "123456789"
+      "value": "Tester2022"
     }, {
-      "id": "46bed53e-6c40-4fbb-80ea-1a53d4e4c7c7",
+      "id": "f7af1e21-3353-463e-80b9-c693c0386e5a",
       "comment": "",
       "command": "click",
-      "target": "css=.btn",
+      "target": "css=.ant-btn",
       "targets": [
-        ["css=.btn", "css:finder"],
+        ["css=.ant-btn", "css:finder"],
         ["xpath=//button[@type='submit']", "xpath:attributes"],
-        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//form[@id='login-form']/div[4]/div/div/div/button", "xpath:idRelative"],
         ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Log In')]", "xpath:innerText"]
+        ["xpath=//button[contains(.,'Sign In')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "50aec161-eda2-443b-8d3d-f4bb4c2df63e",
-      "comment": "",
-      "command": "open",
-      "target": "/online-shop/data-management/categories",
-      "targets": [],
-      "value": "30000"
-    }, {
-      "id": "be51905e-67c2-4d5a-beca-2da7d48ebd68",
-      "comment": "",
-      "command": "type",
-      "target": "css=#create-form_name",
-      "targets": [
-        ["css=.ant-input-affix-wrapper", "css:finder"],
-        ["xpath=//form[@id='create-form']/div/div/div[2]/div/div/span", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/span", "xpath:position"]
-      ],
-      "value": "CPU1111"
-    }, {
-      "id": "ded5f0fc-9459-45c8-9fed-9209ce58404b",
-      "comment": "",
-      "command": "type",
-      "target": "id=create-form_description",
-      "targets": [
-        ["id=create-form_description", "id"],
-        ["css=#create-form_description", "css:finder"],
-        ["xpath=//input[@id='create-form_description']", "xpath:attributes"],
-        ["xpath=//form[@id='create-form']/div[2]/div/div[2]/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/input", "xpath:position"]
-      ],
-      "value": "Desc ..."
-    }, {
-      "id": "d0d2b79d-e936-460e-997b-812cc0b7dd92",
-      "comment": "",
-      "command": "click",
-      "target": "css=.ant-btn-primary",
-      "targets": [
-        ["css=.ant-btn-primary", "css:finder"],
-        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
-        ["xpath=//form[@id='create-form']/div[3]/div/div/div/div/button", "xpath:idRelative"],
-        ["xpath=//div[3]/div/div/div/div/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Save')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "58588b86-12b7-426e-8cea-7107282f590c",
+      "id": "927a13b5-9ceb-49dd-aa77-2506743fe632",
       "comment": "",
       "command": "assertText",
-      "target": "css=.ant-alert-description li",
+      "target": "css=.site-layout-content > div",
       "targets": [
-        ["css=.ant-alert-description li", "css:finder"],
-        ["xpath=//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div/div/div[3]/div/div[2]/ul/li", "xpath:idRelative"],
-        ["xpath=//div[3]/div/div[2]/ul/li", "xpath:position"],
-        ["xpath=//li[contains(.,'Name must be unique')]", "xpath:innerText"]
+        ["css=.site-layout-content > div", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div", "xpath:idRelative"],
+        ["xpath=//main/div/div", "xpath:position"]
       ],
-      "value": "Name must be unique"
+      "value": "Home Page"
+    }]
+  }, {
+    "id": "c1e93f3f-7242-4eea-834d-a8eec861e157",
+    "name": "IF-EXAMPLES",
+    "commands": [{
+      "id": "c66f807f-1b6a-4dd8-abd2-ba64cd4be150",
+      "comment": "",
+      "command": "store",
+      "target": "7",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "85ace389-3914-4eaa-a154-8916dfe8c591",
+      "comment": "",
+      "command": "if",
+      "target": "${count} > 9",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1bf88248-86eb-4d04-b20d-222529ab51db",
+      "comment": "",
+      "command": "echo",
+      "target": "Số lớn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "08121435-9d96-4e43-bc3f-86771eb0b379",
+      "comment": "",
+      "command": "echo",
+      "target": "Hello",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ed9ac722-a5d8-4d67-a25f-0e509a680e3e",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "b159c21a-3afb-42e9-98e1-b70e8e75a070",
+    "name": "WHILE-EXAMPLES",
+    "commands": [{
+      "id": "0227f620-d471-4d14-8c21-169cca629c6d",
+      "comment": "",
+      "command": "store",
+      "target": "1",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "5d637aa9-cc8b-4cba-be77-2bdcdd21b541",
+      "comment": "",
+      "command": "while",
+      "target": "${count}  <= 10",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68d6e16e-a7e1-4c5e-9247-e37b3263086e",
+      "comment": "",
+      "command": "echo",
+      "target": "${count}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "31529112-cb5f-4700-bea6-a917cfe97ba7",
+      "comment": "",
+      "command": "store",
+      "target": "${count} + 1",
+      "targets": [],
+      "value": "count"
+    }, {
+      "id": "26a8ce4b-a738-461f-a722-238b3f9ea36a",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "c0d86003-da9a-457d-8a81-ab1a4c9548f3",
+    "name": "TESTCASE-USERNAME-3-30",
+    "commands": [{
+      "id": "c8c10cd0-e6f7-466b-8b71-8c851e6be852",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "40f37f0f-968c-49b3-88aa-421ae82647f2",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return [      { username: '123' },      { username: '123456789012345678901234567890' },   { username: '1234' },   { username: '12345678901234567890123456789' },      ];",
+      "targets": [],
+      "value": "users"
+    }, {
+      "id": "24b1b2d5-9262-4300-82b0-2951568ea556",
+      "comment": "",
+      "command": "forEach",
+      "target": "users",
+      "targets": [],
+      "value": "user"
+    }, {
+      "id": "ab2b4bfa-04ec-4313-a66d-1363e42460eb",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${user}.username",
+      "targets": [],
+      "value": "username"
+    }, {
+      "id": "e07968db-c0e9-4d4c-a84a-a08daf6fd8f8",
+      "comment": "",
+      "command": "echo",
+      "target": "${username}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94c4c3f6-557c-4001-993c-5555326765ef",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-form_username",
+      "targets": [
+        ["id=login-form_username", "id"],
+        ["css=#login-form_username", "css:finder"],
+        ["xpath=//input[@id='login-form_username']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${username}"
+    }, {
+      "id": "3c7e4a16-0d6b-4e86-a445-e5799bd94ada",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn",
+      "targets": [
+        ["css=.ant-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div[4]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "df5ab665-9b32-4595-8d67-b25fb6ec5158",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.ant-row:nth-child(1) .ant-form-item-explain-error",
+      "targets": [
+        ["css=.ant-row:nth-child(1) .ant-form-item-explain-error", "css:finder"],
+        ["xpath=//form[@id='login-form']/div/div[2]/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e0b8847-f317-44ab-9ec7-934bcc12364c",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4a9c21c-6ab4-4c7d-a330-e914f37abcfa",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return [      { username: '12' },   { username: '1234567890123456789012345678901' },       ];",
+      "targets": [],
+      "value": "users"
+    }, {
+      "id": "1fc4f8df-98b7-4528-8743-cf170a5d428d",
+      "comment": "",
+      "command": "forEach",
+      "target": "users",
+      "targets": [],
+      "value": "user"
+    }, {
+      "id": "e0681db4-4084-46fa-a41d-79ef7f8281d5",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${user}.username",
+      "targets": [],
+      "value": "username"
+    }, {
+      "id": "759f3a27-c98f-4fbe-969d-da79ff899a84",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-form_username",
+      "targets": [
+        ["id=login-form_username", "id"],
+        ["css=#login-form_username", "css:finder"],
+        ["xpath=//input[@id='login-form_username']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${username}"
+    }, {
+      "id": "3e25b2ae-0c1d-4b97-9910-9d7227730092",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn",
+      "targets": [
+        ["css=.ant-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div[4]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dbc529c0-c267-4a31-8191-735242520dec",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.ant-row:nth-child(1) .ant-form-item-explain-error",
+      "targets": [
+        ["css=.ant-row:nth-child(1) .ant-form-item-explain-error", "css:finder"],
+        ["xpath=//form[@id='login-form']/div/div[2]/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "24958f1f-b599-40c8-a4fd-6fd1a1e5bdc7",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "7a5c2599-ea51-4543-86b1-1a634d895b03",
+    "name": "TESTCASE-PASSWORD-6-10",
+    "commands": [{
+      "id": "25621396-1152-47ab-9c1d-2c43581ef78e",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02fbf017-6add-46a0-a07c-937475a72af3",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return [      { password: '123456' },   { password: '1234567890' },   { password: '1234567' },   { password: '123456789' },    ];",
+      "targets": [],
+      "value": "users"
+    }, {
+      "id": "cb15763f-0ee5-42c6-9b08-d25d25068c08",
+      "comment": "",
+      "command": "forEach",
+      "target": "users",
+      "targets": [],
+      "value": "user"
+    }, {
+      "id": "a49237cd-7051-406b-9130-7381cdf957e0",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${user}.password",
+      "targets": [],
+      "value": "password"
+    }, {
+      "id": "e89b4c70-d765-43fc-b93f-1378ed48ba90",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-form_password",
+      "targets": [
+        ["id=login-form_username", "id"],
+        ["css=#login-form_username", "css:finder"],
+        ["xpath=//input[@id='login-form_username']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${password}"
+    }, {
+      "id": "874660a8-d829-4a88-8973-4095d2d427df",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn",
+      "targets": [
+        ["css=.ant-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div[4]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7879c815-af32-444f-b392-d49574d27908",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.ant-row:nth-child(2) .ant-form-item-explain-error",
+      "targets": [
+        ["css=.ant-row:nth-child(2) .ant-form-item-explain-error", "css:finder"],
+        ["xpath=//form[@id='login-form']/div[2]/div[2]/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f28f3220-a0e5-4e8e-b68d-89e2c42ba272",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8071b6fc-f973-4309-9bc8-b9e599ae31e5",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return[      { password: '12345' },   { password: '12345678901' }  ];",
+      "targets": [],
+      "value": "users"
+    }, {
+      "id": "63c06be3-b0bb-4acd-927c-af0e36988034",
+      "comment": "",
+      "command": "forEach",
+      "target": "users",
+      "targets": [],
+      "value": "user"
+    }, {
+      "id": "3967610b-8be5-4ddc-824c-9f2ae92126ce",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${user}.password",
+      "targets": [],
+      "value": "password"
+    }, {
+      "id": "506684a7-4cb1-4522-8ea2-5faa81284188",
+      "comment": "",
+      "command": "type",
+      "target": "id=login-form_password",
+      "targets": [
+        ["id=login-form_username", "id"],
+        ["css=#login-form_username", "css:finder"],
+        ["xpath=//input[@id='login-form_username']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${password}"
+    }, {
+      "id": "845f35b9-1bc5-4d2f-a4ae-34e68462fb97",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn",
+      "targets": [
+        ["css=.ant-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div[4]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aeeeeaf1-ec19-4905-9ce9-ca407dd7844c",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.ant-row:nth-child(2) .ant-form-item-explain-error",
+      "targets": [
+        ["css=.ant-row:nth-child(1) .ant-form-item-explain-error", "css:finder"],
+        ["xpath=//form[@id='login-form']/div/div[2]/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "72d3f30f-ac4d-4e34-8a3d-675aa66cd570",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "99c48b1b-8c63-4e30-989f-b699f35b6297",
+    "name": "TESTCASE-BOOKING-01",
+    "commands": [{
+      "id": "58948a03-5ebb-4d05-a7fb-eed57fb9f2c9",
+      "comment": "",
+      "command": "open",
+      "target": "/ticket-booking",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8bc61cf8-5509-4b08-88ab-0a0e00387c89",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Nguyen Thi Hoa"
+    }, {
+      "id": "2c09408f-1408-4bc3-a914-adef06fc15e9",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_address",
+      "targets": [
+        ["id=ticket-booking-form_address", "id"],
+        ["css=#ticket-booking-form_address", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_address']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "15 Hùng Vương"
+    }, {
+      "id": "125f5d65-1296-43a0-9bb9-925089455d05",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "123432213"
+    }, {
+      "id": "61ad3ce4-84e7-41aa-966e-2f5d390f2ac3",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44a1c4f4-6b09-4554-bf16-e515cf6a17f2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-layout-content",
+      "targets": [
+        ["css=.ant-layout-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main", "xpath:idRelative"],
+        ["xpath=//main", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "47b6f9c5-c432-45e3-a1ef-580db5c1d11c",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "2014"
+    }, {
+      "id": "bf990938-121f-4a4e-8017-8fd9a5e59cdb",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "263c41c4-3e9d-4084-9197-fdcbb82d0ba9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-select-selection-item",
+      "targets": [
+        ["css=.ant-select-selection-item", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/div/div/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'BUSINESS')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca3a75dd-cd9c-4c92-a603-faf4e7b8e1a1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-select-item-option-active > .ant-select-item-option-content",
+      "targets": [
+        ["css=.ant-select-item-option-active > .ant-select-item-option-content", "css:finder"],
+        ["xpath=//div[2]/div/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "deab3a05-3cae-43fa-8b3f-90fd4ca12cd5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn > span",
+      "targets": [
+        ["css=.ant-btn > span", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[6]/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Tính tiền')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a37d5553-6e9b-41e1-b9a4-3f138a7aacbb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content",
+      "targets": [
+        ["css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div/div/div[2]/table/tbody/tr[5]/td/div/span[2]", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Trẻ em')]", "xpath:innerText"]
+      ],
+      "value": "Người lớn"
+    }, {
+      "id": "e4a7deac-7517-4ea6-a43d-829316cf2abd",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-result-title",
+      "targets": [
+        ["css=.ant-result-title", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Tiền vé: 4.000.000 VNĐ"
+    }]
+  }, {
+    "id": "61e782f2-410d-4b15-a745-8409add3258d",
+    "name": "TESTCASE-BOOKING-02",
+    "commands": [{
+      "id": "fbae3f2c-54be-4869-a36d-70ebdc708f38",
+      "comment": "",
+      "command": "open",
+      "target": "/ticket-booking",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "19aa18cc-748c-417d-bff3-4ac9368b8bc0",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Nguyen Thi Hoa"
+    }, {
+      "id": "b4510005-c85c-49f4-86ff-2ac002cdc09a",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_address",
+      "targets": [
+        ["id=ticket-booking-form_address", "id"],
+        ["css=#ticket-booking-form_address", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_address']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "15 Hùng Vương"
+    }, {
+      "id": "7c19863d-8681-474c-b5d5-2a38cd3224c1",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "123432213"
+    }, {
+      "id": "1fd4a9c8-384a-4aab-b915-fa3e1f0ca721",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "225dc7f2-8970-4a2a-abdb-2d0adb29a033",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-layout-content",
+      "targets": [
+        ["css=.ant-layout-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main", "xpath:idRelative"],
+        ["xpath=//main", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "205cd4af-a1cf-4e39-95a3-5f5e5d596862",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "2014"
+    }, {
+      "id": "8cc25379-ddeb-480f-8495-2c1ee09bf179",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "e2a70b94-01cc-4723-9916-92984845793f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-select-selection-item",
+      "targets": [
+        ["css=.ant-select-selection-item", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/div/div/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'BUSINESS')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d8557a2-9b6b-435b-bc9c-e65eab3ab5fe",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-select-item-option-active > .ant-select-item-option-content",
+      "targets": [
+        ["css=.ant-select-item-option-active > .ant-select-item-option-content", "css:finder"],
+        ["xpath=//div[2]/div/div/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18da9441-a2ae-4e3e-91e1-878b432ad5cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn > span",
+      "targets": [
+        ["css=.ant-btn > span", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[6]/div/div/div/button/span", "xpath:idRelative"],
+        ["xpath=//button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Tính tiền')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "54c25170-ea48-435c-8a57-f0f210e5da8b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content",
+      "targets": [
+        ["css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div/div/div[2]/table/tbody/tr[5]/td/div/span[2]", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Trẻ em')]", "xpath:innerText"]
+      ],
+      "value": "Người lớn"
+    }, {
+      "id": "15b1d7d7-853a-4460-816e-713056943a79",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-result-title",
+      "targets": [
+        ["css=.ant-result-title", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Tiền vé: 4.000.000 VNĐ"
+    }]
+  }, {
+    "id": "c3d4ebb3-d783-477a-a042-bc9275fd4637",
+    "name": "TESTCASE-BOOKING-03",
+    "commands": [{
+      "id": "e0811f98-5cfc-4d0b-8f31-a4c2fb5a4a9c",
+      "comment": "",
+      "command": "open",
+      "target": "/ticket-booking",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ac5289b-a740-4e24-b631-e19ca51a01c1",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ac9f62a-d4db-4107-9f75-e8e1d6e3b5a0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(1)",
+      "targets": [
+        ["css=.ant-row:nth-child(1)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4aeab45a-c71f-48da-9fd6-5bb0798dff61",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Nguyen Van Hung"
+    }, {
+      "id": "c55b7318-0baa-4fc1-ae74-0444728a59de",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(2)",
+      "targets": [
+        ["css=.ant-row:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d63892e3-e937-4e05-b115-faa82edb8c10",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_address",
+      "targets": [
+        ["id=ticket-booking-form_address", "id"],
+        ["css=#ticket-booking-form_address", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_address']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "15 Hùng Vương"
+    }, {
+      "id": "a7fb8664-49a1-483e-bff6-67bc613fce41",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c79a9517-37c9-489c-bda8-bf7905ef8279",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1921cdc7-341e-4e56-8a0c-3f88797ffd81",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c27fd97e-853f-4960-8275-3392afd828f4",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "1233211234"
+    }, {
+      "id": "209c19f8-dfb5-4e78-9d93-f585d297ab22",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09e942ff-258b-48c3-9401-5448b24f65d0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(4)",
+      "targets": [
+        ["css=.ant-row:nth-child(4)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]", "xpath:idRelative"],
+        ["xpath=//div[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "18e5b793-390a-4f1c-b588-e19a636bb068",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "2014"
+    }, {
+      "id": "e564955b-4806-45eb-9269-5fbc1194d673",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "bdf43096-b185-42c3-b3d7-ee55635e82f8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-select-selection-item",
+      "targets": [
+        ["css=.ant-select-selection-item", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/div/div/div/span[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9c0127f0-dc25-40c9-9dee-90bc919c254c",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_classType",
+      "targets": [
+        ["id=ticket-booking-form_classType", "id"],
+        ["css=#ticket-booking-form_classType", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_classType']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "BUSINESS"
+    }, {
+      "id": "2bc88b07-36c4-4c29-b406-0be4da81d39b",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_classType",
+      "targets": [
+        ["id=ticket-booking-form_classType", "id"],
+        ["css=#ticket-booking-form_classType", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_classType']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "c1f87e59-ba30-4a48-b459-1e2821c24b5c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn",
+      "targets": [
+        ["css=.ant-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[6]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Tính tiền')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0aeafa28-ab88-49af-b79d-5cf624c45577",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content",
+      "targets": [
+        ["css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div/div/div[2]/table/tbody/tr[5]/td/div/span[2]", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Người lớn')]", "xpath:innerText"]
+      ],
+      "value": "Người lớn"
+    }, {
+      "id": "99f48a31-51a8-4f1e-ab3c-f59372548336",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-result-title",
+      "targets": [
+        ["css=.ant-result-title", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Tiền vé: 4.000.000 VNĐ"
+    }, {
+      "id": "3af94c9d-743e-470f-8f9f-f1db1d1bb65a",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "55f8b8be-4d99-4ad0-b092-07d627332a40",
+    "name": "TESTCASE-BOOKING-04",
+    "commands": [{
+      "id": "223987c7-6ce0-4406-b3df-89b8ea4ff4e3",
+      "comment": "",
+      "command": "open",
+      "target": "/ticket-booking",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "da8c8a85-0045-465e-9c12-d1b647164acc",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7faf9de5-534d-4abf-b34c-21558a8be4a5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(1)",
+      "targets": [
+        ["css=.ant-row:nth-child(1)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3607aee0-5047-433f-87d2-dd74dc2452ae",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Nguyen Van Hung"
+    }, {
+      "id": "40127a2f-0ea0-44fc-bb59-bec76eaadc33",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(2)",
+      "targets": [
+        ["css=.ant-row:nth-child(2)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]", "xpath:idRelative"],
+        ["xpath=//form/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcd40f0b-55b9-47e7-93b9-4372680a869d",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_address",
+      "targets": [
+        ["id=ticket-booking-form_address", "id"],
+        ["css=#ticket-booking-form_address", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_address']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "15 Hùng Vương"
+    }, {
+      "id": "9edd9f57-e406-49c9-9a36-3282fecc03b3",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f5470c7-435f-4939-b0e2-f6953a643522",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "598034ee-1043-4ce7-9365-79d25635a951",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a88a484a-650b-4811-8874-95863e77268c",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "1233211234"
+    }, {
+      "id": "4ad3052e-a783-47d1-b9a4-4ff284599108",
+      "comment": "",
+      "command": "click",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d64e4261-8114-40bf-9b51-c133ddeb8937",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-row:nth-child(4)",
+      "targets": [
+        ["css=.ant-row:nth-child(4)", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]", "xpath:idRelative"],
+        ["xpath=//div[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bde2fd5-e52c-4f1c-9706-b43c17266a1e",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "2014"
+    }, {
+      "id": "d9329e9c-f268-4e0f-8f08-23bc0e0be4af",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "cf2f1768-495c-4ea9-8e75-c25d5f7cc869",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-select-selection-item",
+      "targets": [
+        ["css=.ant-select-selection-item", "css:finder"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[5]/div[2]/div/div/div/div/span[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "51c5a1fc-fbea-4c36-96c0-8e8a2546d2f4",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_classType",
+      "targets": [
+        ["id=ticket-booking-form_classType", "id"],
+        ["css=#ticket-booking-form_classType", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_classType']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "ECONOMY"
+    }, {
+      "id": "deeabf46-b68c-4d7e-a5c9-1dca3094b31d",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=ticket-booking-form_classType",
+      "targets": [
+        ["id=ticket-booking-form_classType", "id"],
+        ["css=#ticket-booking-form_classType", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_classType']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[5]/div[2]/div/div/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "f00059d7-cf3f-4908-b1cb-822fe630b331",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn",
+      "targets": [
+        ["css=.ant-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[6]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Tính tiền')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef23b753-6f90-47ca-8caa-62c76b8975ca",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content",
+      "targets": [
+        ["css=.ant-descriptions-row:nth-child(5) .ant-descriptions-item-content", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div/div/div[2]/table/tbody/tr[5]/td/div/span[2]", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Người lớn')]", "xpath:innerText"]
+      ],
+      "value": "Người lớn"
+    }, {
+      "id": "48021e68-a670-487b-9482-9467cc4b9cb2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ant-result-title",
+      "targets": [
+        ["css=.ant-result-title", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div[3]/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Tiền vé: 3.000.000 VNĐ"
+    }, {
+      "id": "64a63518-22ac-4993-9740-6b43aeab3691",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "9b279ca5-d922-480c-be29-f2af964a591c",
+    "name": "FETCH CATEGORIES",
+    "commands": [{
+      "id": "13a344a8-24b1-4080-ad68-16c34af053f1",
+      "comment": "",
+      "command": "executeAsyncScript",
+      "target": "return (async function () {   const headers = new Headers();   headers.append('Authorization', 'Bearer 123456');    const requestOptions = {     method: 'GET',     redirect: 'follow',     headers: headers   };    const response = await fetch('https://server.aptech.io/online-shop/categories', requestOptions);   const json = await response.json();   return json; })();",
+      "targets": [],
+      "value": "json"
+    }, {
+      "id": "d9d5c4c3-142d-4d01-a696-8cf050415fc1",
+      "comment": "",
+      "command": "forEach",
+      "target": "json",
+      "targets": [],
+      "value": "category"
+    }, {
+      "id": "5ae41029-567c-4c86-9b01-ce155faeab9e",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${category}.name",
+      "targets": [],
+      "value": "name"
+    }, {
+      "id": "a0eb3b1e-3465-4262-8164-a4ef8d89c2df",
+      "comment": "",
+      "command": "echo",
+      "target": "${name}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "19bf71b3-91ad-49a0-a7a6-314ecdfaa21c",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
     }]
   }],
   "suites": [{
-    "id": "2abe636f-af50-49d9-bada-5e14f6231d28",
+    "id": "8d7fa6f2-2040-4747-95d3-12b3846d77dc",
     "name": "Default Suite",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["8a788647-19e3-49d8-8731-6f61748b17fc"]
+    "tests": ["18d2c04f-830b-4b98-979d-a9dfad5c241d"]
   }],
-  "urls": ["https://os-admin.aptech.io/"],
+  "urls": ["https://ecommerce.aptech.io/", "https://aptech-tester.web.app/"],
   "plugins": []
 }
