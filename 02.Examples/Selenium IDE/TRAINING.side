@@ -2,7 +2,7 @@
   "id": "e2eb01e6-83bf-42a8-b7c9-0fd629792012",
   "version": "2.0",
   "name": "TRAINING",
-  "url": "https://aptech-tester.web.app/",
+  "url": "https://aptech-tester.web.app",
   "tests": [{
     "id": "18d2c04f-830b-4b98-979d-a9dfad5c241d",
     "name": "Times Command",
@@ -223,17 +223,10 @@
     "id": "7ea6c96f-f780-439a-92b0-d35e9c3e9303",
     "name": "For Each",
     "commands": [{
-      "id": "3f7f6f94-5166-4027-a287-dd82124a5a98",
-      "comment": "",
-      "command": "open",
-      "target": "login?returnUrl=/",
-      "targets": [],
-      "value": ""
-    }, {
       "id": "745b09b8-c011-4599-b412-de26c738bc1b",
       "comment": "",
-      "command": "executeScript",
-      "target": "return [      { username: 'tungnt@softech.vn', password: '123456789' },      { username: 'tuanna@softech.vn', password: '987654321' },   { username: 'tuyetta@softech.vn', password: '987654321' },   { username: 'thutt@softech.vn', password: '987654321' }   ];",
+      "command": "storeJson",
+      "target": "[   {     \"username\": \"tungnt@softech.vn\",     \"password\": \"123456789\"   },   {     \"username\": \"tuanna@softech.vn\",     \"password\": \"987654321\"   },   {     \"username\": \"tuyetta@softech.vn\",     \"password\": \"987654321\"   },   {     \"username\": \"thutt@softech.vn\",     \"password\": \"987654321\"   } ]",
       "targets": [],
       "value": "items"
     }, {
@@ -243,6 +236,13 @@
       "target": "items",
       "targets": [],
       "value": "item"
+    }, {
+      "id": "3f7f6f94-5166-4027-a287-dd82124a5a98",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
     }, {
       "id": "59204a64-abfa-4e92-a2cf-88bb0bae93d9",
       "comment": "",
@@ -297,19 +297,23 @@
       ],
       "value": ""
     }, {
-      "id": "04a076f6-fc7b-4f5e-b453-6d7cfbc4f1e9",
+      "id": "249b996d-651c-4f32-88aa-a8924b902a6b",
       "comment": "",
       "command": "echo",
-      "target": "${username}",
+      "target": "TC - ${username}",
       "targets": [],
       "value": ""
     }, {
-      "id": "9df63233-e24d-48cd-86be-76b80174908f",
+      "id": "11f3fbd4-715b-4a08-8ce2-9f42faa7dde6",
       "comment": "",
-      "command": "echo",
-      "target": "${password}",
-      "targets": [],
-      "value": ""
+      "command": "assertText",
+      "target": "css=.site-layout-content > div",
+      "targets": [
+        ["css=.site-layout-content > div", "css:finder"],
+        ["xpath=//div[@id='root']/section/section/section/main/div/div", "xpath:idRelative"],
+        ["xpath=//main/div/div", "xpath:position"]
+      ],
+      "value": "Home Page"
     }, {
       "id": "8be55a25-f8ed-4ddb-a95b-1ea76c64121e",
       "comment": "",
