@@ -8,7 +8,7 @@ return (async function () {
     headers: headers,
   };
 
-  const response = await fetch('https://server.aptech.io/online-shop/categories', requestOptions);
+  const response = await fetch('https://server.aptech.io/online-shop/products', requestOptions);
   const json = await response.json();
   return json;
 })();
