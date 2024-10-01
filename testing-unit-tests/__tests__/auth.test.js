@@ -1,5 +1,5 @@
 // import from the sum.js file
-const { login, register } = require('../src/auth');
+const { login } = require('../src/auth');
 
 describe('auth/login', () => {
   test('Login must be successful', async () => {
