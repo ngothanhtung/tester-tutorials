@@ -10,6 +10,8 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import TicketBooking from './pages/TicketBooking';
 import LogOut from './pages/LogOut';
+import LifecycleLoginRequirement from './pages/LifecycleLogin/requirements';
+import LifecycleLogin from './pages/LifecycleLogin';
 
 const { Header, Sider, Content } = Layout;
 
@@ -42,6 +44,9 @@ function App() {
                 <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='/home' element={<Home />} />
+
+                  <Route path='/lifecycle/login/requirements' element={<LifecycleLoginRequirement />} />
+                  <Route path='/lifecycle/login/app' element={<LifecycleLogin />} />
                   <Route path='/login' element={<Login />} />
                   <Route path='/logout' element={<LogOut />} />
                   <Route path='/ticket-booking' element={<TicketBooking />} />

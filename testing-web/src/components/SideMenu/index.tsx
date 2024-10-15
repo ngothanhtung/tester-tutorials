@@ -1,7 +1,7 @@
 import { Menu, MenuProps } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { SendOutlined, HomeOutlined, LogoutOutlined, UserOutlined, AppstoreOutlined } from '@ant-design/icons';
+import { SendOutlined, HomeOutlined, LogoutOutlined, UserOutlined, AppstoreOutlined, LockOutlined } from '@ant-design/icons';
 
 const menuItems: MenuProps['items'] = [
   {
@@ -9,6 +9,23 @@ const menuItems: MenuProps['items'] = [
     label: 'Home',
     icon: <HomeOutlined />,
   },
+
+  {
+    key: '/lifecycle/login',
+    label: 'Lifecycle - Login',
+    icon: <LockOutlined />,
+    children: [
+      {
+        key: '/lifecycle/login/requirements',
+        label: 'Hướng dẫn',
+      },
+      {
+        key: '/lifecycle/login/app',
+        label: 'Login',
+      },
+    ],
+  },
+
   {
     key: '/login',
     label: 'Login',
