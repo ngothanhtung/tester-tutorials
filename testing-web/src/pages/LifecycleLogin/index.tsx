@@ -4,10 +4,27 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 
+const labelCol = {
+  xs: { span: 24 },
+  sm: { span: 24 },
+  md: { span: 6 },
+  lg: { span: 8 },
+};
+const wrapperCol = {
+  xs: { span: 24 },
+  sm: { span: 24 },
+  md: { span: 16 },
+  lg: { span: 12 },
+};
+
 const LifecycleLogin = () => {
+  const [loading, setLoading] = React.useState(false);
+
   const navigate = useNavigate();
   const onFinish = async (values: any) => {
     try {
+      setLoading(true);
+
       const cookies = new Cookies();
       cookies.remove('username');
       cookies.remove('password');
@@ -31,10 +48,20 @@ const LifecycleLogin = () => {
 
       // delay 2000ms
       await new Promise((resolve) => setTimeout(resolve, 1000));
+      setLoading(false);
 
       navigate('/home');
     } catch (error) {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      // if login failed, remove cookies
+      const cookies = new Cookies();
+      cookies.remove('username');
+      cookies.remove('password');
+
       message.error('Đăng nhập thất bại');
+
+      setLoading(false);
     }
   };
 
@@ -62,14 +89,14 @@ const LifecycleLogin = () => {
     <React.Fragment>
       <h3>Đăng nhập hệ thống</h3>
       <Divider />
-      <Form form={form} name='login-form' labelCol={{ span: 8 }} wrapperCol={{ span: 8 }} initialValues={{ username: '', password: '' }} onFinish={onFinish} onFinishFailed={onFinishFailed} onFieldsChange={checkFormValidity}>
+      <Form form={form} name='login-form' labelCol={labelCol} wrapperCol={wrapperCol} initialValues={{ username: '', password: '' }} onFinish={onFinish} onFinishFailed={onFinishFailed} onFieldsChange={checkFormValidity}>
         <Form.Item
           label='Email'
           name='username'
           hasFeedback={true}
           rules={[
-            { required: true, message: 'Email không hợp lệ' },
-            { type: 'email', message: 'Email không hợp lệ' },
+            { required: true, message: 'Email không hợp lệ.' },
+            { type: 'email', message: 'Email không hợp lệ.' },
           ]}
         >
           <Input placeholder='Nhập email của bạn' autoFocus={true} />
@@ -87,8 +114,27 @@ const LifecycleLogin = () => {
           <Input.Password placeholder='Nhập mật khẩu của bạn' autoComplete='off' />
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-          <Button type='primary' htmlType='submit' style={{ width: 120 }} disabled={!isFormValid}>
+        <Form.Item
+          wrapperCol={{
+            xs: {
+              offset: 0,
+              span: 24,
+            },
+            sm: {
+              offset: 0,
+              span: 24,
+            },
+            md: {
+              offset: 6,
+              span: 16,
+            },
+            lg: {
+              offset: 8,
+              span: 16,
+            },
+          }}
+        >
+          <Button type='primary' htmlType='submit' style={{ width: 120 }} disabled={!isFormValid || loading}>
             Đăng nhập
           </Button>
         </Form.Item>

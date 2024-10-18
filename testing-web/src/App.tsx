@@ -24,7 +24,17 @@ function App() {
           <Menu theme='dark' mode='horizontal' defaultSelectedKeys={['1']} items={[{ key: '1', label: 'Home' }]} />
         </Header>
         <Layout>
-          <Sider width={200} className='site-layout-background'>
+          <Sider
+            width={200}
+            className='site-layout-background'
+            breakpoint='lg'
+            onBreakpoint={(broken) => {
+              console.log(broken);
+            }}
+            onCollapse={(collapsed, type) => {
+              console.log(collapsed, type);
+            }}
+          >
             <SideMenu />
           </Sider>
           <Layout style={{ padding: '0 24px 24px' }}>
