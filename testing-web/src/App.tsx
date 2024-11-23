@@ -12,6 +12,8 @@ import TicketBooking from './pages/TicketBooking';
 import LogOut from './pages/LogOut';
 import LifecycleLoginRequirement from './pages/LifecycleLogin/requirements';
 import LifecycleLogin from './pages/LifecycleLogin';
+import CreateCategory from './pages/CreateCategory';
+import CreateCustomer from './pages/CreateCustomer';
 
 const { Header, Sider, Content } = Layout;
 
@@ -55,6 +57,8 @@ function App() {
                   <Route path='/' element={<Home />} />
                   <Route path='/home' element={<Home />} />
 
+                  <Route path='/online-shop/categories/create' element={<CreateCategory />} />
+                  <Route path='/online-shop/customers/create' element={<CreateCustomer />} />
                   <Route path='/lifecycle/login/requirements' element={<LifecycleLoginRequirement />} />
                   <Route path='/lifecycle/login/app' element={<LifecycleLogin />} />
                   <Route path='/login' element={<Login />} />
