@@ -11,18 +11,24 @@
       flex-direction: column;
       width: 200px;
     }
+
+    input {
+      border: 1px solid #ccc;
+    }
   </style>
 </head>
 
 <body>
   <form>
-    <input placeholder="Hãy nhập email" autofocus />
+    <label for="my-email">Email:</label>
+    <input id="my-email" placeholder="Hãy nhập email" autofocus />
     <input type="checkbox" id="check-input" />
     <!-- COLOR PICKER -->
     <input type="color" />
 
     <!-- DATE PICKER -->
-    <input type="date" />
+    <label for="date1">Ngày sinh:</label>
+    <input type="date" id="date1" />
     <input type="datetime-local" />
     <input type="email" placeholder="Email" />
     <input type="file" />
