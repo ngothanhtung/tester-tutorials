@@ -1,7 +1,7 @@
 {
   "id": "b993ee2e-a11b-454a-ba62-4873bb612469",
   "version": "2.0",
-  "name": "OlineShop",
+  "name": "OnlineShop",
   "url": "https://os-admin.aptech.io",
   "tests": [{
     "id": "c11f1119-b330-4f21-a6cf-8bc31a8a65e4",
@@ -126,7 +126,7 @@
     }]
   }, {
     "id": "a8096939-dc3b-4df4-a16c-be0b691f9a96",
-    "name": "Delete category",
+    "name": "Delete category 1",
     "commands": [{
       "id": "d5e598fc-3bfc-45cd-8e16-75765b954916",
       "comment": "",
@@ -292,7 +292,7 @@
     }]
   }, {
     "id": "bec78bf5-8e93-49a0-9919-ee7bae294a9a",
-    "name": "Delete category (Batch35)",
+    "name": "Delete category 2",
     "commands": [{
       "id": "a5ee1b4b-d5d9-4c8e-aab7-b7f0385c68d1",
       "comment": "",
