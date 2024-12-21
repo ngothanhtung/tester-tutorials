@@ -21,7 +21,7 @@
 <body>
   <form>
     <label for="my-email">Email:</label>
-    <input id="my-email" placeholder="Hãy nhập email" autofocus />
+    <input id="my-email" value="tungnt@softech.vn" placeholder="Hãy nhập email" autofocus disabled />
     <input type="checkbox" id="check-input" />
     <!-- COLOR PICKER -->
     <input type="color" />
@@ -70,15 +70,21 @@
 
     <label for="m-cars">Choose a car:</label>
     <select id="m-cars" name="cars" size="3" multiple>
-      <option value="volvo">Volvo</option>
+      <option value="volvo" selected>Volvo</option>
       <option value="saab">Saab</option>
-      <option value="fiat">Fiat</option>
+      <option value="fiat" selected>Fiat</option>
       <option value="audi">Audi</option>
     </select>
     <label for="message">Message:</label>
     <textarea id="message" name="message" rows="4" cols="30"></textarea>
     <input type="submit" />
   </form>
+
+
+  <script>
+    // confirm("Hello Selenium IDE");
+    // prompt("What is your name?");
+  </script>
 </body>
 
 </html>

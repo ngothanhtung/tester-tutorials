@@ -2,7 +2,7 @@
   "id": "70648fae-0720-46cf-913b-d971a2436930",
   "version": "2.0",
   "name": "SELENIUM IDE",
-  "url": "https://www.w3schools.com/",
+  "url": "http://127.0.0.1:5500",
   "tests": [{
     "id": "01944a3e-ccd1-4607-bf96-54c3256d4ca9",
     "name": "TC-BASIC",
@@ -66,43 +66,48 @@
     "id": "0023520c-5176-4dd0-9676-9af3790d268e",
     "name": "TC-ASSERT-TITLE",
     "commands": [{
-      "id": "94ad3489-f756-45e8-b41f-87e9383a8af9",
+      "id": "8c2dc93d-1d45-4704-9811-7de38556d31f",
       "comment": "",
       "command": "open",
-      "target": "login?returnUrl=%2F",
+      "target": "/02.Examples/HTML/Session%2010%20-%20HTML%20Forms/form-all-elements.html",
       "targets": [],
       "value": ""
     }, {
       "id": "5ee9bf1f-6c93-400e-909c-a3bd07c0ed97",
       "comment": "",
-      "command": "assertTitle",
-      "target": "Aptech",
+      "command": "verifyTitle",
+      "target": "W3Schools Online Web Tutorial",
       "targets": [],
       "value": ""
+    }, {
+      "id": "46814c3c-e39c-4ac7-a71c-47db57ef7292",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.learntocodeh1",
+      "targets": [],
+      "value": "Learn to Code"
     }]
   }, {
     "id": "5b275b69-c1b7-4385-b204-7775a74019ca",
     "name": "TC-ASSERT-VALUE",
     "commands": [{
-      "id": "ba89e676-ad11-4c85-b95f-58cb2dd8820f",
+      "id": "358cbe01-f86c-40b1-a212-fb22365aa7ce",
       "comment": "",
       "command": "open",
-      "target": "/ticket-booking",
+      "target": "/02.Examples/HTML/Session%2010%20-%20HTML%20Forms/form-all-elements.html",
       "targets": [],
       "value": ""
     }, {
-      "id": "e0dbd1fd-ddec-4152-9c5d-c2f7c0e11d36",
+      "id": "9e774321-9ef7-4c74-9d65-5c3770195734",
       "comment": "",
-      "command": "assertValue",
-      "target": "id=ticket-booking-form_idnumber",
+      "command": "assertElementPresent",
+      "target": "css=p",
       "targets": [
-        ["id=ticket-booking-form_idnumber", "id"],
-        ["css=#ticket-booking-form_idnumber", "css:finder"],
-        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
-        ["xpath=//form[@id='ticket-booking-form']/div[3]/div[2]/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[3]/div[2]/div/div/input", "xpath:position"]
+        ["css=p", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Hello Selenium IDE')]", "xpath:innerText"]
       ],
-      "value": "201123455"
+      "value": ""
     }]
   }, {
     "id": "aaf5d2fd-8962-4d5b-8bdd-6434762e501c",
@@ -111,22 +116,32 @@
       "id": "481bf97f-ad40-4ce0-90cb-cdbfd317aa38",
       "comment": "",
       "command": "open",
-      "target": "/tags/tryit.asp?filename=tryhtml5_input_type_checkbox",
+      "target": "/02.Examples/HTML/Session%2010%20-%20HTML%20Forms/form-all-elements.html",
       "targets": [],
       "value": ""
     }, {
-      "id": "795fb2f0-f2d4-4a2a-a456-63430ab3aa5f",
+      "id": "48d1face-1ff4-48c2-ae1b-632bf0be981b",
       "comment": "",
-      "command": "click",
-      "target": "id=vehicle1",
-      "targets": [],
+      "command": "check",
+      "target": "id=check-input",
+      "targets": [
+        ["id=check-input", "id"],
+        ["css=#check-input", "css:finder"],
+        ["xpath=//input[@id='check-input']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
       "value": ""
     }, {
-      "id": "9349d612-ce2f-4fe5-becd-3943b2a4c52b",
+      "id": "ee6cfdbf-dca5-43cc-bf40-d3b5cc28e068",
       "comment": "",
-      "command": "pause",
-      "target": "5000",
-      "targets": [],
+      "command": "uncheck",
+      "target": "id=check-input",
+      "targets": [
+        ["id=check-input", "id"],
+        ["css=#check-input", "css:finder"],
+        ["xpath=//input[@id='check-input']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
       "value": ""
     }]
   }, {
@@ -158,25 +173,35 @@
     "id": "8314bbb1-533b-451b-8d7e-21737538125a",
     "name": "TC-SELECT",
     "commands": [{
-      "id": "8e6af03e-f2b2-4fb9-9105-e2a9f4f47af1",
+      "id": "6991d017-913f-4be3-80fe-820aea68d470",
       "comment": "",
       "command": "open",
-      "target": "/",
+      "target": "/02.Examples/HTML/Session%2010%20-%20HTML%20Forms/form-all-elements.html",
       "targets": [],
       "value": ""
     }, {
-      "id": "c9e653dd-f00c-402e-95e6-bfb31b588078",
+      "id": "9d3b8fa8-0ab2-4284-8efa-b8666a4c7f85",
       "comment": "",
       "command": "select",
-      "target": "id=customerlanguage",
+      "target": "id=cars",
       "targets": [
-        ["id=customerlanguage", "id"],
-        ["name=customerlanguage", "name"],
-        ["css=#customerlanguage", "css:finder"],
-        ["xpath=//select[@id='customerlanguage']", "xpath:attributes"],
-        ["xpath=//div[2]/select", "xpath:position"]
+        ["id=cars", "id"],
+        ["name=cars", "name"],
+        ["css=#cars", "css:finder"],
+        ["xpath=//select[@id='cars']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
       ],
-      "value": "EN"
+      "value": "Hãng xe Audi"
+    }, {
+      "id": "bd322709-45e5-4079-822e-cc82c790a92b",
+      "comment": "",
+      "command": "submit",
+      "target": "css=form",
+      "targets": [
+        ["css=form", "css:finder"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
     }]
   }, {
     "id": "43647f5e-7e00-4e0e-a3c1-281031a7b4e3",
@@ -226,6 +251,37 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "00bbf68b-7a34-4be9-bcab-747b9027b2fd",
+    "name": "TC-REMOVE-SELECTION",
+    "commands": [{
+      "id": "7e9602ac-c384-4e6d-8ae9-5befe840bfe9",
+      "comment": "",
+      "command": "open",
+      "target": "/02.Examples/HTML/Session%2010%20-%20HTML%20Forms/form-all-elements.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "492d3b74-e852-447a-958d-561c61319c37",
+      "comment": "",
+      "command": "removeSelection",
+      "target": "id=m-cars",
+      "targets": [
+        ["id=cars", "id"],
+        ["name=cars", "name"],
+        ["css=#cars", "css:finder"],
+        ["xpath=//select[@id='cars']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "Fiat"
+    }, {
+      "id": "144b9226-716f-400a-a88e-e6029612095c",
+      "comment": "",
+      "command": "addSelection",
+      "target": "id=m-cars",
+      "targets": [],
+      "value": "Saab"
+    }]
   }],
   "suites": [{
     "id": "84df628b-3df3-4fc3-9eb3-2f631716f3da",
@@ -235,6 +291,6 @@
     "timeout": 300,
     "tests": ["01944a3e-ccd1-4607-bf96-54c3256d4ca9"]
   }],
-  "urls": ["https://www.w3schools.com/", "https://ecommerce.aptech.io/", "https://aptech-tester.web.app/", "https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_checkbox"],
+  "urls": ["https://www.w3schools.com/", "https://ecommerce.aptech.io/", "https://aptech-tester.web.app/", "https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_type_checkbox", "http://127.0.0.1:5500/02.Examples/HTML/Session%2010%20-%20HTML%20Forms/form-all-elements.html", "http://127.0.0.1:5500/"],
   "plugins": []
 }

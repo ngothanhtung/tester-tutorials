@@ -357,6 +357,71 @@
       "targets": [],
       "value": "${deleteId}"
     }]
+  }, {
+    "id": "5c9049fd-7e18-48d2-ba93-fab0bd7686e2",
+    "name": "Delete category (DEMO)",
+    "commands": [{
+      "id": "df8103aa-89cb-4428-b9ab-9f09e0c7ee71",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "716cd40c-786a-4790-ab1f-f9843b9e4bb3",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//*[@id=\"root\"]/div[2]/div/div/div/div[1]/div[2]/div[2]/form/div[1]/input",
+      "targets": [],
+      "value": "tungnt@softech.vn"
+    }, {
+      "id": "0f7b3519-36c0-488f-912c-490acb09628f",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//*[@id=\"root\"]/div[2]/div/div/div/div[1]/div[2]/div[2]/form/div[2]/input",
+      "targets": [],
+      "value": "123456789"
+    }, {
+      "id": "5b0e69b6-c410-43a6-9b59-ba5f77b5ce55",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "14799d5e-a0b4-4c2e-8872-1a3b38242ad0",
+      "comment": "",
+      "command": "open",
+      "target": "/online-shop/data-management/categories",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd44b994-bc51-4a3e-87a8-9d2e66513295",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-table-row:nth-child(1) .ant-space-item:nth-child(2) svg",
+      "targets": [
+        ["css=.ant-table-row:nth-child(1) .ant-space-item:nth-child(2) svg", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a52e39d-5eff-4310-b65f-c24073cb577c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn:nth-child(2) > span",
+      "targets": [
+        ["css=.ant-btn:nth-child(2) > span", "css:finder"],
+        ["xpath=//div[3]/button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Confirm')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "9b27cba1-9dc9-4bd1-b8d6-52c1c96c6d48",
