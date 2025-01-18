@@ -23,6 +23,4 @@ test('page', async ({ page }) => {
   page.waitForURL('https://aptech-tester.web.app/login');
 
   page.waitForSelector('#login-form_username');
-
-  page.
 });
