@@ -2,7 +2,7 @@ import React from 'react';
 import 'moment/locale/vi';
 import 'numeral/locales/vi';
 import ReactMarkdown from 'react-markdown';
-import { Form, Input, Button, DatePicker, Divider, Select, Result, Descriptions, Row, Col, message } from 'antd';
+import { Form, Input, Button, DatePicker, Divider, Select, Result, Descriptions, Row, Col, message, Radio } from 'antd';
 import moment from 'moment';
 import numeral from 'numeral';
 
@@ -104,7 +104,16 @@ const TicketBooking = () => {
     <React.Fragment>
       <h3>Ticket Booking Form - Version 1.0</h3>
       <Divider />
-      <Form form={form} name='ticket-booking-form' labelCol={{ span: 8 }} wrapperCol={{ span: 8 }} initialValues={{ fullname: 'Peter Jackson', address: '38 Yên Bái', idnumber: '201123456', year: moment('1990-01-01'), classType: '' }} onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete='off'>
+      <Form
+        form={form}
+        name='ticket-booking-form'
+        labelCol={{ span: 6 }}
+        wrapperCol={{ span: 12 }}
+        initialValues={{ fullname: 'Peter Jackson', address: '38 Yên Bái', idnumber: '201123456', year: moment('1990-01-01'), classType: 'ECONOMY' }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+        autoComplete='off'
+      >
         <Form.Item label='Họ và tên' name='fullname' rules={[{ required: true, message: 'Vui lòng nhập họ và tên!' }]}>
           <Input placeholder='Enter your full name' />
         </Form.Item>
@@ -122,15 +131,15 @@ const TicketBooking = () => {
         </Form.Item>
 
         <Form.Item label='Chọn loại vé' name='classType' rules={[{ required: true, message: 'Vui lòng chọn loại vé!' }]}>
-          <Select showSearch>
-            <Select.Option value='BUSINESS'>BUSINESS</Select.Option>
-            <Select.Option value='ECONOMY'>ECONOMY</Select.Option>
-          </Select>
+          <Radio.Group>
+            <Radio value='ECONOMY'>ECONOMY (Phổ thông)</Radio>
+            <Radio value='BUSINESS'>BUSINESS (Thương gia)</Radio>
+          </Radio.Group>
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item wrapperCol={{ offset: 6, span: 12 }}>
           <Button type='primary' htmlType='submit' style={{ minWidth: 120 }}>
-            Tính tiền
+            Tính tiền / Xuất vé
           </Button>
         </Form.Item>
       </Form>
