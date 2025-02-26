@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .header {
+      background-color: red;
+      height: 150px;
+      padding-top: 100px;
+      box-sizing: border-box;
+    }
+
+    .navigator {
+      background-color: blue;
+      height: 50px;
+    }
+
+    .nav-item {
+      color: white;
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    .content {
+      background-color: yellow;
+      height: 500px;
+      display: flex;
+    }
+
+    .left-column {
+      width: 200px;
+      background-color: green;
+      height: 100%;
+    }
+
+    .main-content {
+      flex: 1;
+      background-color: orange;
+      height: 100%;
+    }
+
+    .right-column {
+      width: 200px;
+      background-color: violet;
+      height: 100%;
+    }
+
+    .footer {
+      background-color: blue;
+      height: 50px;
+      color: white;
+      text-align: center;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navigator">
+      <div class="nav-item">
+        Home | About | Contact | Services
+      </div>
+    </nav>
+  </header>
+  <div class="content">
+    <aside class="left-column"></aside>
+    <section class="main-content"></section>
+    <aside class="right-column"></aside>
+  </div>
+
+  <footer class="footer">
+    Address: 123, ABC Street, XYZ City
+  </footer>
+</body>
+
+</html>
