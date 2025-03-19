@@ -1,0 +1,142 @@
+{
+  "id": "e62f9325-72a9-4bdc-8c6d-593e95052dfc",
+  "version": "2.0",
+  "name": "Batch 38",
+  "url": "https://aptech-tester.web.app",
+  "tests": [{
+    "id": "cd47ef05-b220-43b4-bd65-225f65000195",
+    "name": "TC-01: Login",
+    "commands": [{
+      "id": "7a28c571-817b-4a3d-b21a-481b2d3f2142",
+      "comment": "",
+      "command": "open",
+      "target": "/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "20ebce4e-4ce7-42b2-bd3a-b2483dddcf43",
+      "comment": "",
+      "command": "type",
+      "target": "//*[@id=\"login-form_username\"]",
+      "targets": [
+        ["id=login-form_username", "id"],
+        ["css=#login-form_username", "css:finder"],
+        ["xpath=//input[@id='login-form_username']", "xpath:attributes"],
+        ["xpath=//form[@id='login-form']/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "d97a5c31-c3f5-4295-b983-ab7513ae1b09",
+      "comment": "",
+      "command": "type",
+      "target": "//*[@id=\"login-form_password\"]",
+      "targets": [],
+      "value": "Tester@123"
+    }, {
+      "id": "13bc9ba3-35f9-49e8-94ff-462d03db97e9",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"login-form\"]/div[4]/div/div/div/div/button",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "b3825cfd-a372-46b5-b3d0-7349a7f29f66",
+    "name": "TC-02: Ticket Booking",
+    "commands": [{
+      "id": "c3e6b71b-efdb-41c3-bb47-73291bf64344",
+      "comment": "",
+      "command": "open",
+      "target": "/ticket-booking",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ead4661-a035-4a76-934b-1e6753c7b400",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_fullname",
+      "targets": [
+        ["id=ticket-booking-form_fullname", "id"],
+        ["css=#ticket-booking-form_fullname", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Nguyễn Văn Hùng"
+    }, {
+      "id": "77ec6244-98b3-4676-a7cb-993255d9d3ab",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_address",
+      "targets": [
+        ["id=ticket-booking-form_address", "id"],
+        ["css=#ticket-booking-form_address", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_address']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[2]/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "24 Lê Thánh Tôn, Đà Nẵng"
+    }, {
+      "id": "eba81cd4-2f5b-4c6b-abd6-ba00562c022c",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_idnumber",
+      "targets": [
+        ["id=ticket-booking-form_idnumber", "id"],
+        ["css=#ticket-booking-form_idnumber", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_idnumber']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[3]/div/div[2]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "012345678"
+    }, {
+      "id": "6ca49a8f-7bdc-4672-93b2-b353ecb5901a",
+      "comment": "",
+      "command": "type",
+      "target": "id=ticket-booking-form_year",
+      "targets": [
+        ["id=ticket-booking-form_year", "id"],
+        ["css=#ticket-booking-form_year", "css:finder"],
+        ["xpath=//input[@id='ticket-booking-form_year']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div[2]/div/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1980"
+    }, {
+      "id": "e403ec87-39d9-48c8-91f8-837ee02869ab",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-radio-inner:nth-child(2)",
+      "targets": [
+        ["css=.ant-radio-inner:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='ticket-booking-form_classType']/label/span/span", "xpath:idRelative"],
+        ["xpath=//label/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "70aad580-613a-447f-9968-31569671c4c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ant-btn",
+      "targets": [
+        ["css=.ant-btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='ticket-booking-form']/div[6]/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Tính tiền / Xuất vé')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "9c2323f7-b44f-41d4-9c7f-c3779abf930c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://aptech-tester.web.app/"],
+  "plugins": []
+}
