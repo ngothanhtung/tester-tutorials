@@ -24,12 +24,15 @@ test('Create a category must be successful', async ({ page }) => {
   const old_id = await page.locator('#layout-wrapper > div.main-content > div > div > div > div:nth-child(2) > div > div.ant-table-wrapper.css-d6xwx0 > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)').textContent();
 
   // Test data:
-  const name = 'Category 1111123';
-  const description = 'Desc Category 1111123';
+  const name = 'Category New 1234';
+  const description = 'Desc Category ...';
 
   // Test steps:
   await page.locator('#create-form_name').fill(name);
   await page.locator('#create-form_description').fill(description);
+
+  await page.screenshot({ path: './tests/screen-shots/TC-CATEGORY-CREATE-1.png' });
+
   // Click nút Save
   await page.locator('#create-form > div:nth-child(3) > div > div > div > div > button').click();
 
