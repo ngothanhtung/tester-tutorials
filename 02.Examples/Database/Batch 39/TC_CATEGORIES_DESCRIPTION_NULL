@@ -1,0 +1,9 @@
+INSERT INTO Categories
+(
+    Name
+)
+VALUES
+(
+    N'Thời trang nam X-2029'
+)
+
