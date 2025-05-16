@@ -14,6 +14,7 @@ import LifecycleLoginRequirement from './pages/LifecycleLogin/requirements';
 import LifecycleLogin from './pages/LifecycleLogin';
 import CreateCategory from './pages/CreateCategory';
 import CreateCustomer from './pages/CreateCustomer';
+import Products from './pages/Products';
 
 const { Header, Sider, Content } = Layout;
 
@@ -65,6 +66,8 @@ function App() {
                   <Route path='/logout' element={<LogOut />} />
                   <Route path='/ticket-booking' element={<TicketBooking />} />
                   <Route path='/categories' element={<Categories />} />
+
+                  <Route path='/products' element={<Products />} />
                 </Routes>
               </div>
             </Content>
