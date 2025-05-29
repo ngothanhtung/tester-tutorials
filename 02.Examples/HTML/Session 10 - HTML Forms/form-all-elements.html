@@ -21,7 +21,8 @@
 <body>
   <form>
     <label for="my-email">Email:</label>
-    <input type="text" id="my-email" placeholder="Hãy nhập email" autofocus readonly />
+    <input type="email" id="my-email" placeholder="Hãy nhập email" />
+
     <input type="checkbox" id="check-input" />
     <!-- COLOR PICKER -->
     <input type="color" />
@@ -29,8 +30,11 @@
     <!-- DATE PICKER -->
     <label for="date1">Ngày sinh:</label>
     <input type="date" id="date1" />
+
     <input type="datetime-local" />
-    <input type="email" placeholder="Email" />
+
+    <input type="email" placeholder="Hãy nhập Email" />
+
     <input type="file" />
     <input type="hidden" />
     <input type="image" />
@@ -42,6 +46,7 @@
     <!-- RADIO BUTTON -->
     <input type="radio" name="gender" id="gender-woman" />
     <input type="radio" name="gender" id="gender-man" />
+    <input type="radio" name="gender" id="gender-unknown" />
     Range
     <input type="range" min="0" max="100" step="10" />
     <input type="reset" />
@@ -78,6 +83,7 @@
     <label for="message">Message:</label>
     <textarea id="message" name="message" rows="4" cols="30"></textarea>
     <input type="submit" />
+    <button type="submit">Submit</button>
   </form>
 
 
