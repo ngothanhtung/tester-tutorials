@@ -1,0 +1,1075 @@
+{
+  "id": "c2b2d255-8128-400c-9928-e80c78818214",
+  "version": "3.0",
+  "name": "Login",
+  "url": "http://www.google.com",
+  "urls": [
+    "http://www.google.com"
+  ],
+  "plugins": [],
+  "suites": [
+    {
+      "id": "db019722-7f9b-48e9-b31f-61552de6c988",
+      "name": "New Suite",
+      "parallel": false,
+      "persistSession": false,
+      "tests": [
+        "39be9657-e77a-403a-9c9e-881709633da0"
+      ],
+      "timeout": 30000
+    }
+  ],
+  "tests": [
+    {
+      "id": "39be9657-e77a-403a-9c9e-881709633da0",
+      "name": "Login - Demo",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": "",
+          "id": "e336e080-3ced-4a85-ae7a-675e435f2ae7"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "admin",
+          "id": "93ff2a3a-707c-444f-b352-bde358acbd81",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_password",
+          "value": "Tester@123",
+          "id": "9bac8c72-b8fb-4503-92f4-4817d9f00d99",
+          "fallbackTargets": [
+            [
+              "id=login-form_password",
+              "id"
+            ],
+            [
+              "css=#login-form_password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[2]/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "id": "c0475af6-4ab7-4de7-bbfb-915e138213be",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "57415d62-0f25-4d16-b29a-f40b393f1dbd",
+      "name": "Category - Add New",
+      "commands": [
+        {
+          "id": "817d7f92-e970-4c84-a21f-e197ce6170f8",
+          "command": "open",
+          "target": "https://os-admin.aptech.io/login",
+          "value": ""
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=email",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "id": "db2da904-d5ab-4b29-9bd4-af8eb11fcf97",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.is-invalid",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "name=email",
+          "value": "tungnt@softech.vn",
+          "id": "bb693893-fbc4-43b9-9bca-61c7ee32d32a",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(1) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=password",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "3d5a9ce4-afc3-49a2-8403-38b3b6a76648"
+        },
+        {
+          "command": "type",
+          "target": "name=password",
+          "value": "123456789",
+          "id": "071a5720-8fbf-4641-becd-a41429b3d282",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.is-invalid",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.btn",
+          "value": "",
+          "id": "48b00800-7711-4ef2-af59-e2d729bed2ec",
+          "fallbackTargets": [
+            [
+              "css=.btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='submit' and text()='Log In'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[4]/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Log In')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "open",
+          "target": "https://os-admin.aptech.io/online-shop/data-management/categories",
+          "value": "",
+          "id": "4f193f7c-58da-401d-9add-2f8eb1b736cc"
+        },
+        {
+          "command": "type",
+          "target": "id=create-form_name",
+          "value": "new category - 090512347",
+          "id": "5c2a52ed-3366-47b1-ab6c-7f17319b78a7",
+          "fallbackTargets": [
+            [
+              "id=create-form_name",
+              "id"
+            ],
+            [
+              "css=#create-form_name",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='create-form_name'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='create-form']/div/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "id=create-form_description",
+          "value": "Desc ...",
+          "id": "f09e7257-b37e-42d6-8020-6edb2931cfdc",
+          "fallbackTargets": [
+            [
+              "id=create-form_description",
+              "id"
+            ],
+            [
+              "css=#create-form_description",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='create-form_description'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='create-form']/div[2]/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn-primary",
+          "value": "",
+          "id": "2e31d9c4-9662-4913-a134-ab1902e6d52b",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn-primary",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='create-form']/div[3]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Save')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "assertElementNotPresent",
+          "target": "css=[data-show]",
+          "value": "",
+          "id": "e7ee4f42-a355-4ab1-b5cb-564b60d2e207",
+          "fallbackTargets": [
+            [
+              "css=[data-show]",
+              "css:data-attr"
+            ],
+            [
+              "css=.ant-alert",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div/div/div[3])[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8c51a856-bf6f-4813-b510-29880febc159",
+      "name": "Category - Delete",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://os-admin.aptech.io/login",
+          "value": "",
+          "id": "73281e68-2e2f-430d-8514-572cc767c288"
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=email",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.is-invalid",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "a2a920cc-8d54-4934-b731-182a134160cf"
+        },
+        {
+          "command": "type",
+          "target": "name=email",
+          "value": "tungnt@softech.vn",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(1) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "9b63c31a-8f00-4239-a94f-a9d5e01c3436"
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=password",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "031bb2fb-ca06-426b-a4e3-333080bace53"
+        },
+        {
+          "command": "type",
+          "target": "name=password",
+          "value": "123456789",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.is-invalid",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "26009488-0eb8-40cd-9c97-ee4e51900e19"
+        },
+        {
+          "command": "click",
+          "target": "css=.btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='submit' and text()='Log In'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[4]/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Log In')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "58c57132-e786-46e8-87ff-4b30f0568d09"
+        },
+        {
+          "command": "open",
+          "target": "https://os-admin.aptech.io/online-shop/data-management/categories",
+          "value": "",
+          "id": "0f43717a-1d25-429e-b5fa-f98bc8e4d773"
+        },
+        {
+          "command": "click",
+          "target": "//*[@id=\"layout-wrapper\"]/div[2]/div/div/div/div[2]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[4]/div/div[2]/button",
+          "value": "",
+          "id": "770cbee8-3685-4e22-bc9c-75d9b4c62ba4",
+          "fallbackTargets": [
+            [
+              "css=.ant-table-cell-row-hover .ant-btn-dangerous",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='button'])[11]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div[2]/div/div/div/div/div/table/tbody/tr/td[4]/div/div[2]/button)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn:nth-child(2)",
+          "value": "",
+          "id": "59a102fa-38d2-43e5-8fc6-276615ace777",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn:nth-child(2)",
+              "css:finder"
+            ],
+            [
+              "xpath=//button[contains(.,'Confirm')]",
+              "xpath:innerText"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9c14b860-f945-45a5-88c7-5cffb9139f63",
+      "name": "Category - Update",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://os-admin.aptech.io/login",
+          "value": "",
+          "id": "5f02abfb-1de2-4517-a827-5cb540dc4700"
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=email",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.is-invalid",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "a70015c7-5511-4750-bc53-5a4779ebc059"
+        },
+        {
+          "command": "type",
+          "target": "name=email",
+          "value": "tungnt@softech.vn",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(1) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "231353fe-28e5-47eb-8522-b2fbdcddd41a"
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=password",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "f8241b7c-4f2c-4df5-8431-bb1dc29c89be"
+        },
+        {
+          "command": "type",
+          "target": "name=password",
+          "value": "123456789",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.is-invalid",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "c6b58cf1-de17-4320-aae0-55ac1294d333"
+        },
+        {
+          "command": "click",
+          "target": "css=.btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='submit' and text()='Log In'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[4]/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Log In')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "d8149542-3277-43d9-9bb8-b210ce3cbb62"
+        },
+        {
+          "command": "open",
+          "target": "https://os-admin.aptech.io/online-shop/data-management/categories",
+          "value": "",
+          "id": "6444fa0f-bf31-47d0-a463-a73013eb701a"
+        },
+        {
+          "command": "click",
+          "target": "//*[@id=\"layout-wrapper\"]/div[2]/div/div/div/div[2]/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[4]/div/div[1]/button",
+          "value": "",
+          "id": "99c96df9-0838-4cc5-98da-fe6f076bd77c",
+          "fallbackTargets": [
+            [
+              "css=.ant-table-cell-row-hover .ant-space-item:nth-child(1) > .ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='button'])[10]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div[2]/div/div/div/div/div/table/tbody/tr/td[4]/div/div/button)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=update-form_name",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.is-invalid",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "7969e0a5-e8c4-4f34-9307-7e5e7c3804bf"
+        },
+        {
+          "command": "type",
+          "target": "id=update-form_name",
+          "value": "Cafe cafe 003",
+          "id": "6eceffc0-2774-4c56-9ebe-05f32dbca077",
+          "fallbackTargets": [
+            [
+              "id=update-form_name",
+              "id"
+            ],
+            [
+              "css=#update-form_name",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='update-form_name'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='update-form']/div/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=update-form_description",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.is-invalid",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "399b04a4-3ca3-4bc0-a0e6-c098f242b0e6"
+        },
+        {
+          "command": "type",
+          "target": "id=update-form_description",
+          "value": "Desc new cafe ...",
+          "id": "1615b949-737d-4a66-9d20-50c41d02086f",
+          "fallbackTargets": [
+            [
+              "id=update-form_description",
+              "id"
+            ],
+            [
+              "css=#update-form_description",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='update-form_description'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='update-form']/div[2]/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn:nth-child(2)",
+          "value": "",
+          "id": "4203d159-6eee-4f9a-a0ff-3e94475be2f2",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn:nth-child(2)",
+              "css:finder"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0f125cf3-67b4-4c38-8c6d-369aefe46283",
+      "name": "Assert-Command",
+      "commands": [
+        {
+          "id": "9d03ba79-0a35-4ad5-8f6c-b1f2e5156727",
+          "command": "open",
+          "target": "https://aptech-tester.web.app/ticket-booking",
+          "value": ""
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=ticket-booking-form_fullname",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "f76d170a-333d-4b60-9121-020c0e201092"
+        },
+        {
+          "command": "type",
+          "target": "id=ticket-booking-form_fullname",
+          "value": "Ngô Thanh Tùng",
+          "id": "1dae299f-6b11-4578-83ce-654291018a9b",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_fullname",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_fullname",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_fullname'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=ticket-booking-form_address",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_address",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_address",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_address'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[2]/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "e27c2ac1-cdf1-4bbb-8407-f4714a6cea46"
+        },
+        {
+          "command": "type",
+          "target": "id=ticket-booking-form_address",
+          "value": "02 Quang Trung, Đà Nẵng",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_address",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_address",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_address'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[2]/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "a6683458-913c-40bd-b200-bf9a1052281e"
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=ticket-booking-form_idnumber",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_idnumber",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_idnumber",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_idnumber'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[3]/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "b4d2ac39-dbd9-4cf3-9d24-bf26281aa621"
+        },
+        {
+          "command": "type",
+          "target": "id=ticket-booking-form_idnumber",
+          "value": "04234578676",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_idnumber",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_idnumber",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_idnumber'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[3]/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "8ddf3129-2193-4163-8946-cae227e42367"
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=ticket-booking-form_year",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_year",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_year",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_year'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "35c7f06c-4623-4596-b38c-6e0999e68cc3"
+        },
+        {
+          "command": "type",
+          "target": "id=ticket-booking-form_year",
+          "value": "2001",
+          "id": "d9079080-b5b9-455c-9679-b1334c8b3537",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_year",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_year",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_year'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-form-item:nth-child(5) .ant-col-6",
+          "value": "",
+          "id": "4e5f6474-43b6-4421-9ab6-fc6da7eb4767",
+          "fallbackTargets": [
+            [
+              "css=.ant-form-item:nth-child(5) .ant-col-6",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[5]/div/div)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-radio-wrapper:nth-child(2) > .ant-radio-label",
+          "value": "",
+          "id": "a852f54d-4a0f-4134-af80-eb78c6d55b2b",
+          "fallbackTargets": [
+            [
+              "css=.ant-radio-wrapper:nth-child(2) > .ant-radio-label",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='ticket-booking-form_classType']/label[2]/span[2])[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//span[contains(.,'BUSINESS (Thương gia)')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "id": "b01c0cbe-b453-4b83-93ef-e8c3d9bc7313",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[6]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Tính tiền / Xuất vé')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "assertText",
+          "target": "css=.ant-result-title",
+          "value": "Tiền vé: 4.000.000 VNĐ",
+          "id": "2c6968db-b410-4e28-aab7-7e9cfdc39c98",
+          "fallbackTargets": [
+            [
+              "css=.ant-result-title",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div[3]/div[2]/div/div[2])[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "//*[@id=\"root\"]/div/div/aside/div/ul/li[1]",
+          "value": "",
+          "id": "08ffe3ce-d9e3-4179-bb30-3c5f45e37371",
+          "fallbackTargets": [
+            [
+              "css=[data-menu-id=\"rc-menu-uuid-72370-2-/home\"]",
+              "css:data-attr"
+            ],
+            [
+              "css=.ant-menu-item-active",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/aside/div/ul/li)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "snapshot": {
+    "dependencies": {},
+    "tests": [],
+    "jest": {
+      "extraGlobals": []
+    }
+  },
+  "timeout": 0,
+  "delay": 100
+}
