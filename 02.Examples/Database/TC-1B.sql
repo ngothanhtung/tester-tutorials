@@ -1,0 +1,10 @@
+INSERT INTO Categories 
+(
+    [Name],
+    [Description]
+)
+VALUES 
+(
+    N'A123456789A123456789A123456789A123456789A1234567891',
+    N'DESC ...'
+)
