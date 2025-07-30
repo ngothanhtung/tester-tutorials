@@ -1,0 +1,1159 @@
+{
+  "id": "0e113bcd-3a73-412e-a78f-68fa8daad9c2",
+  "version": "3.0",
+  "name": "Batch 40",
+  "url": "http://www.google.com",
+  "urls": [
+    "http://www.google.com"
+  ],
+  "plugins": [],
+  "suites": [
+    {
+      "id": "6e785ae2-fa4e-41c5-912d-8e2b67b308cc",
+      "name": "New Suite",
+      "parallel": false,
+      "persistSession": false,
+      "tests": [],
+      "timeout": 30000
+    }
+  ],
+  "tests": [
+    {
+      "id": "33488564-8c94-4f9d-8241-266c7d1acbb6",
+      "name": "TC - Login OK",
+      "commands": [
+        {
+          "id": "18843b08-98dd-46d5-9cc4-80e68ba06e6a",
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": ""
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "admin",
+          "id": "42b1e46d-081d-4b36-8fdf-a08aa867e82a",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_password",
+          "value": "Tester@123",
+          "id": "1d7424db-6ec0-40dc-953b-b5095d7ec719",
+          "fallbackTargets": [
+            [
+              "id=login-form_password",
+              "id"
+            ],
+            [
+              "css=#login-form_password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[2]/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "id": "91827046-52a4-4b5f-aa0f-89d6f1a37171",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "pause",
+          "target": "500",
+          "value": "",
+          "id": "80875955-245f-40a5-88e8-cc2858c52e4a"
+        },
+        {
+          "command": "verifyElementPresent",
+          "target": "css=.site-layout-content > div",
+          "value": "",
+          "id": "5627e4c7-6243-454d-84c9-6a71f388693d",
+          "fallbackTargets": [
+            [
+              "css=.site-layout-content > div",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "verifyText",
+          "target": "css=.site-layout-content > div",
+          "value": "Home Page",
+          "id": "1c422893-e84a-4958-8238-fac162096e29",
+          "fallbackTargets": [
+            [
+              "css=.site-layout-content > div",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9bb61c31-31f3-4745-ba05-f8c095dbc963",
+      "name": "TC-Login-Username-Required",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": "",
+          "id": "dee12ddc-a0ef-4493-8dc6-b544b67229f4"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "id": "0da9d381-f64a-41c8-b377-728cbeaf2607",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "pause",
+          "target": "100",
+          "value": "",
+          "id": "308caa5e-c022-42ea-92da-79376558c60a"
+        },
+        {
+          "command": "verifyText",
+          "target": "css=#login-form_username_help > .ant-form-item-explain-error",
+          "value": " Tên đăng nhập không được để trống",
+          "id": "4e7a239b-d5d1-434c-a3c1-c5eaa41e65d9",
+          "fallbackTargets": [
+            [
+              "css=#login-form_username_help > .ant-form-item-explain-error",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='login-form_username_help']/div)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3ac33f90-78ca-448e-abde-28b26c53f1c7",
+      "name": "TC-Login-Password-Required",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": "",
+          "id": "42bd16ed-87c1-4f46-a154-b0b950803a56"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "48111c7e-02c4-4f70-9821-b705ae1e9bd6"
+        },
+        {
+          "command": "pause",
+          "target": "100",
+          "value": "",
+          "id": "a66f8dcb-8c8c-4b3b-91d5-d20a6e62d216"
+        },
+        {
+          "command": "verifyText",
+          "target": "css=#login-form_password_help > .ant-form-item-explain-error",
+          "value": "Mật khẩu không được để trống",
+          "fallbackTargets": [
+            [
+              "css=#login-form_password_help > .ant-form-item-explain-error",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='login-form_password_help']/div)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "0ccda25a-5a63-48f5-a123-27bb51bca4ac"
+        }
+      ]
+    },
+    {
+      "id": "7763fc56-88a2-4c99-97ec-4a583bec3236",
+      "name": "TC-Login-Username:3-30characters",
+      "commands": [
+        {
+          "id": "d13a1f3b-29d2-437a-aa5c-8ecaa4882571",
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": ""
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "abc",
+          "id": "4e3c70f8-7259-4cf6-8121-bf7f653e5851",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "id": "406682a2-5122-4952-9212-16f4d7329fb3",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "pause",
+          "target": "200",
+          "value": "",
+          "id": "163eaca9-a8d9-4a53-85e4-e41d517a352c"
+        },
+        {
+          "command": "verifyElementNotPresent",
+          "target": "//*[@id=\"login-form_username_help\"]/div",
+          "value": "",
+          "id": "b6a07410-40a0-4770-8a6c-4c088371ac74"
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=login-form_username",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "id": "e109fdb1-bb33-41bc-9056-acc92f51e11c",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "abcd",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "c39d10ec-9065-44f5-b43d-aff6dcb197ad"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "1d67c6e1-f14b-4749-8868-346b0c31a544"
+        },
+        {
+          "command": "pause",
+          "target": "200",
+          "value": "",
+          "id": "a5ddbf44-9e6d-4a0f-889c-7c334a280c12"
+        },
+        {
+          "command": "verifyElementNotPresent",
+          "target": "//*[@id=\"login-form_username_help\"]/div",
+          "value": "",
+          "id": "cc82edc1-39d3-4fe3-a3ac-e95d1d694a58"
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=login-form_username",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "8d6d9664-dadf-40c8-a2ea-f43fec2d2ea8"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "a123456789a123456789a123456789",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "d0fae295-3578-48e9-ae03-5a220da9d89f"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "0f1b8434-1c3c-4ef4-859b-4e24b826e2ce"
+        },
+        {
+          "command": "pause",
+          "target": "200",
+          "value": "",
+          "id": "aa70075d-ddac-40e3-b300-156a2a046b7e"
+        },
+        {
+          "command": "verifyElementNotPresent",
+          "target": "//*[@id=\"login-form_username_help\"]/div",
+          "value": "",
+          "id": "ee63e2e7-a85b-484f-8c29-6db67c153496"
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=login-form_username",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "d7cee324-a4a4-42d4-8889-87c4c45333c8"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "a123456789a123456789a12345678",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "e8b21c62-e547-46d0-84ed-76e336d514b0"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "30146f9b-b901-4a3a-90fc-68836c204476"
+        },
+        {
+          "command": "pause",
+          "target": "200",
+          "value": "",
+          "id": "26873823-2351-4840-8316-e6236eb45188"
+        },
+        {
+          "command": "verifyElementNotPresent",
+          "target": "//*[@id=\"login-form_username_help\"]/div",
+          "value": "",
+          "id": "63e8fcb6-2bbe-4c5c-b8d8-e136360035e3"
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=login-form_username",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "8a3f7f27-d899-40a1-af0b-ea3c71fc9112"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "ab",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "336c6299-90cf-43ce-acec-4634f77e149f"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "326e48a3-483a-4962-b646-4a39b10c0105"
+        },
+        {
+          "command": "pause",
+          "target": "200",
+          "value": "",
+          "id": "4088d129-2f04-4d3e-bfda-54a9af51461e"
+        },
+        {
+          "command": "verifyElementPresent",
+          "target": "//*[@id=\"login-form_username_help\"]/div",
+          "value": "",
+          "id": "a39eb12f-98f6-46b2-bf44-3c9d7a7b80bb"
+        },
+        {
+          "command": "verifyText",
+          "target": "//*[@id=\"login-form_username_help\"]/div",
+          "value": "Độ dài tên đăng nhập phải nằm trong khoảng 3 đến 30 ký tự",
+          "id": "ebe5aa71-4f52-4b67-a1af-cb2b41863723"
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=login-form_username",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "684dac37-3ccf-40c6-9044-9252649c20a6"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "a123456789a123456789a123456789x",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "fa4b6b19-c56e-4fb6-b82f-c60fe573e2a7"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "948a1cc3-1994-4f84-9f22-49c79c45a49d"
+        },
+        {
+          "command": "pause",
+          "target": "200",
+          "value": "",
+          "id": "684fdf04-06ca-4da4-893d-3b00e16f1fa9"
+        },
+        {
+          "command": "verifyElementPresent",
+          "target": "//*[@id=\"login-form_username_help\"]/div",
+          "value": "",
+          "id": "0862373d-875b-4c5e-861e-56c80da1a808"
+        },
+        {
+          "command": "verifyText",
+          "target": "//*[@id=\"login-form_username_help\"]/div",
+          "value": "Độ dài tên đăng nhập phải nằm trong khoảng 3 đến 30 ký tự",
+          "id": "8e37423d-6201-4f12-93a9-ea3b81c3704b"
+        }
+      ]
+    },
+    {
+      "id": "f88afa23-d473-4a7b-a870-13f16297f569",
+      "name": "TC-LoginUsernam:3 character",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": "",
+          "id": "22db7a44-7b63-4d78-b2c6-7db962219d50"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "abc",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "fee7887b-5272-4d45-bbfa-185a6ac63d8d"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "4dccbd7f-3f77-450d-b3c5-33ee1ce69c4f"
+        },
+        {
+          "command": "pause",
+          "target": "200",
+          "value": "",
+          "id": "62ae5f4c-2d00-4cc6-9380-3ae82689909a"
+        },
+        {
+          "command": "verifyElementNotPresent",
+          "target": "//*[@id=\"login-form_username_help\"]/div",
+          "value": "",
+          "id": "a046b2f5-964f-47c7-8127-2598ce89823b"
+        }
+      ]
+    },
+    {
+      "id": "8566bbc8-3ce5-4c7e-9669-5706b5e613a3",
+      "name": "TC-Login-Failed",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": "",
+          "id": "10cc3f91-595f-4881-b253-f739e3098131"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "admin",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "b2009ec1-1eb9-4253-9eb2-a21e5ac96bf3"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_password",
+          "value": "Tester@124",
+          "fallbackTargets": [
+            [
+              "id=login-form_password",
+              "id"
+            ],
+            [
+              "css=#login-form_password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[2]/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "a0388442-662b-406e-904d-5aa615a099f0"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "17eee516-0910-40a8-95f6-85b34e51a95a"
+        },
+        {
+          "command": "pause",
+          "target": "500",
+          "value": "",
+          "id": "aec81287-19df-460a-8373-e1a16dde1a16"
+        },
+        {
+          "command": "verifyElementPresent",
+          "target": "//*[@id=\"root\"]/div/div/div/main/div/h3[1]",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.site-layout-content > div",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "ab1cd71c-9d35-42cc-838f-adea63daf5a7"
+        },
+        {
+          "command": "verifyText",
+          "target": "//*[@id=\"root\"]/div/div/div/main/div/h3[1]",
+          "value": "Login Form",
+          "fallbackTargets": [
+            [
+              "css=.site-layout-content > div",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "f74e530d-8de9-40d6-8d27-d3a742267b52"
+        }
+      ]
+    },
+    {
+      "id": "2321959d-3257-4a2c-9f3c-922d6606315e",
+      "name": "TC-Login-Failed-2",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": "",
+          "id": "a147f436-80b4-49ac-9b2e-d387c61dfbe0"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "admix",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "771bbae0-e42b-4a00-8f96-622cf269d4c9"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_password",
+          "value": "Tester@123",
+          "fallbackTargets": [
+            [
+              "id=login-form_password",
+              "id"
+            ],
+            [
+              "css=#login-form_password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[2]/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "04721975-f844-4de5-a392-e033abc12168"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "8598757f-6b8f-4e68-bc12-718ed634d28e"
+        },
+        {
+          "command": "pause",
+          "target": "500",
+          "value": "",
+          "id": "4220ee4a-c0d4-42f1-8dd5-fea84059e0ac"
+        },
+        {
+          "command": "verifyElementPresent",
+          "target": "//*[@id=\"root\"]/div/div/div/main/div/h3[1]",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.site-layout-content > div",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "4efe83bd-c234-45c0-b29f-63f218a2b89e"
+        },
+        {
+          "command": "verifyText",
+          "target": "//*[@id=\"root\"]/div/div/div/main/div/h3[1]",
+          "value": "Login Form",
+          "fallbackTargets": [
+            [
+              "css=.site-layout-content > div",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "dbc5793d-894a-455a-92cf-0babe8863b63"
+        }
+      ]
+    },
+    {
+      "id": "7fdc4a74-e9e1-48ee-b477-6fdf027e2775",
+      "name": "TC-Login-Failed-3",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": "",
+          "id": "4e477b9d-e52a-49fa-854f-98587c232ab7"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "admix",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "ce843234-9eb1-4584-93bd-f0b66da9ae6a"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_password",
+          "value": "Tester@124",
+          "fallbackTargets": [
+            [
+              "id=login-form_password",
+              "id"
+            ],
+            [
+              "css=#login-form_password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[2]/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "cde8985d-e35d-4e2c-9745-201903ad4abd"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "de611db0-8688-49f2-bc5f-42e37c0ff231"
+        },
+        {
+          "command": "pause",
+          "target": "500",
+          "value": "",
+          "id": "e3be3e56-6026-4926-8da6-45060ea76639"
+        },
+        {
+          "command": "verifyElementPresent",
+          "target": "//*[@id=\"root\"]/div/div/div/main/div/h3[1]",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.site-layout-content > div",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "f6f57b9f-57e2-43fd-a51a-e708778fc3dc"
+        },
+        {
+          "command": "verifyText",
+          "target": "//*[@id=\"root\"]/div/div/div/main/div/h3[1]",
+          "value": "Login Form",
+          "fallbackTargets": [
+            [
+              "css=.site-layout-content > div",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "faf14985-858d-4df2-a711-312430329ad2"
+        }
+      ]
+    }
+  ],
+  "snapshot": {
+    "dependencies": {},
+    "tests": [],
+    "jest": {
+      "extraGlobals": []
+    }
+  },
+  "timeout": 0,
+  "delay": 50
+}
