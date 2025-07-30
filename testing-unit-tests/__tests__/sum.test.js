@@ -9,4 +9,8 @@ describe('math', () => {
   test('adds 5 + 9 to equal 14', () => {
     expect(sum(5, 9)).toBe(14);
   });
+
+  test('adds 10 + (-5) to equal 5', () => {
+    expect(sum(10, -5)).toBe(5);
+  });
 });
