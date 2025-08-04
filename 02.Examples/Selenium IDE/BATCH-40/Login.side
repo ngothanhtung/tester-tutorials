@@ -311,30 +311,6 @@
           "id": "b6a07410-40a0-4770-8a6c-4c088371ac74"
         },
         {
-          "command": "sendKeys",
-          "target": "id=login-form_username",
-          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
-          "id": "e109fdb1-bb33-41bc-9056-acc92f51e11c",
-          "fallbackTargets": [
-            [
-              "id=login-form_username",
-              "id"
-            ],
-            [
-              "css=#login-form_username",
-              "css:finder"
-            ],
-            [
-              "xpath=(//input[@id='login-form_username'])[1]",
-              "xpath:attributes"
-            ],
-            [
-              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
-              "xpath:idRelative"
-            ]
-          ]
-        },
-        {
           "command": "type",
           "target": "id=login-form_username",
           "value": "abcd",
@@ -389,6 +365,12 @@
           "target": "//*[@id=\"login-form_username_help\"]/div",
           "value": "",
           "id": "cc82edc1-39d3-4fe3-a3ac-e95d1d694a58"
+        },
+        {
+          "command": "pause",
+          "target": "500000",
+          "value": "",
+          "id": "145a908e-9b57-4c14-8df7-152870a86c3c"
         },
         {
           "command": "sendKeys",
