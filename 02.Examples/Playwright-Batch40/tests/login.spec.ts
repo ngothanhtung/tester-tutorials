@@ -3,6 +3,9 @@ import { test, expect } from '@playwright/test';
 test('Login thành công', async ({ page }) => {
   await page.goto('https://aptech-tester.web.app/login');
 
+  const h2 = page.locator('#root > div > div > div > main > div > h2');
+  const textH2 = await h2.textContent();
+
   await page.locator('#login-form_username').fill('admin');
   await page.locator('#login-form_password').fill('Tester@123');
 
