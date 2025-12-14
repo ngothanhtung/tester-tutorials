@@ -15,6 +15,8 @@ import LifecycleLogin from './pages/LifecycleLogin';
 import CreateCategory from './pages/CreateCategory';
 import CreateCustomer from './pages/CreateCustomer';
 import Products from './pages/Products';
+import AllProducts from './pages/AllProducts';
+import CreateProduct from './pages/CreateProduct';
 
 const { Header, Sider, Content } = Layout;
 
@@ -68,6 +70,8 @@ function App() {
                   <Route path='/categories' element={<Categories />} />
 
                   <Route path='/products' element={<Products />} />
+                  <Route path='/all-products' element={<AllProducts />} />
+                  <Route path='/create-products' element={<CreateProduct />} />
                 </Routes>
               </div>
             </Content>
