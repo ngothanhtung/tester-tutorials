@@ -42,6 +42,16 @@ const menuItems: MenuProps['items'] = [
     icon: <AppstoreOutlined />,
   },
   {
+    key: '/products/all',
+    label: 'All products',
+    icon: <AppstoreOutlined />,
+  },
+  {
+    key: '/products/create',
+    label: 'Create product',
+    icon: <AppstoreOutlined />,
+  },
+  {
     key: '/logout',
     label: 'Logout',
     icon: <LogoutOutlined />,

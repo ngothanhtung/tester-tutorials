@@ -70,8 +70,8 @@ function App() {
                   <Route path='/categories' element={<Categories />} />
 
                   <Route path='/products' element={<Products />} />
-                  <Route path='/all-products' element={<AllProducts />} />
-                  <Route path='/create-products' element={<CreateProduct />} />
+                  <Route path='/products/all' element={<AllProducts />} />
+                  <Route path='/products/create' element={<CreateProduct />} />
                 </Routes>
               </div>
             </Content>
