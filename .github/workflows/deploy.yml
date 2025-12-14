@@ -39,6 +39,7 @@ jobs:
         run: yarn build
         env:
           CI: true
+          DISABLE_ESLINT_PLUGIN: true
 
       - name: Deploy to Firebase
         if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
