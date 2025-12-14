@@ -31,7 +31,7 @@ const LifecycleLogin = () => {
 
       const { username, password } = values;
 
-      await axios.post('https://server.aptech.io/auth/login', {
+      await axios.post('https://server.softech.cloud/auth/login', {
         username: username,
         password: password,
       });

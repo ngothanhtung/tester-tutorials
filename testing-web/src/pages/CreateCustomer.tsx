@@ -20,7 +20,7 @@ export default function CreateCustomer({}: Props) {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://server.aptech.io/online-shop/customers',
+      url: 'https://server.softech.cloud/online-shop/customers',
       headers: {
         'Content-Type': 'application/json',
         Authorization:

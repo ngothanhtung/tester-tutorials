@@ -46,7 +46,7 @@ const Login = () => {
 
     const { username, password } = values;
 
-    const response = await axios.post('https://server.aptech.io/auth/login', {
+    const response = await axios.post('https://server.softech.cloud/auth/login', {
       username: username,
       password: password,
     });

@@ -4,7 +4,7 @@ import axios from 'axios';
 let config = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://server.aptech.io/online-shop/products',
+  url: 'https://server.softech.cloud/online-shop/products',
   headers: {},
 };
 

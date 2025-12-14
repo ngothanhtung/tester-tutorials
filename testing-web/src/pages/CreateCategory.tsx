@@ -16,7 +16,7 @@ export default function CreateCategory({}: Props) {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'https://server.aptech.io/online-shop/categories',
+      url: 'https://server.softech.cloud/online-shop/categories',
       headers: {
         'Content-Type': 'application/json',
         Authorization:

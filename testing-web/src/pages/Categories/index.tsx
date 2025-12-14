@@ -48,7 +48,7 @@ const Categories = () => {
     console.log({ name, description });
 
     axios
-      .post('https://server.aptech.io/auth/login', {
+      .post('https://server.softech.cloud/auth/login', {
         username: 'tungnt@softech.vn',
         password: '123456789',
       })
@@ -56,7 +56,7 @@ const Categories = () => {
         console.log(response.data.access_token);
         axios
           .post(
-            'https://server.aptech.io/online-shop/categories',
+            'https://server.softech.cloud/online-shop/categories',
             { name, description },
             {
               headers: {
