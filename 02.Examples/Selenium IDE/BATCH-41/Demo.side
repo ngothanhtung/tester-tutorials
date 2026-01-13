@@ -1,0 +1,987 @@
+{
+  "id": "09d1edd1-e092-46f3-b07a-1a6a36c5e0a4",
+  "version": "3.0",
+  "name": "Demo-1",
+  "url": "http://www.google.com",
+  "urls": [
+    "http://www.google.com"
+  ],
+  "plugins": [],
+  "suites": [
+    {
+      "id": "aee9d62d-34b1-455f-952c-ddb894ab62f8",
+      "name": "New Suite",
+      "parallel": false,
+      "persistSession": false,
+      "tests": [
+        "ebded436-ccff-4083-9d06-469816b66557"
+      ],
+      "timeout": 30000
+    }
+  ],
+  "tests": [
+    {
+      "id": "ebded436-ccff-4083-9d06-469816b66557",
+      "name": "Login-Passed",
+      "commands": [
+        {
+          "id": "dd3e7be9-9b23-43b7-9d45-0bb40e7c55f0",
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": ""
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "admin",
+          "id": "f7c7ff56-e393-4fe3-9bb1-9caab0db55c0",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_password",
+          "value": "Tester@123",
+          "id": "0452672d-8fa2-4935-9bca-53a95132f216",
+          "fallbackTargets": [
+            [
+              "id=login-form_password",
+              "id"
+            ],
+            [
+              "css=#login-form_password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[2]/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "id": "cc18e47f-161f-4c87-a4fb-b0ca828623c7",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "pause",
+          "target": "2000",
+          "value": "",
+          "id": "43fb7247-7b9e-4a49-8b31-dc2575dbcfe5"
+        },
+        {
+          "command": "assertText",
+          "target": "css=.site-layout-content > div",
+          "value": "Home Page",
+          "id": "20816ae5-8c01-4508-b3cd-a5ad59ad6e01",
+          "fallbackTargets": [
+            [
+              "css=.site-layout-content > div",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f51d107c-a0df-4c73-9808-2440ac3e4bcf",
+      "name": "Login-Failed-1",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": "",
+          "id": "f5bea6cc-0b4e-4cef-9ae0-178a00f13af6"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "admix",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "53e32ede-c7cf-4674-b6d2-7e9705202345"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_password",
+          "value": "Tester@123",
+          "fallbackTargets": [
+            [
+              "id=login-form_password",
+              "id"
+            ],
+            [
+              "css=#login-form_password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[2]/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "f2c14fdb-e7fd-4c81-b5a7-9a29ee9be53e"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "e49f154b-6e9d-4e1b-8e2b-28b320787d3a"
+        }
+      ]
+    },
+    {
+      "id": "809aefc0-ad7c-4079-b109-0dd9c005794f",
+      "name": "Login-Failed-2",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": "",
+          "id": "9b04fb9a-1f93-49b2-a2c9-f3e94c70d787"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "admin",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "9308f095-50bf-4cc2-aaa1-0b10a2a3aa8f"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_password",
+          "value": "Tester@129",
+          "fallbackTargets": [
+            [
+              "id=login-form_password",
+              "id"
+            ],
+            [
+              "css=#login-form_password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[2]/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "4c9e90c8-5b82-46bd-9060-2502b88bad10"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "a76ea14f-7374-41bf-947b-a7e058685d1f"
+        }
+      ]
+    },
+    {
+      "id": "a4245169-71f5-4488-8471-30475079fb62",
+      "name": "Login-Failed-3",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://aptech-tester.web.app/login",
+          "value": "",
+          "id": "55293560-81fc-4f78-9bb6-f1c1f88b2ef3"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_username",
+          "value": "admix",
+          "fallbackTargets": [
+            [
+              "id=login-form_username",
+              "id"
+            ],
+            [
+              "css=#login-form_username",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_username'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "c35dcfbd-8f1f-4bc3-abbe-4cdf6200d89b"
+        },
+        {
+          "command": "type",
+          "target": "id=login-form_password",
+          "value": "Tester@129",
+          "fallbackTargets": [
+            [
+              "id=login-form_password",
+              "id"
+            ],
+            [
+              "css=#login-form_password",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='login-form_password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[2]/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "ae1f6426-7457-451c-aad8-78a351193b4e"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='login-form']/div[4]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Đăng nhập')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "12fa7cc2-7ea0-4023-932a-abf9809936c8"
+        }
+      ]
+    },
+    {
+      "id": "0db2d475-400a-4b16-a72b-38efca2b795c",
+      "name": "Category-Create-OK",
+      "commands": [
+        {
+          "id": "4deae3bc-52f2-4baa-99e3-0bea15a978ec",
+          "command": "open",
+          "target": "https://os-admin.vercel.app/login",
+          "value": ""
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=email",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "id": "a8dca0e3-737f-4ca8-bc13-bbbe75d0cd4a",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(1) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "name=email",
+          "value": "tungnt@softech.vn",
+          "id": "b4ea4076-7fd4-4446-92b4-52c99a505000",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(1) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=password",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "id": "bfd54d80-e354-4a48-9d31-ba37d689ea91",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "name=password",
+          "value": "123456789",
+          "id": "e8927ee8-6634-4f74-b645-324d4e31bb15",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.btn",
+          "value": "",
+          "id": "db0dafab-8d9a-49b2-8e3e-f96b63769eb9",
+          "fallbackTargets": [
+            [
+              "css=.btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='submit' and text()='Log In'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[4]/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Log In')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "open",
+          "target": "https://os-admin.vercel.app/online-shop/data-management/categories",
+          "value": "",
+          "id": "4be592da-b938-476c-9352-dbf90d939bed"
+        },
+        {
+          "command": "type",
+          "target": "id=create-form_name",
+          "value": "Category Y123456789",
+          "id": "df5a111c-93da-40a5-a8e9-bae7eaa910ed",
+          "fallbackTargets": [
+            [
+              "id=create-form_name",
+              "id"
+            ],
+            [
+              "css=#create-form_name",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='create-form_name'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='create-form']/div/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "id=create-form_description",
+          "value": "Desc ...",
+          "id": "12ea4cd7-43c1-498d-8869-fcafdf559036",
+          "fallbackTargets": [
+            [
+              "id=create-form_description",
+              "id"
+            ],
+            [
+              "css=#create-form_description",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='create-form_description'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='create-form']/div[2]/div/div[2]/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn-primary",
+          "value": "",
+          "id": "c9d7cb56-1cdd-4afe-a603-6441ffd4a2bc",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn-primary",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='create-form']/div[3]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Save')]",
+              "xpath:innerText"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "61b3ff67-54b9-496e-b74d-2fdd42dd4d03",
+      "name": "Category-Update-OK",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://os-admin.vercel.app/login",
+          "value": "",
+          "id": "400ee68b-3a1a-49e4-bd3e-639f6b815842"
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=email",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(1) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "bd77b89d-5765-46ec-a184-eac7b6f8a592"
+        },
+        {
+          "command": "type",
+          "target": "name=email",
+          "value": "tungnt@softech.vn",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(1) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "ed211f70-efc3-4cfd-afa7-9ddacce387f2"
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=password",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "d16f7146-6ffb-4aeb-9a1f-77d83e6d7bfc"
+        },
+        {
+          "command": "type",
+          "target": "name=password",
+          "value": "123456789",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "52ae3d70-fc09-4dce-92a7-b4b3f84a6a38"
+        },
+        {
+          "command": "click",
+          "target": "css=.btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='submit' and text()='Log In'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[4]/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Log In')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "95e2d182-63b0-4caa-90e7-117dbc66f157"
+        },
+        {
+          "command": "open",
+          "target": "https://os-admin.vercel.app/online-shop/data-management/categories",
+          "value": "",
+          "id": "fbe277bc-7555-4816-b825-c467bc7db47f"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-table-row:nth-child(1) .ant-space-item:nth-child(1) > .ant-btn",
+          "value": "",
+          "id": "327f1216-70a0-4766-8555-68df0e757c5c",
+          "fallbackTargets": [
+            [
+              "css=.ant-table-row:nth-child(1) .ant-space-item:nth-child(1) > .ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='button'])[10]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div[2]/div/div/div/div/div/table/tbody/tr/td[4]/div/div/button)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "pause",
+          "target": "500",
+          "value": "",
+          "id": "db931df0-4536-44f8-a98f-c03f38a23706"
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=update-form_name",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "id": "f341e4d2-4e83-47eb-b01f-ef7f7e52afcc",
+          "fallbackTargets": [
+            [
+              "id=update-form_name",
+              "id"
+            ],
+            [
+              "css=#update-form_name",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='update-form_name'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='update-form']/div/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "id=update-form_name",
+          "value": "Category Z123456789",
+          "id": "c0e1c97a-1ae6-423d-83ac-de9743b12e5f",
+          "fallbackTargets": [
+            [
+              "id=update-form_name",
+              "id"
+            ],
+            [
+              "css=#update-form_name",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='update-form_name'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='update-form']/div/div/div[2]/div/div/span/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn:nth-child(2)",
+          "value": "",
+          "id": "49ce9e71-60c9-459e-b0da-7c2b4be4505d",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn:nth-child(2)",
+              "css:finder"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eeb29317-4a80-487f-ae61-e8dc500a6814",
+      "name": "Category-Delete-OK",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://os-admin.vercel.app/login",
+          "value": "",
+          "id": "13f852ed-55bf-4205-bdfb-e63520e074b2"
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=email",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(1) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "6f86f437-dda7-4498-bc3a-b0177051654f"
+        },
+        {
+          "command": "type",
+          "target": "name=email",
+          "value": "tungnt@softech.vn",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(1) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "187bd1a7-7da1-45ba-82e4-eb3dbf092c3c"
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=password",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "f8d3dc91-6282-4ad3-8c12-8b95f784efb2"
+        },
+        {
+          "command": "type",
+          "target": "name=password",
+          "value": "123456789",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "394e57c6-da6d-4508-9258-1b93722f495e"
+        },
+        {
+          "command": "click",
+          "target": "css=.btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='submit' and text()='Log In'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[4]/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Log In')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "370f2b67-9fe7-47dc-a743-b0a5057c474c"
+        },
+        {
+          "command": "open",
+          "target": "https://os-admin.vercel.app/online-shop/data-management/categories",
+          "value": "",
+          "id": "8b30d32d-56f0-43ee-b8dc-70fe54c56989"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-table-row:nth-child(1) .ant-space-item:nth-child(2) > .ant-btn",
+          "value": "",
+          "id": "1ff9b5ef-382d-4f26-9a50-d92491dec2d0",
+          "fallbackTargets": [
+            [
+              "css=.ant-table-row:nth-child(1) .ant-space-item:nth-child(2) > .ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='button'])[11]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div[2]/div/div/div/div/div/table/tbody/tr/td[4]/div/div[2]/button)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "pause",
+          "target": "500",
+          "value": "",
+          "id": "2a0672e4-d8e2-4fe6-8d41-98d74454f66d"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn:nth-child(2)",
+          "value": "",
+          "id": "ac5d640c-4a6b-4585-a0aa-72ea39849fd0",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn:nth-child(2)",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id=':r3:']/div/div/div[2]/button[2])[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Confirm')]",
+              "xpath:innerText"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "snapshot": {
+    "dependencies": {},
+    "tests": [],
+    "jest": {
+      "extraGlobals": []
+    }
+  }
+}

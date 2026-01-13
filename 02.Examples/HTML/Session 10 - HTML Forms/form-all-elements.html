@@ -20,7 +20,7 @@
 
 <body>
   <form>
-    <label for="my-email">Email:</label>
+    <label for="my-email">Email (*):</label>
     <input type="email" id="my-email" placeholder="Hãy nhập email" />
 
     <input type="checkbox" id="check-input" />
@@ -71,6 +71,18 @@
       <option value="saab">Hãng xe Saab</option>
       <option value="fiat">Hãng xe Fiat</option>
       <option value="audi">Hãng xe Audi</option>
+    </select>
+
+    <label for="department">Choose a department:</label>
+    <select id="department" name="department">
+      <option value="company" selected>Công ty ABC</option>
+      <option value="branch-1">-- Chi nhánh Đà Nẵng</option>
+      <option value="branch-1-accounting">-- --Phòng kế toán</option>
+      <option value="branch-1-accounting-stock">-- -- --Kế toán phụ trách kho</option>
+
+      <option value="branch-2">Chi nhánh Huế</option>
+      <option value="branch-2-accounting">Phòng kế toán</option>
+      <option value="branch-2-accounting-stock">Kế toán phụ trách kho</option>
     </select>
 
     <label for="m-cars">Choose a car:</label>

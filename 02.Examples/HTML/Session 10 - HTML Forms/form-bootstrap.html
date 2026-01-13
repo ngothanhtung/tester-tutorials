@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Form Bootstrap</title>
+
+  <meta name="description" content="Form with Bootstrap CSS framework">
+  <meta name="keywords" content="HTML, CSS, Bootstrap, Form">
+  <!-- We use bootstrap 5.x -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<body class="container">
+  <form class="mt-5">
+
+    <label class="form-label" for="username">Username:</label><br />
+    <input class="form-control" required type="text" id="username" name="username" /><br />
+    <label class="form-label" for="pwd">Password:</label><br />
+    <input class="form-control" required type="password" id="pwd" name="pwd" /><br />
+    <input type="submit" value="Login" class="btn btn-primary" />
+  </form>
+
+  <form class="mt-5">
+    <!-- I need to create 2 columns -->
+    <div class="row">
+      <div class="col">
+        <label class="form-label" for="first_name">First name:</label><br />
+        <input class="form-control" required type="text" id="first_name" name="first_name" /><br />
+
+        <label class="form-label" for="address">Address:</label><br />
+        <input class="form-control" required type="text" id="address" name="address" /><br />
+      </div>
+      <div class="col">
+        <label class="form-label" for="last_name">Last name:</label><br />
+        <input class="form-control" required type="text" id="last_name" name="last_name" /><br />
+      </div>
+    </div>
+
+
+
+    <input type="submit" value="Login" class="btn btn-primary" />
+  </form>
+</body>
+
+</html>

@@ -27,7 +27,7 @@
         {
           "id": "7e30ef31-350e-4813-be47-648344166895",
           "command": "open",
-          "target": "https://os-admin.aptech.io/login",
+          "target": "https://os-admin.vercel.app/login",
           "value": ""
         },
         {
@@ -152,7 +152,7 @@
         },
         {
           "command": "open",
-          "target": "https://os-admin.aptech.io/online-shop/data-management/categories",
+          "target": "https://os-admin.vercel.app/online-shop/data-management/categories",
           "value": "",
           "id": "6aa51be4-9df7-4c04-b2ea-23fad5d9f9d9"
         },
