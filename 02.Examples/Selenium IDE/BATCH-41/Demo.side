@@ -499,9 +499,22 @@
           "id": "4be592da-b938-476c-9352-dbf90d939bed"
         },
         {
+          "command": "store",
+          "target": "Category D123456789",
+          "value": "name",
+          "id": "71ad04a3-e321-43ac-9bef-46f72419a372"
+        },
+        {
+          "command": "store",
+          "target": "Desc ...",
+          "value": "desc",
+          "id": "4ddc7c17-b6d4-4090-826d-07f660c8205c",
+          "comment": ""
+        },
+        {
           "command": "type",
           "target": "id=create-form_name",
-          "value": "Category Y123456789",
+          "value": "${name}",
           "id": "df5a111c-93da-40a5-a8e9-bae7eaa910ed",
           "fallbackTargets": [
             [
@@ -525,7 +538,7 @@
         {
           "command": "type",
           "target": "id=create-form_description",
-          "value": "Desc ...",
+          "value": "${desc}",
           "id": "12ea4cd7-43c1-498d-8869-fcafdf559036",
           "fallbackTargets": [
             [
@@ -562,6 +575,52 @@
             ],
             [
               "xpath=//button[contains(.,'Save')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "pause",
+          "target": "1000",
+          "value": "",
+          "id": "90728921-c9b7-4ac6-b693-9731c9412129"
+        },
+        {
+          "command": "assertText",
+          "target": "css=#layout-wrapper > div.main-content > div > div > div > div:nth-child(2) > div > div.ant-table-wrapper.css-15vjyw2 > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(2) > span",
+          "value": "${name}",
+          "id": "cbbe83ce-c825-4dd2-a95d-a273db9fd287",
+          "fallbackTargets": [
+            [
+              "css=.ant-table-cell-row-hover:nth-child(2) > span",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div[2]/div/div/div/div/div/table/tbody/tr/td[2]/span)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//span[contains(.,'Category C123456789')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "assertText",
+          "target": "css=#layout-wrapper > div.main-content > div > div > div > div:nth-child(2) > div > div.ant-table-wrapper.css-15vjyw2 > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(3) > span",
+          "value": "${desc}",
+          "id": "faf7cc0f-c0be-4e5f-8434-e711e1790257",
+          "fallbackTargets": [
+            [
+              "css=.ant-table-cell-row-hover:nth-child(3) > span",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div[2]/div/div/div/div/div/table/tbody/tr/td[3]/span)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//span[contains(.,'Desc B123456789')]",
               "xpath:innerText"
             ]
           ]
@@ -973,6 +1032,679 @@
               "xpath:innerText"
             ]
           ]
+        }
+      ]
+    },
+    {
+      "id": "f37843bc-400d-43f9-b660-abeead953001",
+      "name": "Ticket-1",
+      "commands": [
+        {
+          "id": "1226e995-fa17-4ea9-8c36-7eb476c20442",
+          "command": "open",
+          "target": "https://aptech-tester.web.app/ticket-booking",
+          "value": ""
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=ticket-booking-form_year",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "id": "785468fc-8081-4d7b-bffc-872e3acd2051",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_year",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_year",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_year'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "id=ticket-booking-form_year",
+          "value": "2000",
+          "id": "45085205-1bb5-483e-be8b-5823e1d5e7bf",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_year",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_year",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_year'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=ticket-booking-form_year",
+          "value": "${KEY_TAB}",
+          "id": "306e246e-6a05-43f8-8c5e-09d07540cbd8",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_year",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_year",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_year'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-radio-wrapper:nth-child(2) > .ant-radio",
+          "value": "",
+          "id": "be11d485-f174-471f-92e2-a714ab7741ca",
+          "fallbackTargets": [
+            [
+              "css=.ant-radio-wrapper:nth-child(2) > .ant-radio",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='ticket-booking-form_classType']/label[2]/span)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "id": "ce97344d-9e78-45dc-b246-a8595df61742",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[6]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Tính tiền / Xuất vé')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "assertText",
+          "target": "css=.ant-result-title",
+          "value": "Tiền vé: 4.000.000 VNĐ",
+          "id": "b721cb8c-ee8e-4d30-8378-65bbde695d77",
+          "fallbackTargets": [
+            [
+              "css=.ant-result-title",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div[3]/div[2]/div/div[2])[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bd665b5d-bd61-4be2-aa2c-3713b279330e",
+      "name": "Commands",
+      "commands": [
+        {
+          "id": "37657cc4-7841-419c-af66-7e35ded72ebc",
+          "command": "open",
+          "target": "http://127.0.0.1:5500/form.html",
+          "value": ""
+        },
+        {
+          "command": "//click",
+          "target": "css=body > div.container.mt-4 > button",
+          "value": "",
+          "id": "b0b3f1d2-d048-4895-9b01-17fef7e18d63",
+          "fallbackTargets": [
+            [
+              "css=.btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='button' and text()='Submit'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=//button[contains(.,'Submit')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "//type",
+          "target": "id=exampleInputEmail1",
+          "value": "admin@gmail.com",
+          "id": "11fb4642-bf7a-40b7-ad4d-839d93d6b375",
+          "fallbackTargets": [
+            [
+              "id=exampleInputEmail1",
+              "id"
+            ],
+            [
+              "css=#exampleInputEmail1",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='exampleInputEmail1'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "//type",
+          "target": "id=exampleInputFullName",
+          "value": "Peter Jackson",
+          "id": "5867bfe9-7bca-4c50-8b60-6f65eb02c207",
+          "fallbackTargets": [
+            [
+              "id=exampleInputFullName",
+              "id"
+            ],
+            [
+              "css=#exampleInputFullName",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='exampleInputFullName'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "//sendKeys",
+          "target": "id=exampleInputFullName",
+          "value": "${KEY_TAB}",
+          "id": "ebdb4b65-74ac-4db0-b0d3-e9c0d56708f4",
+          "fallbackTargets": [
+            [
+              "id=exampleInputFullName",
+              "id"
+            ],
+            [
+              "css=#exampleInputFullName",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='exampleInputFullName'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "//sendKeys",
+          "target": "css=.btn",
+          "value": "${KEY_ENTER}",
+          "id": "4d8ac182-3d27-474d-8f71-8866aea46f89",
+          "fallbackTargets": [
+            [
+              "css=.btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='button' and text()='Submit'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=//button[contains(.,'Submit')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "//check",
+          "target": "id=exampleCheck1",
+          "value": "",
+          "id": "de8549db-14be-45b8-a104-eb74bd34be4f",
+          "fallbackTargets": [
+            [
+              "id=exampleCheck1",
+              "id"
+            ],
+            [
+              "css=#exampleCheck1",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='exampleCheck1'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "//select",
+          "target": "id=hobbiesSelect",
+          "value": "Gaming",
+          "id": "e66e9419-59a8-45b5-835d-a2f77052e09d",
+          "fallbackTargets": [
+            [
+              "id=hobbiesSelect",
+              "id"
+            ],
+            [
+              "css=#hobbiesSelect",
+              "css:finder"
+            ],
+            [
+              "xpath=(//select[@id='hobbiesSelect'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "//addSelection",
+          "target": "id=hobbiesSelect",
+          "value": "label=Traveling",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "c36680c9-edab-4c5c-8952-36c086745f64",
+          "targets": [
+            [
+              "id=hobbiesSelect",
+              "id"
+            ],
+            [
+              "css=#hobbiesSelect",
+              "css:finder"
+            ],
+            [
+              "xpath=(//select[@id='hobbiesSelect'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "//addSelection",
+          "target": "id=hobbiesSelect",
+          "value": "label=Gaming",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "a7dd5fcf-2a12-4b2e-8285-7a076f9d52c1",
+          "targets": [
+            [
+              "id=hobbiesSelect",
+              "id"
+            ],
+            [
+              "css=#hobbiesSelect",
+              "css:finder"
+            ],
+            [
+              "xpath=(//select[@id='hobbiesSelect'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "//type",
+          "target": "id=exampleInputAddress",
+          "value": "24 Le Thanh Ton",
+          "insertBeforeLastCommand": false,
+          "frameLocation": "root",
+          "winHandleId": "root",
+          "id": "e508b0b2-75c4-43ab-8986-d47e939c9208",
+          "targets": [
+            [
+              "id=exampleInputAddress",
+              "id"
+            ],
+            [
+              "css=#exampleInputAddress",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='exampleInputAddress'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "verifyValue",
+          "target": "id=exampleInputEmail1",
+          "value": "admin@gmail.com",
+          "id": "fbc91175-d7d1-4e15-8414-3a2b4f1ef123",
+          "fallbackTargets": [
+            [
+              "id=exampleInputEmail1",
+              "id"
+            ],
+            [
+              "css=#exampleInputEmail1",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='exampleInputEmail1'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "id=exampleInputAddress",
+          "value": "15 Quang Trung, Hải Châu",
+          "id": "09b154f7-ed8f-4365-b6d7-6acdc7c12597",
+          "fallbackTargets": [
+            [
+              "id=exampleInputAddress",
+              "id"
+            ],
+            [
+              "css=#exampleInputAddress",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='exampleInputAddress'])[1]",
+              "xpath:attributes"
+            ]
+          ]
+        },
+        {
+          "command": "assertText",
+          "target": "css=h1",
+          "value": "Hello Selenium IDE!",
+          "id": "dea14543-3de5-4e08-aaf0-257c3b236755",
+          "fallbackTargets": [
+            [
+              "css=h1",
+              "css:finder"
+            ],
+            [
+              "xpath=//h1[contains(.,'Hello Selenium IDE!')]",
+              "xpath:innerText"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b5f0970b-a056-457f-9153-00918e418905",
+      "name": "Ticket Booking - Nguoi lon - Pho thong",
+      "commands": [
+        {
+          "id": "9e8e71dd-4ac8-4388-af77-168c71d13d70",
+          "command": "open",
+          "target": "https://aptech-tester.web.app/ticket-booking",
+          "value": ""
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=ticket-booking-form_year",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "id": "b804d4e9-29f9-414a-aaf6-1f1b67be9443",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_year",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_year",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_year'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "type",
+          "target": "id=ticket-booking-form_year",
+          "value": "2018",
+          "id": "a0c1b1cd-fa66-4413-8a96-35cb6cde2893",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_year",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_year",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_year'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=ticket-booking-form_year",
+          "value": "${KEY_TAB}",
+          "id": "ee2ad908-ce58-479e-a39f-0265a615f69e",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_year",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_year",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_year'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "id": "5cca15ee-c1ed-4099-93ac-f1d9363aefb5",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[6]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Tính tiền / Xuất vé')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "assertText",
+          "target": "css=.ant-result-title",
+          "value": "Tiền vé: 3.000.000 VNĐ",
+          "id": "3d79d453-2b7e-45cc-b8d4-ad5f0f340529",
+          "fallbackTargets": [
+            [
+              "css=.ant-result-title",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div[3]/div[2]/div/div[2])[1]",
+              "xpath:idRelative"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "56ef53cf-878d-4a59-b76a-46c7cce07d64",
+      "name": "TicketBooking - Người lớn - Business",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://aptech-tester.web.app/ticket-booking",
+          "value": "",
+          "id": "c897548d-ece5-4237-863b-84a7fa1227a0"
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=ticket-booking-form_year",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_year",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_year",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_year'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "420cde05-c082-425f-a68c-0a33347e634f"
+        },
+        {
+          "command": "type",
+          "target": "id=ticket-booking-form_year",
+          "value": "2018",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_year",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_year",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_year'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "c0b24449-0e31-4271-af14-8c037424c68c"
+        },
+        {
+          "command": "sendKeys",
+          "target": "id=ticket-booking-form_year",
+          "value": "${KEY_TAB}",
+          "fallbackTargets": [
+            [
+              "id=ticket-booking-form_year",
+              "id"
+            ],
+            [
+              "css=#ticket-booking-form_year",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@id='ticket-booking-form_year'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[4]/div/div[2]/div/div/div/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "827a6bd1-d43e-4057-934d-f3225d49a660"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-radio-wrapper:nth-child(2) > .ant-radio-label",
+          "value": "",
+          "id": "46e905c8-807f-46b5-b342-0999020b5660",
+          "fallbackTargets": [
+            [
+              "css=.ant-radio-wrapper:nth-child(2) > .ant-radio-label",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='ticket-booking-form_classType']/label[2]/span[2])[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//span[contains(.,'BUSINESS (Thương gia)')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='ticket-booking-form']/div[6]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Tính tiền / Xuất vé')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "581ccb70-9e02-41b4-8f4e-e1343063cfe9"
+        },
+        {
+          "command": "assertText",
+          "target": "css=.ant-result-title",
+          "value": "Tiền vé: 4.000.000 VNĐ",
+          "fallbackTargets": [
+            [
+              "css=.ant-result-title",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='root']/div/div/div/main/div/div[3]/div[2]/div/div[2])[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "2d52b47a-441d-4c23-9f8d-3b3b4fd6e6f9"
         }
       ]
     }
