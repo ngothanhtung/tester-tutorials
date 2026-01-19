@@ -988,6 +988,26 @@
           "id": "8b30d32d-56f0-43ee-b8dc-70fe54c56989"
         },
         {
+          "command": "storeText",
+          "target": "css=#layout-wrapper > div.main-content > div > div > div > div:nth-child(2) > div > div.ant-table-wrapper.css-15vjyw2 > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)",
+          "value": "id",
+          "id": "65a2607d-3218-4324-ab44-5a63ec8d3855",
+          "fallbackTargets": [
+            [
+              "css=.ant-table-cell-row-hover:nth-child(1)",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='layout-wrapper']/div[2]/div/div/div/div[2]/div/div[2]/div/div/div/div/div/table/tbody/tr/td)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//td[contains(.,'4025')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
           "command": "click",
           "target": "css=.ant-table-row:nth-child(1) .ant-space-item:nth-child(2) > .ant-btn",
           "value": "",
@@ -1032,6 +1052,12 @@
               "xpath:innerText"
             ]
           ]
+        },
+        {
+          "command": "assertNotText",
+          "target": "css=#layout-wrapper > div.main-content > div > div > div > div:nth-child(2) > div > div.ant-table-wrapper.css-15vjyw2 > div > div > div > div > div > table > tbody > tr:nth-child(1) > td:nth-child(1)",
+          "value": "x",
+          "id": "dc875cfe-a2d9-4041-91d7-96e828cf2ee6"
         }
       ]
     },
@@ -1705,6 +1731,204 @@
             ]
           ],
           "id": "2d52b47a-441d-4c23-9f8d-3b3b4fd6e6f9"
+        }
+      ]
+    },
+    {
+      "id": "a4e367e4-8cf1-46da-9e33-1adb309e7273",
+      "name": "TIKI - Assert Title",
+      "commands": [
+        {
+          "id": "e6310dca-2c0d-4e19-b964-ccb4689218e6",
+          "command": "open",
+          "target": "https://tiki.vn/dien-gia-dung/c1882",
+          "value": ""
+        },
+        {
+          "command": "assertTitle",
+          "target": "Hàng Gia Dụng Chính Hãng, Đẹp, Ưu Đãi Đến 40%, Trả Góp 0% | tiki.vn",
+          "value": "",
+          "id": "c33dc5ce-da80-42e6-8d58-343ff1d2a5dd"
+        }
+      ]
+    },
+    {
+      "id": "8b7e028f-7d6a-4cac-91e5-ac6f54f67b95",
+      "name": "Product - Name is required",
+      "commands": [
+        {
+          "command": "open",
+          "target": "https://os-admin.vercel.app/login",
+          "value": "",
+          "id": "7f8fafe9-256d-4973-86d2-32adfcff959d"
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=email",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(1) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "85649a1f-bd6e-4746-adde-481453efa6cb"
+        },
+        {
+          "command": "type",
+          "target": "name=email",
+          "value": "tungnt@softech.vn",
+          "fallbackTargets": [
+            [
+              "name=email",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(1) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='email'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "e7766bb8-907c-42b7-abf7-6fabd2707a4d"
+        },
+        {
+          "command": "sendKeys",
+          "target": "name=password",
+          "value": "${KEY_SHIFT}${KEY_HOME}${KEY_SHIFT}${KEY_DELETE}",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "f7a7a320-fbcc-4ead-ab23-06c8645dbee5"
+        },
+        {
+          "command": "type",
+          "target": "name=password",
+          "value": "123456789",
+          "fallbackTargets": [
+            [
+              "name=password",
+              "name"
+            ],
+            [
+              "css=.mb-3:nth-child(2) > .form-control",
+              "css:finder"
+            ],
+            [
+              "xpath=(//input[@name='password'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[2]/input)[1]",
+              "xpath:idRelative"
+            ]
+          ],
+          "id": "a8147fd0-7e65-4e67-8d85-5d842e5b9125"
+        },
+        {
+          "command": "click",
+          "target": "css=.btn",
+          "value": "",
+          "fallbackTargets": [
+            [
+              "css=.btn",
+              "css:finder"
+            ],
+            [
+              "xpath=(//button[@type='submit' and text()='Log In'])[1]",
+              "xpath:attributes"
+            ],
+            [
+              "xpath=(//div[@id='root']/div[2]/div/div/div/div/div[2]/div[2]/form/div[4]/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Log In')]",
+              "xpath:innerText"
+            ]
+          ],
+          "id": "b6e742a3-5a90-40ed-9b8d-b0087a7cb48e"
+        },
+        {
+          "command": "open",
+          "target": "https://os-admin.vercel.app/online-shop/data-management/products",
+          "value": "",
+          "id": "cfa4d7ee-75ed-48d2-a80e-727c7c50e8ef"
+        },
+        {
+          "command": "click",
+          "target": "css=.ant-btn-primary",
+          "value": "",
+          "id": "2dce3303-861c-461e-a127-df84a3400c8e",
+          "fallbackTargets": [
+            [
+              "css=.ant-btn-primary",
+              "css:finder"
+            ],
+            [
+              "xpath=(//form[@id='create-form']/div[7]/div/div/div/div/button)[1]",
+              "xpath:idRelative"
+            ],
+            [
+              "xpath=//button[contains(.,'Save')]",
+              "xpath:innerText"
+            ]
+          ]
+        },
+        {
+          "command": "pause",
+          "target": "200",
+          "value": "",
+          "id": "cc9af812-aaba-487b-b6f3-0c17b56099b1"
+        },
+        {
+          "command": "assertText",
+          "target": "css=#create-form_name_help > .ant-form-item-explain-error",
+          "value": " Product's name is required.",
+          "id": "cb042ec3-070d-4b59-979e-f98a43b1facc",
+          "fallbackTargets": [
+            [
+              "css=#create-form_name_help > .ant-form-item-explain-error",
+              "css:finder"
+            ],
+            [
+              "xpath=(//div[@id='create-form_name_help']/div)[1]",
+              "xpath:idRelative"
+            ]
+          ]
         }
       ]
     }
