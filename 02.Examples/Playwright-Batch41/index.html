@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add boostrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/v4-shims.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/brands.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/svg-with-js.min.css">
+  <title>Document</title>
+
+  <style>
+    #button1 {
+      color: #000000;
+      height: 54px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body class="container">
+  <h1>Welcome to my website</h1>
+  <p>This is a simple HTML document.</p>
+  <button class="btn btn-primary" id="submit-button">Save</button>
+  <br />
+  <button role="button" id="button1" class="btn btn-danger" style="background-color: rgb(255, 255, 0); height: 60px;">Button
+    1</button>
+
+  <!-- Xây dựng login form với Bootstrap -->
+  <div class="container mt-5">
+    <h2>Login Form</h2>
+    <form>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input autofocus value="Nguyen Van A" type="text" class="form-control" id="username" placeholder="Enter username"
+          name="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+      </div>
+
+
+      <!-- Thêm 1 checkbox để Ghi nhớ thông tin đăng nhập -->
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="remember">
+        <label class="form-check-label" for="remember">Remember me</label>
+      </div>
+      <button type="submit" class="btn btn-primary" disabled>Submit</button>
+    </form>
+
+    <select id="favorite-colors" multiple>
+      <option value="R" selected>Red</option>
+      <option value="G">Green</option>
+      <option value="B" selected>Blue</option>
+    </select>
+
+    <div style="height: 500px;"></div>
+
+
+    <div id="address">
+      24 Lê Thánh Tôn
+      <br />
+      <a id="link" href="https://aptech-danang.edu.vn" title="Website của Aptech Đà Nẵng"
+        target="_blank">https://aptech-danang.edu.vn</a>
+    </div>
+    <div id="empty" style="height: 200px; width: 200px; background-color: red;">
+
+
+    </div>
+</body>
+
+</html>
