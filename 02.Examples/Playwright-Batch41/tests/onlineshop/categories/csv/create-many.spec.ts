@@ -13,6 +13,7 @@ const records = parse(fs.readFileSync(path.join(__dirname, 'data.csv'), 'utf-8')
   bom: true, // Xử lý UTF-8 BOM
 }) as any[];
 
+// Test Suite: Có nhiều test case bên trong
 test.describe('Create Categories from CSV', () => {
   let sharedPage: Page;
 
