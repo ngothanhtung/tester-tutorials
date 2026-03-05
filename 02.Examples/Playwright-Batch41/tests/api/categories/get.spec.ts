@@ -2,51 +2,75 @@ import { test, expect } from '@playwright/test';
 
 const baseURL = 'https://server.softech.cloud';
 
-test.describe('Categories API — GET', () => {
-  test('GET /categories — trả về danh sách categories', async ({ request }) => {
-    const response = await request.get(baseURL + '/online-shop/categories');
+test.describe('Categories API — GET /categories', () => {
+  let response: any;
+  let body: any[];
+  let elapsed: number;
 
-    // Kiểm tra mã trạng thái
-    // pm.test("Status code is 200", () => {
-    //   pm.response.to.have.status(200);
-    // });
-
-    expect(response.status()).toBe(200);
-
-    // Kiểm tra thời gian phản hồi: Response time is less than 200ms
+  test.beforeAll(async ({ request }) => {
     const startTime = Date.now();
-    const body = await response.json();
-    const endTime = Date.now();
+    response = await request.get(baseURL + '/online-shop/categories');
+    elapsed = Date.now() - startTime;
+    body = await response.json();
+  });
 
-    expect(endTime - startTime).toBeLessThan(200);
+  test('1. Kiểm tra mã trạng thái', () => {
+    expect(response.status()).toBe(200);
+  });
 
-    // Kiểm tra body và định dạng JSON
-    /* 
-    pm.test("Response must be valid and have a JSON body", () => {
-      pm.response.to.have.body;
-      pm.response.to.be.json;
-    });
-    */
+  test('2. Kiểm tra thời gian phản hồi < 200ms', () => {
+    expect(elapsed).toBeLessThan(200);
+  });
 
-    expect(Array.isArray(body)).toBeTruthy();
+  test('3. Kiểm tra body là JSON hợp lệ', () => {
+    expect(body).toBeDefined();
+  });
 
-    // Kiểm tra schema của response (tương đương pm.expect(responseJson).to.be.jsonSchema(schema))
-    const allowedKeys = ['id', 'name', 'description'];
-    for (const item of body) {
-      // additionalProperties: false — không cho phép field thừa
-      for (const key of Object.keys(item)) {
-        expect(allowedKeys, `Field không hợp lệ: "${key}"`).toContain(key);
-      }
+  test('4. Kiểm tra response là mảng', () => {
+    expect(Array.isArray(body)).toBe(true);
+  });
 
-      // required: ['id', 'name', 'description']
-      expect(item).toHaveProperty('id');
-      expect(item).toHaveProperty('name');
-      expect(item).toHaveProperty('description');
-
-      // type checks
-      expect(Number.isInteger(item.id)).toBe(true); // id: integer
-      expect(typeof item.name).toBe('string'); // name: string
-      expect(item.description === null || typeof item.description === 'string').toBe(true); // description: string | null
+  test('5. Kiểm tra từng phần tử có đúng schema', () => {
+    for (const { id, name, description } of body) {
+      expect(Number.isInteger(id) && id > 0).toBe(true);
+      expect(typeof name === 'string' && name !== '').toBe(true);
+      expect(description === null || typeof description === 'string').toBe(true);
     }
+  });
+});
+
+test.describe('Categories API — GET /categories/:id', () => {
+  let response: any;
+  let body: any;
+  let elapsed: number;
+
+  test.beforeAll(async ({ request }) => {
+    const startTime = Date.now();
+    response = await request.get(baseURL + '/online-shop/categories/1');
+    elapsed = Date.now() - startTime;
+    body = await response.json();
+  });
+
+  test('1. Kiểm tra mã trạng thái', () => {
+    expect(response.status()).toBe(200);
+  });
+
+  test('2. Kiểm tra thời gian phản hồi < 200ms', () => {
+    expect(elapsed).toBeLessThan(200);
+  });
+
+  test('3. Kiểm tra body là JSON hợp lệ', () => {
+    expect(body).toBeDefined();
+  });
+
+  test('4. Kiểm tra response là đối tượng', () => {
+    expect(typeof body === 'object' && body !== null).toBe(true);
+  });
+
+  test('5. Kiểm tra phần tử có đúng schema', () => {
+    const { id, name, description } = body;
+    expect(Number.isInteger(id) && id > 0).toBe(true);
+    expect(typeof name === 'string' && name !== '').toBe(true);
+    expect(description === null || typeof description === 'string').toBe(true);
   });
 });
