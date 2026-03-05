@@ -74,3 +74,46 @@ test.describe('Categories API — GET /categories/:id', () => {
     expect(description === null || typeof description === 'string').toBe(true);
   });
 });
+
+test.describe('Categories API — GET /categories/:id -> NOT FOUND', () => {
+  let response: any;
+  let body: any;
+  let elapsed: number;
+
+  test.beforeAll(async ({ request }) => {
+    const startTime = Date.now();
+    response = await request.get(baseURL + '/online-shop/categories/999');
+    elapsed = Date.now() - startTime;
+    body = await response.json();
+  });
+
+  test('1. Kiểm tra mã trạng thái', () => {
+    expect(response.status()).toBe(410);
+  });
+
+  test('2. Kiểm tra thời gian phản hồi < 200ms', () => {
+    expect(elapsed).toBeLessThan(200);
+  });
+
+  test('3. Kiểm tra body là JSON hợp lệ', () => {
+    expect(body).toBeDefined();
+  });
+
+  test('4. Kiểm tra response là đối tượng', () => {
+    expect(typeof body === 'object' && body !== null).toBe(true);
+  });
+
+  test('5. Kiểm tra phần tử có đúng schema', () => {
+    const { statusCode, message, error } = body;
+    expect(Number.isInteger(statusCode)).toBe(true);
+    expect(Array.isArray(message)).toBe(true);
+    expect(typeof error === 'string' && error !== '').toBe(true);
+  });
+
+  test('6. Kiểm tra phần tử thông báo lỗi có giá trị', () => {
+    const { statusCode, message, error } = body;
+    expect(statusCode).toBe(410);
+    expect(message).toContain('Category not found'); // string hoặc array đều dùng được toContain
+    expect(error).toBe('Gone');
+  });
+});
