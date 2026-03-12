@@ -30,6 +30,9 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    // Nên ghi lại trace chỉ khi test case thất bại để tiết kiệm dung lượng lưu trữ.
+    // video: 'on-first-retry', // Ghi lại video chỉ khi test case thất bại, giúp tiết kiệm dung lượng lưu trữ.
+    video: 'on', // Ghi lại video cho tất cả test case, không chỉ khi thất bại.
   },
 
   /* Configure projects for major browsers */
